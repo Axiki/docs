@@ -48,6 +48,86 @@
         ]
       },
       {
+        "tab": "CRM Documentation",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "crm",
+              "crm/getting-started",
+              "crm/account-setup",
+              "crm/data-import",
+              "crm/onboarding"
+            ]
+          },
+          {
+            "group": "Core Features",
+            "pages": [
+              "crm/interface",
+              "crm/settings",
+              "crm/team",
+              "crm/reports",
+              "crm/integrations"
+            ]
+          },
+          {
+            "group": "CRM Modules",
+            "pages": [
+              "crm/modules",
+              "crm/leads",
+              "crm/opportunities",
+              "crm/quotes",
+              "crm/invoices",
+              "crm/products",
+              "crm/tasks-activities"
+            ]
+          },
+          {
+            "group": "Training",
+            "pages": [
+              "crm/training/courses",
+              "crm/training/certification",
+              "crm/training/webinars"
+            ]
+          },
+          {
+            "group": "Marketing Tools",
+            "pages": [
+              "crm/marketing-tools"
+            ]
+          },
+          {
+            "group": "Mobile & Best Practices",
+            "pages": [
+              "crm/mobile",
+              "crm/best-practices"
+            ]
+          },
+          {
+            "group": "Best Practices",
+            "pages": [
+              "crm/best-practices"
+            ]
+          },
+          {
+            "group": "Resources",
+            "pages": [
+              "crm/glossary"
+            ]
+          },
+          {
+            "group": "Support",
+            "pages": [
+              "crm/support",
+              "crm/faq",
+              "crm/troubleshooting",
+              "crm/releases",
+              "crm/videos"
+            ]
+          }
+        ]
+      },
+      {
         "tab": "API reference",
         "groups": [
           {
