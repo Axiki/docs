@@ -4,93 +4,376 @@ description: "Learn the basics of Lynka CRM and set up your account"
 icon: "rocket"
 ---
 
-## Setting up your account
+## Welcome to Lynka CRM
 
-Get your Lynka CRM account up and running in minutes.
+Welcome to Lynka CRM, your comprehensive customer relationship management platform. This guide will help you get up and running quickly with the essential features you need to manage your customer relationships effectively.
 
-<Card
-  title="Sign up"
-  icon="user-plus"
-  href="/crm/account-setup"
-  horizontal
->
-  Create your account and configure basic settings.
+<CardGroup cols={2}>
+
+<Card title="Quick Setup" icon="bolt" href="/crm/account-setup">
+  Get your account set up in minutes with our quick setup process.
 </Card>
 
-## Navigate the interface
-
-Familiarize yourself with the CRM interface and main navigation.
-
-<Columns cols={2}>
-  <Card
-    title="Dashboard Overview"
-    icon="gauge"
-    href="/crm/interface#dashboard"
-  >
-    Understand the main dashboard and key metrics.
-  </Card>
-  <Card
-    title="Navigation"
-    icon="compass"
-    href="/crm/interface#navigation"
-  >
-    Learn how to navigate between different sections.
-  </Card>
-</Columns>
-
-## Core modules
-
-Start using the main features of the CRM.
-
-<Columns cols={2}>
-  <Card
-    title="Lead Management"
-    icon="user-plus"
-    href="/crm/leads"
-  >
-    Add and manage your leads effectively.
-  </Card>
-  <Card
-    title="Opportunity Tracking"
-    icon="chart-line"
-    href="/crm/opportunities"
-  >
-    Track potential deals through your pipeline.
-  </Card>
-  <Card
-    title="Quotes & Invoices"
-    icon="file-invoice-dollar"
-    href="/crm/quotes"
-  >
-    Create professional quotes and convert to invoices.
-  </Card>
-  <Card
-    title="Product Catalog"
-    icon="box"
-    href="/crm/products"
-  >
-    Manage your products and services.
-  </Card>
-</Columns>
-
-## Next steps
-
-<Card
-  title="Configure your team"
-  icon="user-group"
-  href="/crm/team"
->
-  Set up your team members and permissions.
+<Card title="Import Your Data" icon="upload" href="/crm/data-import">
+  Bring your existing leads and customer data into the CRM.
 </Card>
 
-<Card
-  title="Marketing tools"
-  icon="megaphone"
-  href="/crm/marketing-tools"
->
-  Use built-in tools for lead generation and outreach.
+<Card title="Configure Your Team" icon="user-group" href="/crm/team">
+  Set up your team members and assign roles.
 </Card>
+
+<Card title="Customize Your CRM" icon="sliders" href="/crm/customization">
+  Tailor the CRM to match your business processes.
+</Card>
+
+</CardGroup>
+
+## Account Setup
+
+### Creating Your Account
+
+<Steps>
+<Step title="Sign up**:
+  Visit the Lynka CRM website and click "Sign Up". You can sign up with your email address or use Google authentication.
+</Step>
+
+<Step title="Verify your email**:
+  Check your email inbox for a verification message and click the verification link.
+</Step>
+
+<Step title="Complete profile**:
+  Add your name, company information, and contact details.
+</Step>
+
+<Step title="Choose your plan**:
+  Select the plan that best fits your business needs.
+</Step>
+
+<Step title="Set up security**:
+  Configure two-factor authentication for enhanced security.
+</Step>
+
+<Step title="Complete onboarding**:
+  Follow the onboarding wizard to configure basic settings.
+</Step>
+</Steps>
+
+#### Required Information
+- **Email address**: Your primary email for account access
+- **Company name**: Your business name
+- **Business type**: Industry and business model
+- **Timezone**: Your local timezone for scheduling
+- **Currency**: Base currency for all financial data
+- **Phone number**: For two-factor authentication
+
+### Initial Configuration
+
+#### Basic Settings
+<Tip>
+  **Plan ahead**: Consider your sales process before configuring pipeline stages to ensure they match your workflow.
+</Tip>
+
+<Steps>
+<Step title="Set business hours**:
+  Configure your business hours and holidays.
+</Step>
+
+<Step title="Configure timezone**:
+  Set your local timezone for accurate scheduling.
+</Step>
+
+<Step title="Select currency**:
+  Choose your base currency for all financial data.
+</Step>
+
+<Step title="Set up email**:
+  Configure your email integration for communication tracking.
+</Step>
+
+<Step title="Customize branding**:
+  Add your company logo and brand colors.
+</Step>
+
+<Step title="Review security**:
+  Enable two-factor authentication and set strong passwords.
+</Step>
+</Steps>
+
+## Understanding the Interface
+
+### Main Navigation
+
+The Lynka CRM interface is organized around your sales process:
+
+- **Dashboard**: Overview of key metrics and recent activity
+- **LeadGen**: Automated lead discovery tools
+- **Leads**: Manage potential customers
+- **Opportunities**: Track potential deals
+- **Quotes**: Create and manage proposals
+- **Invoices**: Generate and track billing
+- **Products**: Manage your product catalog
+- **Reports**: Analyze your business performance
+- **Settings**: Configure your account and preferences
+
+### Dashboard Overview
+
+Your dashboard provides a snapshot of your business performance:
+- **Key metrics**: Revenue, leads, conversions, and other KPIs
+- **Recent activity**: Latest customer interactions
+- **Upcoming tasks**: Important deadlines and follow-ups
+- **Performance trends**: Historical performance data
+
+<Info>
+  **Customizable**: Your dashboard is fully customizable to show the metrics that matter most to your business.
+</Info>
+
+## Core CRM Modules
+
+### Lead Management
+
+#### Adding Your First Lead
+
+<Steps>
+<Step title="Navigate to Leads**:
+  Click on "Leads" in the main navigation.
+</Step>
+
+<Step title="Create new lead**:
+  Click the "New Lead" button.
+</Step>
+
+<Step title="Enter lead information**:
+  Add the contact's name, company, email, and phone number.
+</Step>
+
+<Step title="Set lead status**:
+  Select an appropriate status (New, Contacted, Qualified, etc.).
+</Step>
+
+<Step title="Add notes**:
+  Include any relevant information about the lead.
+</Step>
+
+<Step title="Save lead**:
+  Click "Save" to add the lead to your database.
+</Step>
+</Steps>
+
+#### Lead Statuses Explained
+- **New**: Recently added lead that hasn't been contacted
+- **Contacted**: Lead has been reached out to
+- **Qualified**: Lead shows genuine interest and fits your criteria
+- **Proposal**: Lead has received a quote or proposal
+- **Won**: Lead converted to a customer
+- **Lost**: Lead didn't convert
+
+### Opportunity Management
+
+#### Creating Opportunities
+
+When a lead shows strong interest, convert them to an opportunity:
+
+<Steps>
+<Step title="Select qualified lead**:
+  Choose a lead that has shown genuine interest.
+</Step>
+
+<Step title="Convert to opportunity**:
+  Click "Convert to Opportunity" from the lead actions.
+</Step>
+
+<Step title="Enter opportunity details**:
+  Add expected value, probability, and close date.
+</Step>
+
+<Step title="Assign to owner**:
+  Select the salesperson responsible for the opportunity.
+</Step>
+
+<Step title="Set stage**:
+  Place the opportunity in the appropriate pipeline stage.
+</Step>
+
+<Step title="Save opportunity**:
+  Create the opportunity record linked to the original lead.
+</Step>
+</Steps>
+
+### Quote Creation
+
+#### Building Your First Quote
+
+<Steps>
+<Step title="Navigate to Quotes**:
+  Go to the Quotes section in your CRM.
+</Step>
+
+<Step title="Create new quote**:
+  Click "New Quote" to start building.
+</Step>
+
+<Step title="Select associated lead**:
+  Choose the lead this quote is for.
+</Step>
+
+<Step title="Add line items**:
+  Include products/services with descriptions and pricing.
+</Step>
+
+<Step title="Apply discounts**:
+  Add any applicable discounts or adjustments.
+</Step>
+
+<Step title="Send to client**:
+  Send the quote to your client for review.
+</Step>
+</Steps>
+
+## Marketing Tools
+
+### Lead Generation
+
+#### Using Lead Forge
+
+The Lead Forge helps you discover new prospects automatically:
+
+<Steps>
+<Step title="Configure search parameters**:
+  Set your target industry, location, and other criteria.
+</Step>
+
+<Step title="Choose run mode**:
+  Select Normal (5 leads, 1 token) or Turbo (20 leads, 3 tokens).
+</Step>
+
+<Step title="Execute search**:
+  Run the search to discover potential leads.
+</Step>
+
+<Step title="Review results**:
+  Examine the leads returned by the system.
+</Step>
+
+<Step title="Accept relevant leads**:
+  Accept leads you want to pursue.
+</Step>
+
+<Step title="Add to CRM**:
+  Import accepted leads into your main database.
+</Step>
+</Steps>
+
+#### Marketing Automation Tools
+- **WhatsApp Link Generator**: Create custom WhatsApp links
+- **Email Signature Generator**: Build professional email signatures
+- **Business Card QR Generator**: Create QR codes with contact info
+- **UTM Builder**: Generate tracking parameters for marketing links
+
+## Team Setup
+
+### Adding Team Members
+
+<Steps>
+<Step title="Access team settings**:
+  Go to Settings > Team in your CRM.
+</Step>
+
+<Step title="Invite members**:
+  Enter email addresses of team members to invite.
+</Step>
+
+<Step title="Assign roles**:
+  Select appropriate roles for each team member.
+</Step>
+
+<Step title="Set permissions**:
+  Configure data access and feature permissions.
+</Step>
+
+<Step title="Send invitations**:
+  Send invitations to join your team.
+</Step>
+
+<Step title="Configure workflows**:
+  Set up lead assignment and team workflows.
+</Step>
+</Steps>
+
+#### Role Definitions
+- **Administrator**: Full system access and configuration rights
+- **Sales Manager**: Team management and advanced reporting access
+- **Sales Representative**: Lead and opportunity management access
+- **Marketing**: Marketing tools and campaign access
+- **Support**: Customer support and ticket management access
+
+## Best Practices for Success
+
+### Data Quality
+
+#### Maintaining Clean Data
+<Warning>
+  **Data hygiene**: Clean data is essential for accurate reporting and effective CRM usage.
+</Warning>
+
+- **Complete records**: Fill in all available information for each record
+- **Consistent formatting**: Use consistent formats for phone numbers, addresses, etc.
+- **Regular cleanup**: Remove duplicates and outdated information regularly
+- **Validation**: Use validation rules to maintain data quality
+- **Standardization**: Establish standards for data entry across your team
+
+### Regular Maintenance
+
+#### Weekly Tasks
+- **Review leads**: Check for leads that need follow-up
+- **Update opportunities**: Update opportunity status and next steps
+- **Clean data**: Remove duplicates and update outdated information
+- **Review reports**: Analyze weekly performance metrics
+- **Plan follow-ups**: Schedule follow-up activities for the week
+
+#### Monthly Tasks
+- **Performance review**: Analyze monthly performance against goals
+- **Pipeline review**: Review sales pipeline health and conversion rates
+- **Team performance**: Review individual team member performance
+- **Process optimization**: Identify and improve inefficient processes
+- **Training**: Provide additional training on CRM features
+
+## Next Steps
+
+### Essential Actions
+
+<Checklist>
+<CheckItem status="todo">Complete your profile and company information</CheckItem>
+<CheckItem status="todo">Import your existing customer data</CheckItem>
+<CheckItem status="todo">Set up your sales pipeline stages</CheckItem>
+<CheckItem status="todo">Add your first lead to the system</CheckItem>
+<CheckItem status="todo">Configure email integration</CheckItem>
+<CheckItem status="todo">Set up team member accounts</CheckItem>
+<CheckItem status="todo">Create your first quote</CheckItem>
+<CheckItem status="todo">Configure notification preferences</CheckItem>
+</Checklist>
+
+### Getting Help
+
+<CardGroup cols={2}>
+
+<Card title="Video Tutorials" icon="video" href="/crm/videos">
+  Watch step-by-step tutorials for all CRM features.
+</Card>
+
+<Card title="Support Center" icon="life-ring" href="/crm/support">
+  Get help from our support team and community.
+</Card>
+
+<Card title="Best Practices" icon="lightbulb" href="/crm/best-practices">
+  Learn tips and tricks for CRM optimization.
+</Card>
+
+<Card title="API Documentation" icon="code" href="/crm/api">
+  Integrate with other business tools and systems.
+</Card>
+
+</CardGroup>
 
 <Note>
-  **New to CRM systems?** Start with lead management and gradually incorporate other features as you become comfortable with the platform.
+  **Start simple**: Don't try to configure everything at once. Start with basic lead management and gradually add more features as you become comfortable with the system.
 </Note>

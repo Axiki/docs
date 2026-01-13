@@ -1,0 +1,206 @@
+---
+title: "Theme Customization"
+description: "Customize the look and feel of Lynka CRM to match your brand"
+icon: "paintbrush"
+---
+
+## Theme Overview
+
+Lynka CRM uses a dynamic theming system that allows you to customize the appearance to match your brand. The system supports both light and dark modes with customizable accent colors.
+
+## Color System
+
+### Brand Colors
+
+The application uses a dynamic color system based on your selected accent color:
+
+- **Primary Brand Color**: `--user-brand-500` - Used for buttons, highlights, and accents
+- **Deep Brand Color**: `--user-brand-deep` - Used for backgrounds (`#050505` in old-school theme)
+- **Surface Colors**: `--bg-surface`, `--bg-surface-highlight` - Background elements
+- **Text Colors**: `--text-primary`, `--text-secondary` - Text elements
+- **Border Colors**: `--border-color` - Border elements
+
+### Theme Modes
+
+#### Classic Theme
+- Uses the default purple/black mesh background
+- Maintains the original Lynka aesthetic
+- No secondary accent glow
+
+#### Old-School Theme
+- Pure black background (`#050505`)
+- No gradients or mesh effects
+- Minimalist, high-contrast appearance
+
+#### Themed Mode
+- Dynamic gradient background based on your brand color
+- Mesh pattern that adapts to your accent color
+- Modern, vibrant appearance
+
+## Customizing Your Theme
+
+### Changing Accent Color
+
+<Steps>
+<Step title="Access theme settings">
+  Navigate to Settings > Appearance in your CRM dashboard.
+</Step>
+
+<Step title="Select accent color">
+  Choose from the predefined color options or enter a custom hex color.
+</Step>
+
+<Step title="Preview changes">
+  See how the color affects different UI elements in real-time.
+</Step>
+
+<Step title="Save preferences">
+  Click save to apply your new accent color across the application.
+</Step>
+</Steps>
+
+### Theme Style Selection
+
+Choose from three distinct theme styles:
+
+<Steps>
+<Step title="Select theme style">
+  Choose between Classic, Old-School, or Themed styles.
+</Step>
+
+<Step title="Classic style">
+  Preserves the original purple/black mesh aesthetic with your accent color.
+</Step>
+
+<Step title="Old-School style">
+  Applies a pure black background (`#050505`) with no gradients.
+</Step>
+
+<Step title="Themed style">
+  Creates dynamic gradients based on your brand color.
+</Step>
+
+<Step title="Apply and review">
+  Apply your selection and review how it looks across different sections.
+</Step>
+</Steps>
+
+## Background Options
+
+### Mesh Patterns
+
+The themed mode uses dynamic mesh patterns that adapt to your brand color:
+
+```
+radial-gradient(at 0% 0%, ${brandColor}1a 0, transparent 50%),
+radial-gradient(at 50% 0%, ${brandColor}0d 0, transparent 50%),
+radial-gradient(at 100% 0%, ${brandColor}1a 0, transparent 50%)
+```
+
+This creates a subtle background pattern that complements your brand color without being distracting.
+
+### Accent Glow
+
+- **Themed mode**: Uses 15% opacity accent glow (`--user-bg-accent-opacity: 0.15`)
+- **Classic/Old-School**: No accent glow (`--user-bg-accent-opacity: 0`)
+
+## Saving Theme Preferences
+
+Theme preferences are saved to `localStorage` with these keys:
+
+- `linka_theme_color`: Stores your selected accent color
+- `linka_theme_style`: Stores your selected theme style
+
+The system automatically restores your preferences when you return to the application.
+
+## CSS Variables Reference
+
+The theme system uses these CSS custom properties:
+
+```css
+/* Brand Colors */
+--user-brand-500: #A20616; /* Default red accent */
+
+/* Background Colors */
+--user-brand-deep: #050505; /* Old-school black */
+--bg-base: #050505; /* Base background */
+--user-bg-mesh-style: /* Dynamic mesh pattern or 'none' */
+--user-bg-accent-opacity: /* 0 or 0.15 */
+--user-bg-vignette: /* Gradient vignette or 'none' */
+
+/* Surface Colors */
+--bg-surface: /* Surface backgrounds */
+--bg-surface-highlight: /* Highlighted surfaces */
+
+/* Text Colors */
+--text-primary: /* Primary text */
+--text-secondary: /* Secondary text */
+
+/* Border Colors */
+--border-color: /* Border elements */
+```
+
+## Responsive Behavior
+
+Themes adapt to different screen sizes and devices:
+
+- **Desktop**: Full theme experience with all visual elements
+- **Mobile**: Optimized for touch interfaces while maintaining theme consistency
+- **Tablet**: Balanced experience between desktop and mobile
+
+## Best Practices
+
+<Tip>
+  **Accessibility**: Ensure your chosen accent color provides sufficient contrast for readability.
+</Tip>
+
+<Info>
+  **Consistency**: Use your brand's primary color as the accent color for consistency across platforms.
+</Info>
+
+<Warning>
+  **Testing**: Always test your theme on different devices and screen sizes to ensure optimal appearance.
+</Warning>
+
+### Color Selection Guidelines
+
+- **High contrast**: Ensure text remains readable against background elements
+- **Brand consistency**: Use colors that align with your existing brand identity
+- **Professional appearance**: Avoid overly bright or distracting colors
+- **Accessibility compliance**: Meet WCAG contrast requirements
+
+## Troubleshooting
+
+### Theme Not Applying
+
+If your theme changes aren't applying:
+
+<Steps>
+<Step title="Clear browser cache">
+  Clear your browser's cache and cookies for the site.
+</Step>
+
+<Step title="Hard refresh">
+  Use Ctrl+F5 (Windows) or Cmd+Shift+R (Mac) to force refresh.
+</Step>
+
+<Step title="Check localStorage">
+  Verify that your theme preferences are saved in browser storage.
+</Step>
+
+<Step title="Contact support">
+  If issues persist, contact our support team for assistance.
+</Step>
+</Steps>
+
+### Color Contrast Issues
+
+If you're experiencing readability issues:
+
+- Verify your accent color has sufficient contrast against text
+- Consider adjusting your theme style to Classic or Old-School
+- Test with accessibility tools to ensure compliance
+
+<Note>
+  **Theme persistence**: Your theme preferences are automatically saved and will persist across sessions and browser restarts.
+</Note>

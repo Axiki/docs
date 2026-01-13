@@ -1,58 +1,414 @@
 ---
 title: "Quote Management"
-description: "Creating and managing quotes in Lynka CRM"
+description: "Create and manage professional quotes in Lynka CRM"
 icon: "file-invoice-dollar"
 ---
 
 ## Overview
 
-The quote system helps you create professional proposals for potential customers. You can build quotes with line items, apply discounts, and track their status.
+The quote management system helps you create professional proposals for potential customers. You can build quotes with line items, apply discounts, and track their status. Quotes can be converted to invoices once accepted, creating a seamless flow from proposal to billing.
 
 ## Creating Quotes
 
-To create a quote, go to the Quotes section and click "New Quote". Select the associated lead, add line items with descriptions and pricing, and customize the quote as needed. Quotes can be saved as drafts, sent to clients, or converted to invoices once accepted.
+### From Opportunities
+
+Create quotes from qualified opportunities:
+
+<Steps>
+<Step title="Select qualified opportunity**:
+  Choose an opportunity that's ready for a proposal.
+</Step>
+
+<Step title="Click create quote**:
+  Select "Create Quote" from the opportunity actions.
+</Step>
+
+<Step title="Configure quote details**:
+  Set title, validity period, and other quote-specific information.
+</Step>
+
+<Step title="Add line items**:
+  Include products/services with descriptions and pricing.
+</Step>
+
+<Step title="Review and send**:
+  Verify the quote and send to the customer.
+</Step>
+</Steps>
+
+#### Benefits of Opportunity-Based Quotes
+<Tip>
+  **Context preservation**: Creating quotes from opportunities maintains all relevant context and information.
+</Tip>
+
+- **Contact information**: Opportunity contact details automatically populate
+- **Company details**: Company information carries over from opportunity
+- **Relationship context**: Complete interaction history preserved
+- **Value alignment**: Quote value aligns with opportunity expectations
+- **Timeline consistency**: Quote timeline matches opportunity timeline
+
+### Direct Creation
+
+Create quotes without linking to an opportunity:
+
+<Steps>
+<Step title="Navigate to Quotes**:
+  Go to the Quotes section in your CRM.
+</Step>
+
+<Step title="Click New Quote**:
+  Select the "New Quote" button.
+</Step>
+
+<Step title="Select associated lead**:
+  Choose the lead the quote is for.
+</Step>
+
+<Step title="Add quote details**:
+  Enter title, validity period, and other information.
+</Step>
+
+<Step title="Add line items**:
+  Include products/services with pricing.
+</Step>
+
+<Step title="Save quote**:
+  Create the quote record.
+</Step>
+</Steps>
+
+## Quote Information
+
+### Required Fields
+- **Title**: Descriptive name for the quote (required)
+- **Associated Lead**: Link to the lead the quote is for (required)
+- **Currency**: Currency for all monetary values (required)
+
+### Optional Fields
+- **Quote Number**: Unique identifier (auto-generated or custom)
+- **Valid Until**: Expiration date for the quote
+- **Notes**: Additional information for the customer
+- **Terms**: Payment terms and conditions
+- **Tags**: Categorization labels
+- **Owner**: Salesperson responsible for the quote
+- **Template**: Quote template to use
+- **Discount**: Overall discount percentage
+- **Tax Rate**: Default tax rate to apply
+- **Shipping**: Shipping costs if applicable
 
 ## Quote Components
 
-### Quote Header
-- Title: Descriptive name for the quote
-- Quote number: Unique identifier (auto-generated or custom)
-- Valid until: Expiration date for the quote
-- Associated lead: Link to the lead the quote is for
+### Header Information
+- **Quote Title**: Descriptive name for the quote
+- **Quote Number**: Unique identifier for tracking
+- **Issue Date**: Date the quote was created
+- **Valid Until**: Expiration date for the quote
+- **Associated Lead**: Link to the customer
+- **Currency**: Currency for all monetary values
 
 ### Line Items
-- Product/service: Item being quoted
-- Description: Detailed description of the item
-- Quantity: Number of units
-- Unit price: Price per unit
-- Cost: Internal cost (for profit calculations)
-- Tax rate: Tax percentage to apply
+
+#### Product/Service Items
+<Steps>
+<Step title="Select product**:
+  Choose from your product catalog or create a custom item.
+</Step>
+
+<Step title="Enter description**:
+  Add detailed description of the product/service.
+</Step>
+
+<Step title="Set quantity**:
+  Specify the number of units.
+</Step>
+
+<Step title="Enter unit price**:
+  Set the price per unit.
+</Step>
+
+<Step title="Apply tax**:
+  Set tax rate if applicable.
+</Step>
+
+<Step title="Calculate total**:
+  System automatically calculates line item total.
+</Step>
+</Steps>
+
+#### Line Item Details
+- **Product/Service**: Description of the item
+- **Quantity**: Number of units
+- **Unit Price**: Price per unit
+- **Cost**: Internal cost (for margin calculations)
+- **Tax Rate**: Tax percentage to apply
+- **Total**: Line item total (quantity × unit price)
+- **Discount**: Item-specific discount if applicable
+- **Notes**: Additional notes about the line item
 
 ### Adjustments
-- Discounts: Reductions from the total
-- Fees: Additional charges to add to the total
-- Taxes: Tax calculations applied to the quote
+
+#### Discounts and Fees
+- **Overall discounts**: Apply discounts to the entire quote
+- **Line item discounts**: Apply discounts to specific items
+- **Additional fees**: Add extra charges to the quote
+- **Tax calculations**: Apply appropriate taxes to different items
+- **Shipping costs**: Add shipping and handling charges
+- **Payment terms**: Specify payment terms and conditions
 
 ## Quote Statuses
 
-Quote statuses include:
-- Draft: Quote is being prepared
-- Sent: Quote delivered to client
-- Viewed: Client has opened the quote
-- Accepted: Client has approved the quote
-- Rejected: Client declined the quote
-- Expired: Quote validity period ended
-- Void: Quote cancelled
-- Paid: Payment received
+### Status Definitions
 
-## Templates
+#### Draft
+Quote is being prepared and hasn't been sent to the customer yet. You can continue editing the quote and make changes as needed.
 
-Use quote templates to standardize your proposals:
-- Create reusable layouts
-- Include company branding
-- Add standard terms and conditions
-- Save time on quote creation
+#### Sent
+Quote has been delivered to the customer. The quote is no longer editable but can be viewed and tracked.
 
-## Converting to Invoices
+#### Viewed
+Customer has opened and viewed the quote. This indicates interest and provides timing information for follow-up.
 
-Once a quote is accepted, you can convert it to an invoice with a single click. The system preserves all line items and pricing while creating a billable invoice.
+#### Accepted
+Customer has approved the quote and agreed to proceed. This quote can be converted to an invoice.
+
+#### Rejected
+Customer has declined the quote. Document the reason for future reference and potential re-engagement strategies.
+
+#### Expired
+Quote validity period has ended without acceptance. The quote is no longer valid.
+
+#### Void
+Quote has been cancelled and is no longer valid.
+
+#### Paid
+Payment has been received for the quote (usually after conversion to invoice).
+
+### Status Management
+
+#### Automatic Updates
+- **View tracking**: Automatically updates to "Viewed" when customer opens quote
+- **Expiration**: Automatically updates to "Expired" when validity period ends
+- **Payment tracking**: Updates to "Paid" when payment is received
+
+#### Manual Updates
+- **Status changes**: Manually update status based on customer communication
+- **Reason documentation**: Document reasons for status changes
+- **Follow-up actions**: Trigger follow-up actions based on status changes
+
+## Quote Templates
+
+### Built-in Templates
+
+#### Template Types
+- **Standard**: Clean, professional layout suitable for most businesses
+- **Modern**: Contemporary design with visual elements
+- **Minimal**: Simple, focused design for straightforward quotes
+- **Corporate**: Business-focused with company branding
+- **Service**: Optimized for service-based businesses
+- **Product**: Optimized for product-based businesses
+
+#### Template Customization
+<Steps>
+<Step title="Select template**:
+  Choose a template that matches your business needs.
+</Step>
+
+<Step title="Customize branding**:
+  Add your company logo and brand colors.
+</Step>
+
+<Step title="Modify layout**:
+  Adjust the layout to match your preferences.
+</Step>
+
+<Step title="Set default content**:
+  Configure default text and terms.
+</Step>
+
+<Step title="Save template**:
+  Save your customized template for reuse.
+</Step>
+</Steps>
+
+### Custom Templates
+
+#### Creating Custom Templates
+- **Design layout**: Create your own quote layout
+- **Add branding**: Include your company branding elements
+- **Configure fields**: Set up which fields to display
+- **Set default values**: Configure default values for common fields
+- **Apply styling**: Add custom CSS for styling
+- **Test template**: Test with sample quotes before using
+
+#### Template Variables
+- **{{company_name}}**: Your company name
+- **{{customer_name}}**: Customer name
+- **{{quote_number}}**: Quote number
+- **{{valid_until}}**: Quote validity date
+- **{{total_amount}}**: Total quote amount
+- **{{line_items}}**: List of quote line items
+
+## Quote Management Features
+
+### Quote Assignment
+- **Individual assignment**: Assign to specific team members
+- **Team assignment**: Assign to a team or department
+- **Self assignment**: Assign to yourself
+- **Automatic assignment**: Use rules to assign quotes automatically
+- **Round-robin**: Distribute quotes evenly among team members
+
+### Quote Tracking
+- **View tracking**: Track when customers view quotes
+- **Engagement metrics**: Monitor customer engagement with quotes
+- **Status updates**: Track quote status changes
+- **Follow-up scheduling**: Schedule follow-ups based on quote status
+- **Performance analytics**: Analyze quote performance metrics
+
+### Quote History
+- **Status changes**: Complete history of status changes
+- **Version tracking**: Track quote revisions if applicable
+- **Communication history**: All communications related to the quote
+- **Activity timeline**: Complete timeline of quote-related activities
+- **Modification history**: Who made changes and when
+
+### Quote Conversion
+
+#### Converting to Invoices
+<Steps>
+<Step title="Verify acceptance**:
+  Confirm the quote has been accepted by the customer.
+</Step>
+
+<Step title="Click convert**:
+  Select "Convert to Invoice" from the quote actions.
+</Step>
+
+<Step title="Review details**:
+  Verify all information transfers correctly.
+</Step>
+
+<Step title="Set invoice terms**:
+  Configure invoice-specific terms and due dates.
+</Step>
+
+<Step title="Save invoice**:
+  Create the invoice linked to the original quote.
+</Step>
+</Steps>
+
+#### Conversion Benefits
+- **Data preservation**: All quote information transfers to invoice
+- **Line items**: All quote line items transfer to invoice
+- **Customer information**: Contact details and company information preserved
+- **Pricing consistency**: Prices remain consistent from quote to invoice
+- **History maintenance**: Complete history maintained across quote and invoice
+
+## Integration with Other Modules
+
+### Lead Integration
+- **Contact information**: Lead contact details automatically populate quotes
+- **Company details**: Company information carries over to quotes
+- **Interaction history**: Complete history of lead interactions available
+- **Source tracking**: Lead source information maintained in quotes
+- **Status correlation**: Quote status affects lead status and next steps
+
+### Opportunity Integration
+- **Opportunity connection**: Quotes link to related opportunities
+- **Value correlation**: Quote values contribute to opportunity forecasting
+- **Stage progression**: Quote acceptance moves opportunities to "Won" status
+- **Revenue tracking**: Quote values contribute to revenue metrics
+- **Pipeline updates**: Quote status affects pipeline metrics
+
+### Product Integration
+- **Product catalog**: Products from catalog can be added to quotes
+- **Pricing consistency**: Product pricing automatically populates
+- **Inventory tracking**: Check inventory levels when creating quotes
+- **Product descriptions**: Product descriptions automatically populate
+- **Tax rates**: Product-specific tax rates apply to line items
+
+### Invoice Integration
+- **Quote-to-invoice conversion**: Seamless conversion from accepted quotes
+- **Line item transfer**: All quote line items transfer to invoices
+- **Customer information**: Contact details carry over to invoices
+- **Payment tracking**: Invoice payment status tracked after conversion
+- **Revenue recognition**: Revenue recognized when quote converts to paid invoice
+
+<Info>
+  **Quote tracking**: Monitor quote views to identify interested prospects and optimize follow-up timing.
+</Info>
+
+## Best Practices
+
+### Quote Creation
+<Tip>
+  **Professional presentation**: Use templates and customize branding to create professional-looking quotes that build trust.
+</Tip>
+
+- **Clear descriptions**: Use clear, detailed descriptions for line items
+- **Accurate pricing**: Ensure all pricing is accurate and up-to-date
+- **Professional appearance**: Use templates and branding for consistency
+- **Clear terms**: Include clear terms and conditions
+- **Appropriate validity**: Set realistic validity periods
+
+### Quote Management
+- **Prompt follow-up**: Follow up on sent quotes that haven't been responded to
+- **Status tracking**: Keep quote statuses current
+- **Reason documentation**: Document reasons for rejected quotes
+- **Template consistency**: Use consistent templates for brand recognition
+- **Regular review**: Review quote performance and conversion rates
+
+### Quote Conversion
+- **Easy acceptance**: Make it easy for customers to accept quotes
+- **Follow-up process**: Have a process for following up on sent quotes
+- **Expiration management**: Handle expired quotes appropriately
+- **Invoice conversion**: Convert accepted quotes to invoices promptly
+- **Payment tracking**: Track payments on converted invoices
+
+## Troubleshooting
+
+### Common Issues
+
+#### Quote Not Converting to Invoice
+<Steps>
+<Step title="Verify status**:
+  Ensure the quote status is "Accepted".
+</Step>
+
+<Step title="Check permissions**:
+  Verify you have permission to convert quotes.
+</Step>
+
+<Step title="Review data**:
+  Check that all required invoice fields are populated.
+</Step>
+
+<Step title="Try again**:
+  Attempt the conversion again.
+</Step>
+
+<Step title="Contact support**:
+  If issues persist, contact support for assistance.
+</Step>
+</Steps>
+
+#### Pricing Errors
+- **Review line items**: Check all line items and calculations for accuracy
+- **Verify product pricing**: Ensure product catalog pricing is current
+- **Check discounts**: Verify discount calculations are correct
+- **Tax calculations**: Confirm tax rates are applied correctly
+- **Currency settings**: Check that currency settings are correct
+
+#### Template Issues
+- **Check template settings**: Verify template configuration is correct
+- **Review branding elements**: Ensure logos and colors are properly set
+- **Test with sample**: Test templates with sample quotes before using
+- **Update branding**: Refresh branding elements if they're not displaying
+- **Clear cache**: Clear browser cache if templates aren't updating
+
+<Note>
+  **Quote follow-up**: Implement a follow-up process for quotes that have been sent but not yet accepted or rejected.
+</Note>
+
+<Warning>
+  **Validity periods**: Set appropriate validity periods to ensure pricing accuracy and avoid disputes.
+</Warning>

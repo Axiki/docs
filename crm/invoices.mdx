@@ -1,74 +1,451 @@
 ---
 title: "Invoice Management"
-description: "Creating and managing invoices in Lynka CRM"
+description: "Create and manage invoices in Lynka CRM"
 icon: "receipt"
 ---
 
 ## Overview
 
-Invoices handle the billing process for completed work. You can create invoices from accepted quotes or directly for ongoing services.
+The invoice management system handles billing for completed work. You can create invoices from accepted quotes or directly for ongoing services. The system tracks payment status and sends reminders for overdue invoices, helping you maintain healthy cash flow.
 
 ## Creating Invoices
 
-Invoices can be created from accepted quotes with a single click, or you can create standalone invoices. The system tracks payment status and sends reminders for overdue invoices.
-
 ### From Quotes
-When a quote is accepted, you can convert it to an invoice. The system automatically transfers:
-- All line items
-- Pricing and quantities
-- Tax calculations
-- Customer information
 
-### Standalone Invoices
-Create invoices directly without a quote:
-- Select the associated lead
-- Add line items manually
-- Apply taxes and discounts
-- Set payment terms
+Convert accepted quotes to invoices:
 
-## Invoice Details
+<Steps>
+<Step title="Select accepted quote**:
+  Choose the quote that has been approved by the customer.
+</Step>
 
-Each invoice includes:
+<Step title="Click convert to invoice**:
+  Select "Convert to Invoice" from the quote actions.
+</Step>
 
-- Invoice number: Unique identifier
-- Issue date: When the invoice was created
-- Due date: When payment is expected
-- Recipient: Customer information
-- Line items: Detailed breakdown of charges
-- Totals: Subtotal, tax, and final amount
-- Payment status: Current payment status
+<Step title="Review invoice details**:
+  Verify the information transferred from the quote.
+</Step>
+
+<Step title="Set invoice terms**:
+  Configure due date, payment terms, and other invoice-specific details.
+</Step>
+
+<Step title="Save invoice**:
+  Create the invoice record linked to the original quote.
+</Step>
+</Steps>
+
+#### Benefits of Quote-to-Invoice Conversion
+<Tip>
+  **Data preservation**: All quote information transfers to the invoice, maintaining consistency and reducing data entry.
+</Tip>
+
+- **Line items**: All quote line items transfer to invoice
+- **Customer information**: Contact details and company information carry over
+- **Pricing**: All pricing remains consistent from quote to invoice
+- **Tax calculations**: Tax rates and calculations transfer accurately
+- **History**: Complete history maintained from quote to invoice
+
+### Direct Creation
+
+Create invoices without converting from a quote:
+
+<Steps>
+<Step title="Navigate to Invoices**:
+  Go to the Invoices section in your CRM.
+</Step>
+
+<Step title="Click New Invoice**:
+  Select the "New Invoice" button.
+</Step>
+
+<Step title="Select associated lead**:
+  Choose the customer the invoice is for.
+</Step>
+
+<Step title="Add invoice details**:
+  Enter invoice number, due date, and other information.
+</Step>
+
+<Step title="Add line items**:
+  Include products/services with descriptions and pricing.
+</Step>
+
+<Step title="Save invoice**:
+  Create the invoice record.
+</Step>
+</Steps>
+
+## Invoice Information
+
+### Required Fields
+- **Invoice Number**: Unique identifier for the invoice (required)
+- **Associated Lead**: Link to the customer (required)
+- **Due Date**: Payment due date (required)
+- **Currency**: Currency for all monetary values (required)
+- **Line Items**: Products or services with pricing (required)
+
+### Optional Fields
+- **Issue Date**: Date the invoice was created
+- **PO Number**: Purchase order number if applicable
+- **Notes**: Additional information for the customer
+- **Terms**: Payment terms and conditions
+- **Tags**: Categorization labels
+- **Owner**: Salesperson responsible for the invoice
+- **Template**: Invoice template to use
+- **Discount**: Overall discount percentage
+- **Tax Rate**: Default tax rate to apply
+- **Shipping**: Shipping costs if applicable
+- **Payment Instructions**: Specific payment instructions
+
+## Invoice Components
+
+### Header Information
+- **Invoice Number**: Unique identifier for tracking
+- **Issue Date**: Date the invoice was issued
+- **Due Date**: Date payment is expected
+- **Associated Lead**: Link to the customer
+- **Currency**: Currency for all monetary values
+- **Status**: Current invoice status
+- **Amount**: Total amount due
+
+### Line Items
+
+#### Product/Service Items
+<Steps>
+<Step title="Select product**:
+  Choose from your product catalog or create a custom item.
+</Step>
+
+<Step title="Enter description**:
+  Add detailed description of the product/service.
+</Step>
+
+<Step title="Set quantity**:
+  Specify the number of units.
+</Step>
+
+<Step title="Enter unit price**:
+  Set the price per unit.
+</Step>
+
+<Step title="Apply tax**:
+  Set tax rate if applicable.
+</Step>
+
+<Step title="Calculate total**:
+  System automatically calculates line item total.
+</Step>
+</Steps>
+
+#### Line Item Details
+- **Product/Service**: Description of the item
+- **Quantity**: Number of units
+- **Unit Price**: Price per unit
+- **Cost**: Internal cost (for margin calculations)
+- **Tax Rate**: Tax percentage to apply
+- **Total**: Line item total (quantity × unit price)
+- **Discount**: Item-specific discount if applicable
+- **Notes**: Additional notes about the line item
+
+### Totals Section
+- **Subtotal**: Sum of all line items
+- **Discounts**: Reductions from the subtotal
+- **Tax**: Tax calculations applied to the invoice
+- **Shipping**: Shipping and handling charges
+- **Total**: Final amount due
+- **Amount Paid**: Amount already received
+- **Amount Due**: Remaining balance
+- **Currency**: Currency for all monetary values
 
 ## Invoice Statuses
 
-Invoice statuses include:
-- Draft: Invoice being prepared
-- Posted: Invoice issued to client
-- Paid: Full payment received
-- Void: Invoice cancelled
-- Partially Paid: Partial payment received
-- Refunded: Payment refunded to client
+### Status Definitions
 
-## Payment Tracking
+#### Draft
+Invoice is being prepared and hasn't been issued to the customer yet. You can continue editing the invoice and make changes as needed.
 
-Track payments against invoices:
-- Record payment amounts
-- Specify payment methods
-- Add payment notes
-- Track partial payments
-- Process refunds
+#### Posted
+Invoice has been issued to the customer and is awaiting payment. The invoice is no longer editable but can be viewed and tracked.
 
-## Overdue Invoices
+#### Paid
+Full payment has been received for the invoice. The invoice is complete and closed.
 
-The system helps manage overdue invoices:
-- Automatic reminders
-- Overdue status indicators
-- Collections tracking
-- Late fee calculations
+#### Void
+Invoice has been cancelled and is no longer valid. Voided invoices are kept for record keeping but don't affect financial reporting.
 
-## PDF Generation
+#### Partially Paid
+Partial payment has been received, but the full amount is not yet paid. The remaining balance continues to be tracked.
 
-Generate professional PDF invoices:
-- Customizable templates
-- Company branding
-- Automatic delivery
-- Download for record keeping
+#### Refunded
+Payment has been refunded to the customer. The invoice shows as refunded and the amount is returned to the customer.
+
+### Status Management
+
+#### Payment Tracking
+<Steps>
+<Step title="Record payment**:
+  Enter payment details when received.
+</Step>
+
+<Step title="Verify amount**:
+  Confirm the payment amount matches expectations.
+</Step>
+
+<Step title="Select method**:
+  Choose the payment method used.
+</Step>
+
+<Step title="Add reference**:
+  Include any payment reference numbers.
+</Step>
+
+<Step title="Update status**:
+  System automatically updates invoice status based on payment.
+</Step>
+</Steps>
+
+#### Automatic Status Updates
+- **Payment received**: Automatically updates to "Paid" when full payment received
+- **Partial payment**: Updates to "Partially Paid" when partial payment received
+- **Refund processed**: Updates to "Refunded" when refund processed
+- **Cancellation**: Updates to "Void" when invoice is cancelled
+
+## Invoice Templates
+
+### Built-in Templates
+
+#### Template Types
+- **Standard**: Clean, professional layout suitable for most businesses
+- **Modern**: Contemporary design with visual elements
+- **Minimal**: Simple, focused design for straightforward invoices
+- **Corporate**: Business-focused with company branding
+- **Service**: Optimized for service-based businesses
+- **Product**: Optimized for product-based businesses
+
+#### Template Customization
+<Steps>
+<Step title="Select template**:
+  Choose a template that matches your business needs.
+</Step>
+
+<Step title="Customize branding**:
+  Add your company logo and brand colors.
+</Step>
+
+<Step title="Modify layout**:
+  Adjust the layout to match your preferences.
+</Step>
+
+<Step title="Set default content**:
+  Configure default text and terms.
+</Step>
+
+<Step title="Save template**:
+  Save your customized template for reuse.
+</Step>
+</Steps>
+
+### Custom Templates
+
+#### Creating Custom Templates
+- **Design layout**: Create your own invoice layout
+- **Add branding**: Include your company branding elements
+- **Configure fields**: Set up which fields to display
+- **Set default values**: Configure default values for common fields
+- **Apply styling**: Add custom CSS for styling
+- **Test template**: Test with sample invoices before using
+
+#### Template Variables
+- **{{company_name}}**: Your company name
+- **{{customer_name}}**: Customer name
+- **{{invoice_number}}**: Invoice number
+- **{{due_date}}**: Invoice due date
+- **{{total_amount}}**: Total invoice amount
+- **{{line_items}}**: List of invoice line items
+- **{{payment_terms}}**: Payment terms and conditions
+
+## Payment Processing
+
+### Recording Payments
+
+#### Payment Information
+<Info>
+  **Complete payment records**: Record all payment details to maintain accurate financial records.
+</Info>
+
+- **Payment amount**: Enter the exact amount received
+- **Payment date**: Record when payment was received
+- **Payment method**: Specify how payment was made (bank transfer, credit card, check, etc.)
+- **Reference number**: Include any reference numbers from the payment processor
+- **Notes**: Add any relevant notes about the payment
+
+#### Payment Methods
+- **Bank transfer**: Direct bank transfers
+- **Credit card**: Credit card payments
+- **Debit card**: Debit card payments
+- **Check**: Physical check payments
+- **Cash**: Cash payments
+- **Online payment**: Digital payment platforms (PayPal, Stripe, etc.)
+- **Cryptocurrency**: Crypto payment options if configured
+- **Other**: Custom payment methods
+
+### Payment Reminders
+
+#### Automated Reminders
+- **Due date reminders**: Automatic reminders before due date
+- **Overdue notices**: Multiple notices for overdue invoices
+- **Escalation process**: Escalation to different notice types
+- **Custom schedules**: Configure reminder schedules to match your business
+- **Template customization**: Customize reminder message templates
+
+#### Manual Reminders
+- **Individual invoices**: Send reminders for specific invoices
+- **Bulk reminders**: Send reminders for multiple overdue invoices
+- **Custom messages**: Personalize reminder messages
+- **Multiple channels**: Send reminders via email, SMS, or other channels
+- **Follow-up tracking**: Track reminder responses and follow-ups
+
+## Invoice Management Features
+
+### Invoice Assignment
+- **Individual assignment**: Assign to specific team members
+- **Team assignment**: Assign to a team or department
+- **Self assignment**: Assign to yourself
+- **Automatic assignment**: Use rules to assign invoices automatically
+- **Round-robin**: Distribute invoices evenly among team members
+
+### Invoice Tracking
+- **Payment status**: Real-time payment status tracking
+- **Due date monitoring**: Track upcoming and overdue invoices
+- **Payment history**: Complete history of all payments received
+- **Communication history**: All communications related to the invoice
+- **Activity timeline**: Complete timeline of invoice-related activities
+
+### Invoice History
+- **Status changes**: Complete history of status changes
+- **Payment records**: All payment transactions recorded
+- **Communication history**: All customer communications
+- **Activity timeline**: Complete timeline of invoice activities
+- **Modification history**: Who made changes and when (for drafts)
+
+### Invoice Export
+- **PDF export**: Export invoices as PDF documents
+- **CSV export**: Export invoice data to CSV
+- **Excel export**: Export invoice data to Excel
+- **Email delivery**: Send invoices directly via email
+- **Print options**: Print invoices directly from the system
+
+## Integration with Other Modules
+
+### Quote Integration
+- **Quote conversion**: Invoices created from accepted quotes
+- **Line item transfer**: All quote line items transfer to invoice
+- **Customer information**: Contact details carry over from quotes
+- **Pricing preservation**: Prices remain consistent from quote to invoice
+- **History maintenance**: Complete history maintained across quote and invoice
+
+### Lead Integration
+- **Customer connection**: Invoices link to customer records
+- **Interaction history**: Invoice interactions add to customer history
+- **Revenue attribution**: Invoice revenue attributed to lead source
+- **Communication tracking**: Invoice-related communications tracked
+- **Relationship building**: Invoices contribute to customer relationships
+
+### Product Integration
+- **Product catalog**: Products from catalog can be added to invoices
+- **Pricing consistency**: Product pricing automatically populates
+- **Inventory tracking**: Update inventory levels when invoicing products
+- **Product descriptions**: Product descriptions automatically populate
+- **Tax rates**: Product-specific tax rates apply to line items
+
+### Reporting Integration
+- **Revenue tracking**: Invoice data contributes to revenue reports
+- **Payment analysis**: Payment data contributes to cash flow analysis
+- **Customer value**: Invoice data shows customer lifetime value
+- **Performance metrics**: Invoice data contributes to sales metrics
+- **Financial reporting**: Invoice data used for financial reports
+
+## Best Practices
+
+### Invoice Creation
+<Tip>
+  **Clear terms**: Include clear payment terms and due dates to ensure timely payments.
+</Tip>
+
+- **Accurate details**: Ensure all customer and product details are accurate
+- **Clear terms**: Include clear payment terms and conditions
+- **Professional appearance**: Use templates and branding for consistency
+- **Appropriate due dates**: Set realistic payment due dates
+- **Complete information**: Include all necessary information for payment
+
+### Invoice Management
+- **Prompt issuance**: Issue invoices promptly after work completion
+- **Status tracking**: Keep invoice statuses current
+- **Payment monitoring**: Monitor payment status regularly
+- **Follow-up process**: Have a process for following up on overdue invoices
+- **Record keeping**: Maintain accurate records of all invoices and payments
+
+### Payment Processing
+- **Multiple methods**: Offer multiple payment methods for convenience
+- **Clear instructions**: Provide clear payment instructions
+- **Prompt recording**: Record payments as soon as they're received
+- **Reconciliation**: Regularly reconcile payments with bank records
+- **Refund process**: Have a clear process for handling refunds
+
+## Troubleshooting
+
+### Common Issues
+
+#### Payment Not Recording
+<Steps>
+<Step title="Verify payment details**:
+  Check that payment amount and date are correct.
+</Step>
+
+<Step title="Confirm method**:
+  Verify the payment method is correctly selected.
+</Step>
+
+<Step title="Check invoice status**:
+  Ensure the invoice is in a state that accepts payments.
+</Step>
+
+<Step title="Try again**:
+  Attempt to record the payment again.
+</Step>
+
+<Step title="Contact support**:
+  If issues persist, contact support for assistance.
+</Step>
+</Steps>
+
+#### Invoice Calculation Errors
+- **Review line items**: Check all line items and calculations for accuracy
+- **Verify product pricing**: Ensure product catalog pricing is current
+- **Check discounts**: Verify discount calculations are correct
+- **Tax calculations**: Confirm tax rates are applied correctly
+- **Currency settings**: Check that currency settings are correct
+
+#### Template Issues
+- **Check template settings**: Verify template configuration is correct
+- **Review branding elements**: Ensure logos and colors are properly set
+- **Test with sample**: Test templates with sample invoices before using
+- **Update branding**: Refresh branding elements if they're not displaying
+- **Clear cache**: Clear browser cache if templates aren't updating
+
+#### Overdue Invoice Management
+- **Review reminder settings**: Check that automated reminders are configured
+- **Verify due dates**: Confirm due dates are set correctly
+- **Check customer communication**: Ensure customers received invoices
+- **Payment processing**: Verify payment processing is working correctly
+- **Follow-up process**: Implement manual follow-up for persistent overdue invoices
+
+<Note>
+  **Cash flow management**: Monitor invoice aging and payment patterns to maintain healthy cash flow.
+</Note>
+
+<Warning>
+  **Tax compliance**: Ensure tax calculations comply with local regulations and requirements.
+</Warning>

@@ -1,11 +1,11 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "Lynka CRM",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#A20616",
+    "light": "#CB1D31",
+    "dark": "#820512"
   },
   "favicon": "/favicon.svg",
   "navigation": {
@@ -66,7 +66,7 @@
               "crm/interface",
               "crm/settings",
               "crm/team",
-              "crm/reports",
+              "crm/reporting",
               "crm/integrations"
             ]
           },
@@ -83,24 +83,15 @@
             ]
           },
           {
-            "group": "Training",
-            "pages": [
-              "crm/training/courses",
-              "crm/training/certification",
-              "crm/training/webinars"
-            ]
-          },
-          {
             "group": "Marketing Tools",
             "pages": [
               "crm/marketing-tools"
             ]
           },
           {
-            "group": "Mobile & Best Practices",
+            "group": "Mobile Experience",
             "pages": [
-              "crm/mobile",
-              "crm/best-practices"
+              "crm/mobile-experience"
             ]
           },
           {
@@ -110,19 +101,45 @@
             ]
           },
           {
-            "group": "Resources",
+            "group": "Security & Compliance",
             "pages": [
-              "crm/glossary"
+              "crm/security-best-practices"
+            ]
+          },
+          {
+            "group": "Performance & Optimization",
+            "pages": [
+              "crm/performance-optimization"
+            ]
+          },
+          {
+            "group": "Customization",
+            "pages": [
+              "crm/customization-options"
+            ]
+          },
+          {
+            "group": "API Documentation",
+            "pages": [
+              "crm/api"
+            ]
+          },
+          {
+            "group": "Troubleshooting",
+            "pages": [
+              "crm/troubleshooting-comprehensive"
             ]
           },
           {
             "group": "Support",
             "pages": [
-              "crm/support",
-              "crm/faq",
-              "crm/troubleshooting",
-              "crm/releases",
-              "crm/videos"
+              "crm/support"
+            ]
+          },
+          {
+            "group": "Glossary",
+            "pages": [
+              "crm/glossary"
             ]
           }
         ]
