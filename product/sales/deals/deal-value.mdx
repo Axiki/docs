@@ -1,0 +1,66 @@
+---
+title: "Deal value, pipeline value, and weighted pipeline"
+sidebarTitle: "Deal and pipeline value"
+description: "Understand how Lynka treats expected deal value, won value, probability, currency conversion, pipeline totals, and average deal size."
+keywords: ["pipeline value", "weighted pipeline", "deal value", "average deal size", "won value", "sales probability", "CRM metrics"]
+---
+
+Sales uses several money metrics that sound similar but answer different questions. Keeping them separate prevents a dashboard from turning into one unexplained revenue number.
+
+## Deal value while open
+
+An open deal uses its commercial expected amount as the value of the opportunity. That amount contributes to pipeline when the deal is in the open outcome and the reporting scope allows the record.
+
+## Pipeline value
+
+**Pipeline value** is the sum of open deal values after valid currency normalization into the reporting base currency.
+
+Closed won, lost, and disqualified outcomes are not open pipeline. A stage label alone should not be used to guess openness when the canonical outcome says otherwise.
+
+## Weighted pipeline
+
+**Weighted pipeline** adjusts each open deal by its probability before the base-currency conversion is finalized.
+
+Conceptually:
+
+`expected amount x probability = weighted transaction amount`
+
+The weighted transaction amount is then converted into the reporting base currency where the FX information is available.
+
+This is a forecast signal. It is not booked revenue and it is not cash.
+
+## Won value
+
+When a deal closes as won, Lynka uses the canonical won amount from the close lifecycle. It does not replace the deal's won value with the total of invoices linked later.
+
+That prevents a deal with multiple invoices from being counted several times as sales success.
+
+Where a close-event base amount snapshot exists, reports can use it to preserve the historical conversion. Older foreign-currency wins without defensible FX data can be reported as missing FX rather than estimated.
+
+## Average deal size
+
+Average deal size uses the canonical won values of closed wins that have usable currency conversion. Legitimate zero-value wins remain part of the denominator. Deals with missing required historical FX are not silently assigned a made-up base amount.
+
+## Win rate
+
+Win rate is based on final won and lost closures in the selected reporting period. It should not use all open deals in the denominator and it should not use lead status.
+
+## Why the numbers can differ from invoices
+
+A won deal, an issued invoice, recognized revenue, Accounts Receivable, and cleared cash represent different events:
+
+| Metric | What it answers |
+|---|---|
+| Won deal value | What commercial opportunities did we win? |
+| Invoice total | What did we bill? |
+| Revenue | What revenue was recognized or posted? |
+| Accounts Receivable | What billed amount is still owed? |
+| Cleared cash | What payment has actually cleared? |
+
+Trying to force these values to match can make the system less accurate, not more.
+
+## Related articles
+
+- [Close a deal](/product/sales/deals/close-deal)
+- [Sales calculations and metrics](/reference/calculations/sales-metrics)
+- [Invoice to ledger workflow](/workflows/invoice-to-ledger)

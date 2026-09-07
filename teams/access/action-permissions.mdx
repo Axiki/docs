@@ -1,0 +1,53 @@
+---
+title: "Customize action permissions"
+sidebarTitle: "Action permissions"
+description: "Control create, edit, assign, post, export, reopen, void, and other sensitive actions separately from broad product area access."
+keywords: ["permissions", "action permission", "invoice post permission", "deal reopen permission", "lead assign permission", "report export"]
+---
+
+Product area access gets a user through the door. Action permissions decide what the user can actually do with records inside that area.
+
+Lynka applies role permissions within the current workspace and combines them with product-area access, record scope, and record-state rules.
+
+## Why permissions are granular
+
+The same person may need to view a record without being allowed to change its financial or lifecycle state.
+
+Examples from the live permission model include:
+
+| Area | Example permissions |
+|---|---|
+| Leads | `lead.create`, `lead.edit`, `lead.assign`, `lead.delete`, `lead.view_all` |
+| Deals | `deal.create`, `deal.edit`, `deal.assign`, `deal.view_all`, `deal.reopen_closed` |
+| Quotes | `quote.create`, `quote.edit`, `quote.void`, `quote.view_all` |
+| Invoices | `invoice.create`, `invoice.manage`, `invoice.post`, `invoice.view`, `invoice.view_all` |
+| Journals | `journal.create`, `journal.post`, `journal.reverse`, `journal.delete`, `journal.view` |
+| Bills | `bill.create`, `bill.post`, `bill.void`, `bill.delete`, `bill.view` |
+| Periods | `period.view`, `period.close`, `period.reopen` |
+| Reports | `report.view`, `report.export` |
+| Tickets | `ticket.create`, `ticket.edit`, `ticket.assign` |
+| Teams | `team.manage` |
+
+## Sensitive permissions to review carefully
+
+**Posting permissions** create ledger consequences and should usually be limited to finance or authorized owners.
+
+**Reopen permissions** change a previously final lifecycle and can alter historical reporting.
+
+**View-all permissions** broaden record visibility beyond ordinary ownership or team scope.
+
+**Assign permissions** let a user change who owns operational work.
+
+**Export permissions** can move workspace data outside Lynka, so access should match your data policy.
+
+## Testing an access change
+
+After changing permissions, test with the affected user account or a controlled role test. Check both navigation and the actual action. The server must reject a forbidden operation even if a stale frontend button is still visible.
+
+After changing access, refresh the affected page before testing every surface so the new decision is displayed consistently.
+
+## Related articles
+
+- [Control product area access](/teams/access/product-areas)
+- [Record scope and visibility](/teams/access-scopes)
+- [Troubleshoot permission problems](/troubleshooting/permissions)

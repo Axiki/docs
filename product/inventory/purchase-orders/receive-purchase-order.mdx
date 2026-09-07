@@ -1,0 +1,56 @@
+---
+title: "Receive a purchase order partially or in full"
+sidebarTitle: "Receive a purchase order"
+description: "Record what actually arrived from a supplier, keep remaining quantities open, and understand how partial receiving affects stock and purchasing reports."
+keywords: ["receive purchase order", "partial receipt", "partial PO", "goods receipt", "receive inventory", "GRN purchase order"]
+---
+
+Receiving is where procurement intent becomes physical inventory evidence. Use a goods receipt to record what arrived. Do not mark the whole purchase order received when only part of the shipment is on hand.
+
+## Purchase order versus goods receipt
+
+A **purchase order** says what you asked the supplier to deliver.
+
+A **goods receipt** says what the supplier actually delivered on a specific receipt event.
+
+Keeping them separate allows one PO to have partial receipts, damaged quantity, on-hold quantity, multiple delivery dates, and a remaining outstanding balance.
+
+## Receive a partial delivery
+
+<Steps>
+  <Step title="Open the purchase order">Review the ordered lines and quantities before recording the delivery.</Step>
+  <Step title="Create a goods receipt">Start the receipt flow linked to the purchase order.</Step>
+  <Step title="Enter the delivered quantities">For each line, enter accepted, damaged, or on-hold quantity as appropriate. Lynka calculates the total received quantity from those buckets.</Step>
+  <Step title="Save the receipt">Save the goods receipt with its receipt number and dates.</Step>
+  <Step title="Post when ready">Posting locks the receipt for normal editing and applies the supported inventory and accounting consequences. If the remaining PO quantity is greater than zero, the order can stay partially received.</Step>
+</Steps>
+
+## Accepted, damaged, and on-hold quantity
+
+The goods receipt line editor tracks these separately:
+
+**Accepted quantity** is stock accepted into the normal receiving outcome.
+
+**Damaged quantity** records delivered units that arrived damaged.
+
+**On-hold quantity** records units received physically but held for review rather than treated as normal accepted stock.
+
+The line's total received quantity is the sum of accepted, damaged, and on-hold quantities.
+
+## Do not over-receive the line
+
+The receipt editor exposes the ordered quantity for the PO line. Use it as the ceiling for what the order expected. If the supplier sends more than ordered, resolve the commercial discrepancy instead of silently hiding it inside an ordinary partial receipt.
+
+## Reporting after a partial receipt
+
+Open PO reports use the **remaining** quantity and value. Goods in Transit uses the quantity still expected. The PO should not continue contributing its full original value once part of the order has been received.
+
+## Automation
+
+Lynka can surface **Partial purchase order stalled** when a partially received order has no movement for the configured period. It can also flag overdue POs when outstanding quantity remains past the expected date.
+
+## Related articles
+
+- [Create a goods receipt](/product/inventory/goods-receipts/create-goods-receipt)
+- [Post a goods receipt](/product/inventory/goods-receipts/post-goods-receipt)
+- [Damaged and on-hold stock](/product/inventory/goods-receipts/damaged-on-hold)

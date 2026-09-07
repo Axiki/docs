@@ -1,0 +1,33 @@
+---
+title: "Reopen a closed accounting period"
+sidebarTitle: "Reopen a period"
+description: "Reopen a locked accounting period only when an authorized historical correction is necessary, then review the reports affected by the change."
+keywords: ["reopen accounting period", "open closed period", "period reopen", "month end correction", "accounting period permission"]
+---
+
+Reopening a closed period is an exception workflow. It allows authorized users to make a historical change after the period was already locked.
+
+The permission model separates this action as `period.reopen` because ordinary accounting users should not need it for day-to-day posting.
+
+## When reopening is appropriate
+
+Examples include a material source document that was omitted, a correction required by accounting review, or a historical error that cannot be resolved in the current period under your accounting policy.
+
+Do not reopen a period simply because a user picked the wrong date on a new transaction. Fix the new transaction if the workflow allows it.
+
+## Reopen carefully
+
+<Steps>
+  <Step title="Confirm the reason">Identify the exact transaction or correction that requires the historical period.</Step>
+  <Step title="Open Close Center">Go to **Accounting > Close Center** and select the closed period.</Step>
+  <Step title="Reopen">Use the reopen action if your permissions allow it.</Step>
+  <Step title="Make the correction">Use the proper source, journal reversal, or correction workflow. Preserve the audit trail.</Step>
+  <Step title="Review affected reports">Check the Trial Balance, P&L, Balance Sheet, cash or other reports affected by the correction.</Step>
+  <Step title="Close the period again">Once review is complete, return the period to its controlled closed state.</Step>
+</Steps>
+
+## Audit impact
+
+Reopening is itself part of the accounting control history. A corrected period should still tell a reviewer what changed and why.
+
+If you discover a historical posted error, prefer an auditable reversal or correction entry over silently rewriting a journal that was already part of a closed report.

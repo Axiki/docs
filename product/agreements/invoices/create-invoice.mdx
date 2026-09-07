@@ -1,0 +1,50 @@
+---
+title: "Create an invoice"
+sidebarTitle: "Create an invoice"
+description: "Create a customer invoice from the right sales or quote context, add lines and tax, and understand the difference between saving, posting, and payment."
+keywords: ["create invoice", "new invoice", "customer invoice", "invoice builder", "invoice tax", "invoice from quote"]
+---
+
+An invoice records what you are billing the customer. It is downstream of the sales outcome and quote decision, but it is still separate from payment and Accounting posting.
+
+## Create from the right source
+
+Where the workflow allows it, create the invoice from the accepted quote or related deal so customer, product, currency, and commercial context stay connected.
+
+If you create an invoice directly, make sure it still links to the correct customer and sales relationship when that context exists.
+
+## Build the invoice
+
+<Steps>
+  <Step title="Open Invoices">Go to **Agreements > Invoices**.</Step>
+  <Step title="Create the invoice">Start the invoice builder or use the create action from the related quote or deal.</Step>
+  <Step title="Choose the customer">Confirm the company or customer being billed.</Step>
+  <Step title="Add invoice lines">Add the products or services, quantities, prices, and descriptions.</Step>
+  <Step title="Review discounts, tax, and currency">Confirm the commercial calculations before posting or sending.</Step>
+  <Step title="Set dates and terms">Complete the invoice date, due date, terms, notes, and any other available document details.</Step>
+  <Step title="Save">Save the invoice. Saving does not automatically mean the invoice has been posted to Accounting or paid.</Step>
+</Steps>
+
+## Three different states to keep separate
+
+**Document state** describes where the invoice is in its commercial lifecycle.
+
+**Posting state** describes whether the Accounting consequence has been created.
+
+**Settlement state** describes whether cleared payments and refunds have settled the balance.
+
+Keeping those separate is why an invoice can be issued but unpaid, or paid after it was already posted.
+
+## Cost and fulfillment
+
+For stocked products, invoicing does not by itself prove inventory cost has been recognized. Product margin can wait for posted fulfillment lines before treating stocked COGS as complete.
+
+## Permissions and plan gates
+
+Invoice creation requires invoice access such as `invoice.create`. Posting, management, void, refund, and all-record viewing are separate permissions. Invoice posting also depends on the workspace entitlement, so a visible create feature does not guarantee the user can post to Accounting.
+
+## Related articles
+
+- [Post an invoice to Accounting](/product/agreements/invoices/post-invoice)
+- [Record an invoice payment](/product/agreements/invoices/record-payment)
+- [Void or refund an invoice](/product/agreements/invoices/void-refund)

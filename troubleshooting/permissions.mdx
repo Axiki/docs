@@ -1,0 +1,40 @@
+---
+title: "Troubleshoot Lynka permission and access problems"
+description: "Find out why a Lynka user cannot see a product area, record, report, or action by checking plan access, area access, scope, and permissions in order."
+keywords: ["Lynka permission problem", "cannot see feature", "access denied", "record visibility", "role permissions", "product area access", "view all"]
+---
+
+When someone says **I cannot access it**, do not immediately add a permission. Several different gates can produce the same visible result.
+
+Use this order so you fix the real layer.
+
+<Steps>
+  <Step title="Check workspace access">The workspace must be active for an ordinary user. A locked workspace can block the whole app before role permissions matter.</Step>
+  <Step title="Check plan capability">The current plan must include the product area or paid capability. Permission cannot make a capability available when the workspace is not entitled to use it.</Step>
+  <Step title="Check installed product areas">The workspace must have the area enabled. An allowed plan area can still be hidden when the workspace has not installed or enabled it.</Step>
+  <Step title="Check role or user area access">Role defaults and user overrides decide whether the person can enter Sales, Accounting, Reports or another area.</Step>
+  <Step title="Check record scope">The record must fall inside Mine, selected user, team or workspace scope available to that user.</Step>
+  <Step title="Check the action permission">The user may still need a specific permission such as create, edit, assign, post, reopen, export or manage.</Step>
+</Steps>
+
+## Example: user sees Invoices but cannot post
+
+The Agreements area may be available and the invoice may be visible, while `invoice.post` or the workspace posting entitlement is missing. Giving broader record scope would not fix that problem.
+
+## Example: user can edit deals but cannot see another rep's deal
+
+The action permission can be valid while record scope remains restricted. Check team or workspace visibility permissions such as `deal.view_all` rather than changing the edit permission.
+
+## Example: Reports is missing entirely
+
+Check the Reports entitlement and enabled product area before changing `report.view`.
+
+## If the button exists but the backend rejects the action
+
+Refresh the page and check the workspace, role, scope, and record state. Lynka applies the final access decision when the action is submitted. If the result still does not match what the screen shows, report the affected area and action to support.
+
+<CardGroup cols={2}>
+  <Card title="Permission reference" href="/reference/permissions">See common permission families and examples.</Card>
+  <Card title="Record scope" href="/reference/data-scopes">Understand Mine, team and workspace visibility.</Card>
+  <Card title="Product area access" href="/teams/access/product-areas">Manage which parts of Lynka a person can enter.</Card>
+</CardGroup>

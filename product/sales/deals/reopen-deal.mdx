@@ -1,0 +1,36 @@
+---
+title: "Reopen a closed deal"
+sidebarTitle: "Reopen a deal"
+description: "Reopen a previously closed opportunity when the commercial outcome genuinely changes, and understand the permission and reporting impact."
+keywords: ["reopen deal", "reopen opportunity", "deal reopen_closed", "change won deal", "closed deal permission"]
+---
+
+Reopening a deal changes a final commercial record back into active pipeline work. Use it only when the opportunity itself has genuinely resumed, not as a shortcut for correcting unrelated invoice or payment data.
+
+## Permission required
+
+Reopening is protected by `deal.reopen_closed`. A user can be allowed to edit ordinary open deals without being allowed to reopen won, lost, or disqualified records.
+
+That separation protects historical reporting from accidental changes.
+
+## When reopening makes sense
+
+Examples include:
+
+- a lost opportunity returns to active negotiation
+- a customer reverses a decision and the same commercial opportunity is genuinely active again
+- a deal was closed in error and the lifecycle needs to be corrected by an authorized user
+
+It is usually not the right action when the customer already bought and you only need to fix an invoice, payment, fulfillment, or accounting issue. Those belong in the downstream record.
+
+## What to review after reopening
+
+Check the stage, owner, expected amount, expected close date, probability, and next action. A reopened deal should not remain with stale close-era values that no longer describe the active opportunity.
+
+Also review any related quote or invoice context. Reopening Sales does not automatically mean downstream financial documents should be voided or rewritten.
+
+## Reporting impact
+
+Because open pipeline reporting uses the opportunity's active outcome, reopening can put value back into pipeline and weighted pipeline. Final outcome reports should rely on the canonical lifecycle history and close events rather than only the current stage label.
+
+If you are correcting a historical mistake, document why the record was reopened so the change is understandable later.

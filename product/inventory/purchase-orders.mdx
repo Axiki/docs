@@ -1,0 +1,43 @@
+---
+title: "Purchase orders in Lynka"
+description: "Learn how Lynka purchase orders track supplier commitments, expected delivery, partial receipts, outstanding quantities, and open purchasing value."
+keywords: ["purchase orders", "create purchase order", "partial purchase order", "outstanding purchase order", "expected delivery", "supplier order", "procurement", "Lynka inventory"]
+---
+
+A purchase order records what your business asked a supplier to deliver. It should not be rewritten later to look like what actually arrived. Lynka keeps ordering and receiving separate so outstanding quantities remain visible after partial deliveries.
+
+Open **Inventory > Purchase Orders** to work with purchasing documents.
+
+## What a purchase order records
+
+The current builder can capture the supplier, order number, order date, expected date, currency and exchange context where applicable, payment terms, addresses, tax, freight, notes and product lines with ordered quantity and unit cost.
+
+New purchase orders start as drafts. Open purchasing calculations recognize active order states such as approved, sent, ordered, open and partially received.
+
+## Why partial receipts matter
+
+Suppose you order 20 units and receive 12. The purchase order should still show 8 units outstanding. Lynka calculates outstanding purchasing value from the remaining quantity rather than continuing to count the entire original order.
+
+That makes **Open Purchase Orders** and **Goods in Transit** more useful after receiving begins.
+
+## Purchase order attention signals
+
+Built in automation rules can surface:
+
+- Purchase order overdue
+- Partial purchase order stalled
+
+These rules look for orders that still have outstanding quantity and need follow up.
+
+## Receiving is a separate workflow
+
+When goods arrive, create a goods receipt against the purchase order. Record only the quantity that actually arrived, including damaged or on hold quantity where necessary.
+
+Do not change the ordered quantity simply to make the order appear complete.
+
+<CardGroup cols={2}>
+  <Card title="Create a purchase order" href="/product/inventory/purchase-orders/create-purchase-order">Enter supplier, products, quantity, cost and delivery details.</Card>
+  <Card title="Receive a purchase order" href="/product/inventory/purchase-orders/receive-purchase-order">Handle full and partial deliveries correctly.</Card>
+  <Card title="Purchase order statuses" href="/product/inventory/purchase-orders/statuses">Understand draft, open and partially received purchasing states.</Card>
+  <Card title="Procure to stock" href="/workflows/procure-to-stock">Follow the complete replenishment workflow.</Card>
+</CardGroup>

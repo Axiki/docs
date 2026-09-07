@@ -1,0 +1,46 @@
+---
+title: "Approve, post, and pay a supplier bill"
+sidebarTitle: "Approve and pay a bill"
+description: "Move a supplier bill through review and payment while keeping Accounts Payable, cash, permissions, and audit history consistent."
+keywords: ["approve supplier bill", "post vendor bill", "pay supplier bill", "accounts payable payment", "AP payment", "vendor payment"]
+---
+
+A supplier bill becomes a real Accounts Payable obligation when it reaches the appropriate posted state. Payment then reduces the amount owed and affects cash through the accounting workflow.
+
+## Review before posting
+
+Check the supplier, reference, dates, currency, amount, and accounting allocation. If the bill came from a procurement process, compare it with the purchase order and goods receipt rather than reviewing the invoice in isolation.
+
+## Posting permission
+
+Posting is protected by `bill.post`. Creating or viewing a bill does not imply authority to post it.
+
+If your workspace uses approvals, the bill can also need operational review before the finance action is allowed.
+
+## Paying the bill
+
+Use the Payables or Payments flow to record the supplier payment supported by the current Accounting interface. The payment should reduce the outstanding payable rather than creating a second unrelated expense.
+
+The goal is a traceable chain:
+
+`Supplier bill -> posted payable -> payment -> reduced AP -> cash movement`
+
+## Why payment and posting are separate
+
+You can owe a supplier before paying them. That is the entire purpose of Accounts Payable. Posting the bill recognizes the obligation. Paying it later settles that obligation.
+
+If you record only the cash payment and skip the bill, A/P Aging cannot show what was owed before the payment.
+
+## Voiding or deleting
+
+The permission model includes separate `bill.void` and `bill.delete` actions. Use them only when the bill lifecycle and accounting period allow it. A posted historical bill should not be deleted merely because the vendor later issues a correction.
+
+## A/P Aging
+
+The active Finance report catalog includes **A/P Aging**. It groups outstanding supplier obligations by age so owners and finance users can see what is due rather than scanning every bill manually.
+
+## Related articles
+
+- [Create a supplier bill](/product/accounting/payables/create-supplier-bill)
+- [Record cash disbursements](/product/accounting/cash/cash-disbursements)
+- [Financial reports](/product/accounting/financial-reports)

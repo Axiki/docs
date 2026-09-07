@@ -1,0 +1,40 @@
+---
+title: "Quote status, validity, and expiry"
+sidebarTitle: "Quote status and expiry"
+description: "Understand quote lifecycle status versus calculated expiry so a quote can be expired by date without treating expired as a manually stored business status."
+keywords: ["quote status", "quote expired", "valid until", "quote expiry", "accepted quote", "rejected quote"]
+---
+
+Quote lifecycle and quote expiry are related, but they are not the same thing.
+
+## Lifecycle status
+
+The quote record can move through configured business states such as draft, sent, viewed, accepted, or rejected depending on the workspace status configuration.
+
+The exact label and color can be customized, so use the status shown in your workspace.
+
+## Expiry is date based
+
+A quote can be considered expired because its **valid-until date has passed** while it was still waiting for a decision. Expiry is therefore calculated from date and open state rather than needing a manually maintained `expired` status row.
+
+This avoids a common contradiction where a quote says "Sent" in history but somebody also has to remember to move it to a separate expired status exactly at midnight.
+
+## Automation around expiry
+
+Lynka handles the operational follow-up with two built in rules:
+
+**Quote expires soon** finds open quotes approaching the valid-until date.
+
+**Quote expired without decision** finds sent or viewed quotes that passed that date without a customer decision.
+
+## Accepted and rejected quotes
+
+An accepted quote can proceed to invoicing. A rejected quote remains a historical commercial record and should not be deleted simply to clean the list.
+
+## Why this distinction matters
+
+Reports such as **Quotes Expiring Soon** need the validity date. Reports such as **Quotes by Status** need the business status. Combining those into one overloaded field makes both questions harder to answer correctly.
+
+## If a quote looks expired unexpectedly
+
+Check the valid-until date, workspace timezone, current business status, and whether the quote was revised. Do not fix the display by changing a business status unless the customer decision actually changed.

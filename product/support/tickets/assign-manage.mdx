@@ -1,0 +1,47 @@
+---
+title: "Assign and manage support tickets"
+sidebarTitle: "Assign and manage tickets"
+description: "Assign ticket ownership, move status, use list or Kanban views, and understand the automation signals that keep support work from going stale."
+keywords: ["assign ticket", "ticket owner", "ticket status", "ticket kanban", "support queue", "ticket automation"]
+---
+
+Once a ticket exists, the support team's main job is to keep responsibility and next action clear. Assignment, status, priority, activity, and SLA data make that possible.
+
+## Assign the ticket
+
+Use the ticket assignment control to choose the person responsible. Assignment requires `ticket.assign`, which is separate from `ticket.edit`.
+
+If a ticket has no assignee, the built in **Ticket has no assignee** rule can surface it for attention.
+
+## Work the queue
+
+Desktop supports list and Kanban-style ticket surfaces with filters, status, priority, type, and related controls. Mobile converts the list into cards and mobile filter actions.
+
+Use list view for dense sorting and comparison. Use Kanban when status distribution and workflow movement matter more.
+
+## Stale and reopened work
+
+The automation catalog includes:
+
+- Ticket idle too long
+- Ticket reopened repeatedly
+- Ticket waiting for first response
+- Ticket SLA at risk
+- Ticket SLA breached
+
+These rules help distinguish ordinary open work from tickets that need immediate attention.
+
+## Status versus SLA
+
+Changing a status does not automatically erase SLA history. Response and resolution timing should reflect the actual customer-service events tracked by the ticketing backend.
+
+The active report catalog includes First Reply Time, Resolution Time, SLA Compliance, Incoming Ticket Volume, and Ticket Backlog by Status.
+
+## Permissions
+
+A support user can have ticket creation and editing without access to unrelated Sales, Accounting, or Inventory areas. Product area access and ticket action permissions are resolved separately.
+
+## Related articles
+
+- [Create a ticket](/product/support/tickets/create-ticket)
+- [Understand SLA and escalation](/product/support/sla-automation)

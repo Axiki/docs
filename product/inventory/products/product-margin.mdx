@@ -1,0 +1,36 @@
+---
+title: "Understand product margin and recognized inventory cost"
+sidebarTitle: "Product margin"
+description: "Learn how Lynka calculates product margin from invoiced sales and recognized fulfillment cost, including why stocked margin can be incomplete."
+keywords: ["product margin", "gross margin", "inventory COGS", "recognized cost", "margin by product", "stock fulfillment"]
+---
+
+Product margin is useful only when revenue and cost refer to the same delivered sale. For stocked items, Lynka therefore separates invoicing from recognized inventory cost.
+
+## Revenue side
+
+The Margin by Product report uses posted, partially paid, and paid invoice-line net revenue in the workspace base currency, subject to the report scope and reporting exclusions.
+
+## Cost side for stocked products
+
+For stocked products, cost comes from **posted fulfillment lines** using the fulfilled quantity and unit-cost snapshot.
+
+That means creating or posting an invoice does not automatically prove the stock was fulfilled. If the invoiced stocked quantity is not fully fulfilled, Lynka can mark margin as incomplete instead of reporting an artificially high gross profit.
+
+## Cost side for services or non-stock items
+
+For non-stock or service items, the invoice-line base cost snapshot can be used where appropriate because there is no physical stock fulfillment event to wait for.
+
+## Why a margin can be blank or incomplete
+
+A stocked sale can have revenue but still be missing complete recognized cost if fulfillment is pending. The correct answer in that situation is not "100 percent margin." It is "cost is not fully recognized yet."
+
+The current report can surface a reason such as `stock_fulfillment_pending` for that case.
+
+## Currency
+
+Transaction revenue and cost must use compatible currency snapshots. Base margin should use base-currency revenue and base cost rather than subtracting a base cost directly from foreign-currency revenue.
+
+## Related reporting
+
+Inventory also includes valuation, stock movement, available stock, slow-moving stock, open PO, goods in transit, and reorder reports. Product margin should be interpreted alongside fulfillment and stock movement history rather than in isolation.

@@ -1,0 +1,65 @@
+---
+title: "Quotes, invoices, payments, and customer contracts"
+sidebarTitle: "Agreements overview"
+description: "Learn how Lynka Agreements manages quotes, revisions, invoices, payment settlement, posting, fulfillment, customer contracts, and document templates."
+keywords: ["quotes invoices", "sales agreements", "quotation invoice", "customer payment", "invoice posting", "customer contracts", "document templates"]
+---
+
+Agreements is the commercial document layer between Sales and Accounting. It handles what you offer the customer, what you bill, how the balance is settled, and the document history that supports those decisions.
+
+The current area contains **Quotes**, **Invoices**, and **Customer Contracts**, with document builders, previews, send actions, status history, and templates around those records.
+
+## Quotes
+
+Quotes let you propose products or services, quantities, prices, discounts, tax, currency, validity, and terms before the customer is invoiced.
+
+The server recalculates canonical quote totals from line and tax data so the browser is not the only source of truth for the final amount.
+
+After sending, built in automation can surface quotes waiting for a response, approaching expiry, or expired without a decision.
+
+<CardGroup cols={2}>
+  <Card title="Create a quote" href="/product/agreements/quotes/create-quote">Build the commercial offer with defensible totals.</Card>
+  <Card title="Quote status and expiry" href="/product/agreements/quotes/status-expiry">Understand lifecycle status versus date-based expiry.</Card>
+</CardGroup>
+
+## Revisions
+
+Negotiation can change price, quantity, scope, or terms. Quote revision history preserves what was previously sent rather than overwriting the customer-facing document sequence.
+
+## Invoices
+
+Invoices record customer billing. Their document status, Accounting posting state, and payment settlement state are separate.
+
+An invoice can be issued but unpaid, posted but unpaid, or later settled after cleared payment. Keeping those states separate is what lets Agreements and Accounting agree without pretending billing, revenue, and cash all happen at the same time.
+
+<CardGroup cols={2}>
+  <Card title="Create an invoice" href="/product/agreements/invoices/create-invoice">Build customer billing from the right sales or quote context.</Card>
+  <Card title="Record a payment" href="/product/agreements/invoices/record-payment">Apply cleared settlement and partial payments correctly.</Card>
+</CardGroup>
+
+## Posting and Accounting
+
+Posting creates the ledger consequences of customer billing, such as Accounts Receivable, revenue, and tax payable under the configured posting logic. It requires both plan capability and user permission.
+
+Invoice total can include tax, so billings and Sales Revenue should not be forced to match.
+
+## Fulfillment
+
+For stocked items, an invoice does not prove inventory was fulfilled. Product margin uses posted fulfillment cost so stocked margin can remain incomplete until the physical inventory event is recorded.
+
+## Corrections
+
+Void, refund, credit note, and revision are different correction paths. Choose the one that matches the real event instead of rewriting a settled historical document.
+
+## Reports and automation
+
+Agreements reporting includes Quotes by Status, Quote Acceptance Rate, Quotes Expiring Soon, Quote-to-Invoice Conversion, Invoices Created Trend, Invoices Due Soon, Overdue Invoices, and A/R Aging Summary.
+
+Automation can surface accepted quotes missing invoices, invoices due soon, overdue invoices, partial payments needing follow-up, and quote response or expiry issues.
+
+## Next steps
+
+- [Revise a quote](/product/agreements/quotes/revisions)
+- [Post an invoice](/product/agreements/invoices/post-invoice)
+- [Void or refund](/product/agreements/invoices/void-refund)
+- [Quote to cash workflow](/workflows/quote-to-cash)

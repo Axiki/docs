@@ -1,0 +1,54 @@
+---
+title: "Create a product"
+sidebarTitle: "Create a product"
+description: "Add a product to Inventory, choose the stock and cost information that matters, and understand how products connect to purchasing, invoicing, and reporting."
+keywords: ["create product", "add inventory item", "stocked product", "product cost", "product price", "inventory item"]
+---
+
+Products are shared operational records used by Inventory and commercial documents. A product can carry identity, category, pricing, cost, stock behavior, images, status, and supplier relationships depending on the data available in your workspace.
+
+## Before creating a product
+
+Decide whether the item should behave as stocked inventory or as a non-stock or service item. That choice affects how cost and margin should be interpreted later.
+
+For stocked products, accurate opening quantity, cost, reorder settings, and supplier relationships matter because Lynka uses quantity movements and purchasing records to explain where inventory came from and where it went.
+
+## Create the product
+
+<Steps>
+  <Step title="Open Products">Go to **Inventory**, then **Products**.</Step>
+  <Step title="Create the record">Use the new product action. Desktop uses the Inventory workspace create flow. Mobile uses the compact product form.</Step>
+  <Step title="Add product identity">Enter the name and the available category or descriptive information your team needs to recognize the item.</Step>
+  <Step title="Add price and cost context">Complete the available selling price and cost fields. Cost is used for inventory valuation and margin logic, so do not treat it as decorative metadata.</Step>
+  <Step title="Configure stock behavior">For stocked items, complete the stock-related fields available in the form, including opening or current stock context and reorder information where applicable.</Step>
+  <Step title="Save">Save the product. It becomes available to the inventory, purchasing, and document flows allowed by your plan and permissions.</Step>
+</Steps>
+
+## Opening stock
+
+Opening stock should be represented in the quantity ledger, not only in Accounting. Lynka's current backend posts a controlled opening movement for new opening inventory so the product's quantity can reconcile with stock movements.
+
+That matters because a product can otherwise show a current stock number that has no movement history explaining how it got there.
+
+## Cost and margin
+
+For stocked products, gross margin reporting should use recognized fulfillment cost when the invoiced quantity has actually been fulfilled. Lynka does not need to pretend a stocked invoice has recognized product cost before the inventory fulfillment exists.
+
+For service or non-stock items, the cost snapshot on the invoice line can be used where appropriate.
+
+## Supplier relationship
+
+A product can be connected to suppliers and supplier-specific information. The purchasing flow can use preferred supplier relationships and supplier pricing when building purchase orders.
+
+Lynka includes a **Stock item missing supplier** automation for active stocked items that do not have a preferred supplier.
+
+## Permissions and access
+
+Product management uses the `product.manage` permission. Inventory also has to be available to the workspace and user.
+
+## Related articles
+
+- [Understand stock levels and stock movements](/product/inventory/products/stock-levels)
+- [Create a supplier](/product/inventory/suppliers/create-supplier)
+- [Create a purchase order](/product/inventory/purchase-orders/create-purchase-order)
+- [Understand product margin](/product/inventory/products/product-margin)

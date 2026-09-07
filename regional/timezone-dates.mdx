@@ -1,0 +1,34 @@
+---
+title: "Timezone, dates, due dates, and reporting periods"
+sidebarTitle: "Timezone and dates"
+description: "Understand how timezone and date boundaries affect activities, invoice due dates, automations, dashboard periods, and reports in an international Lynka workspace."
+keywords: ["CRM timezone", "invoice due date timezone", "reporting timezone", "international team CRM dates", "automation schedule timezone"]
+---
+
+Timezone becomes important as soon as a business operates across locations or a team works while traveling.
+
+It affects what "today" means, when an activity is overdue, when a scheduled rule runs, and which side of a reporting period a timestamp belongs to.
+
+## Activities
+
+A call or meeting scheduled for a specific time should be interpreted using the timezone context displayed by the product. When a teammate is in another country, verify the shown local time before assuming the activity moved.
+
+## Invoice due dates
+
+An invoice due date is usually a calendar date rather than a meeting time, but automated reminders and overdue logic still run on system time boundaries. Do not wait until the last hour of the customer's day if the collection process depends on an automatic rule.
+
+## Reports
+
+A report for "Today" or "This month" needs a defined timezone boundary. If two systems use different timezones, transactions around midnight can appear in different periods even when the underlying timestamp is the same.
+
+## Scheduled automation
+
+Automation can run at configured cadences. The current Lynka automation catalog includes hourly, daily, and every-15-minute checks for different conditions.
+
+Treat the displayed schedule and workspace behavior as authoritative rather than assuming every rule runs in the timezone of the user's current browser.
+
+## International team habit
+
+For a team across Africa, Europe, and the Middle East, record deadlines as clearly as possible and avoid vague notes such as "tomorrow morning" when the other person may be in another timezone.
+
+Use a specific date and, for timed activities, confirm the timezone shown by Lynka.

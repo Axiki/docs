@@ -1,0 +1,42 @@
+---
+title: "Post a goods receipt"
+sidebarTitle: "Post a goods receipt"
+description: "Understand what posting a goods receipt means, why posted receipts are locked, and how to handle posting review problems without rewriting history."
+keywords: ["post goods receipt", "post GRN", "posted receipt", "inventory posting", "goods receipt locked", "GRN posting issue"]
+---
+
+Posting a goods receipt is the point where the receipt becomes a controlled operational record rather than an editable draft. Use posting only after the supplier, quantities, and receipt details are correct.
+
+## Before posting
+
+Review the linked purchase order, receipt number, dates, and every receipt line. Make sure accepted, damaged, and on-hold quantities reflect the physical delivery.
+
+If only part of the PO arrived, that is fine. Post the real partial receipt. Do not inflate the receipt to make the PO look complete.
+
+## Posted receipts are locked
+
+The current editor explicitly blocks normal edits when a goods receipt is `posted` and tells the user to create an adjustment instead.
+
+That lock is important because the receipt can already have changed stock and accounting context. Editing history in place would make later reconciliation difficult.
+
+<Warning>
+Do not unpick a posting problem by manually changing product stock to the number you want. Fix the source transaction or use the supported adjustment path so the movement history stays explainable.
+</Warning>
+
+## Posting review
+
+Inventory can surface **receipt posting review** items when a receipt needs attention. Lynka also has a built in **Goods receipt posting issue** automation for posted receipts whose inventory lines were not applied cleanly.
+
+If a receipt appears in that queue, investigate the receipt and its posting result rather than creating a duplicate receipt for the same physical delivery.
+
+## What changes after posting?
+
+The receipt becomes locked for ordinary edits. The inventory consequences are applied according to the supported posting logic, and the purchase order's received versus outstanding quantities can move forward.
+
+If accepted stock increases, the stock movement history should explain the resulting product quantity. If there is an accounting inventory value, that history should remain consistent with the operational receipt rather than being manually patched to match a screen.
+
+## If posting fails
+
+Keep the receipt in its existing state, read the error, and resolve the underlying validation or posting problem. A failed post should not be treated as successful just because the frontend form closed.
+
+The backend remains authoritative for the posting result.

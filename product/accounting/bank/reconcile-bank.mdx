@@ -1,0 +1,49 @@
+---
+title: "Reconcile bank transactions"
+sidebarTitle: "Bank reconciliation"
+description: "Match bank statement activity to Lynka accounting records, keep unmatched items visible, and understand what Bank Reconciliation Readiness means."
+keywords: ["bank reconciliation", "reconcile bank transaction", "bank statement matching", "unmatched bank transactions", "reconciliation readiness"]
+---
+
+Bank reconciliation checks whether the activity reported by your bank agrees with the cash activity recorded in Accounting. It is a matching process, not a way to generate a fake cash balance from whatever the statement says.
+
+## What you need
+
+Reconciliation uses bank accounts, statements, statement lines, and accounting activity. If there are no imported or recorded statement lines, there is nothing meaningful to match.
+
+That is why Lynka's **Bank Reconciliation Readiness** report can be unavailable instead of showing a made-up percentage when the workspace has no reconciliation data.
+
+## Reconcile a line
+
+<Steps>
+  <Step title="Open Bank Reconciliation">Go to **Accounting > Bank Reconciliation**. Access is protected by the bank reconciliation permission.</Step>
+  <Step title="Choose the bank account or statement context">Work from the statement activity that needs to be matched.</Step>
+  <Step title="Review candidate accounting entries">Compare amount, date, reference, and counterparty context with the ledger or payment record.</Step>
+  <Step title="Match the correct records">Confirm the match only when the bank line and accounting entry represent the same movement.</Step>
+  <Step title="Leave genuine exceptions visible">If no valid accounting record exists, keep the statement line unmatched or use the supported exception workflow rather than forcing an unrelated match.</Step>
+</Steps>
+
+## What reconciliation does not mean
+
+A matched statement line does not create revenue. It confirms that a cash movement recorded in Accounting also appears at the bank.
+
+A bank statement should not be used to overwrite Accounts Receivable, invoice status, supplier bills, or other source records without resolving those workflows.
+
+## Common unmatched cases
+
+- payment is still pending or uncleared
+- bank date differs from accounting date
+- bank fees or charges need their own accounting entry
+- one bank line represents several accounting transactions
+- a transaction was recorded in the wrong bank account
+- the source payment or cash entry is missing
+
+## Readiness versus reconciliation completion
+
+Readiness asks whether the workspace has enough usable bank and accounting data to perform reconciliation. It is not the same thing as saying every line is reconciled.
+
+## Related articles
+
+- [Record a cash receipt](/product/accounting/cash/cash-receipts)
+- [Record a cash disbursement](/product/accounting/cash/cash-disbursements)
+- [Financial reports](/product/accounting/financial-reports)

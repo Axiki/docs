@@ -1,0 +1,31 @@
+---
+title: "Why a goods receipt is locked"
+sidebarTitle: "Goods receipt is locked"
+description: "Understand why posted goods receipts cannot be edited normally and what to check when a GRN needs correction or posting review."
+keywords: ["goods receipt locked", "cannot edit GRN", "posted goods receipt", "GRN correction", "receipt posting issue"]
+---
+
+A goods receipt becomes locked when its procurement status is terminal, especially after posting. The current editor explicitly blocks edits to a posted receipt and directs the user toward an adjustment instead.
+
+## Why Lynka locks it
+
+The receipt can already have changed stock and Accounting. Editing quantities in place would make the movement history and financial history disagree with the transaction that was originally posted.
+
+## If the receipt has not been posted
+
+Check the current status and your goods-receipt management permission. Some procurement transitions can still lock the document even before you reach a specific edit screen.
+
+## If the receipt is posted
+
+Do not change the product's stock number manually to compensate. Use the supported adjustment or correction path so the inventory movement ledger remains explainable.
+
+If the receipt appears in posting review, investigate the posting result. Lynka also has a **Goods receipt posting issue** automation for posted receipts whose inventory lines were not applied cleanly.
+
+## If you entered the wrong supplier delivery
+
+Determine whether the problem is quantity, classification between accepted/damaged/on-hold, purchase-order link, or an entirely duplicate receipt. The correction should address the source mistake without hiding the original posted record.
+
+## Related articles
+
+- [Post a goods receipt](/product/inventory/goods-receipts/post-goods-receipt)
+- [Stock levels and movements](/product/inventory/products/stock-levels)

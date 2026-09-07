@@ -1,0 +1,143 @@
+---
+title: "Procure to stock workflow in Lynka"
+description: "Learn the complete Lynka purchasing workflow from identifying a stock need through purchase orders, partial receipts, goods receipt posting, and inventory review."
+keywords: ["procure to stock", "purchase order workflow", "receive purchase order", "goods receipt", "partial receipt", "reorder stock", "supplier", "inventory purchasing", "Lynka inventory"]
+---
+
+Procure to stock is the workflow used to turn a replenishment need into received inventory. Lynka separates the supplier order from the receipt because what you ordered and what physically arrived are not always the same.
+
+That separation lets you handle partial deliveries, damaged quantity, stock on hold and overdue outstanding quantities without falsifying the purchase order.
+
+## 1. Identify what needs replenishment
+
+Start in **Inventory**. Use stock levels, product reorder settings, inventory attention signals or the **Reorder List** report to identify stocked products that need action.
+
+Lynka can also surface problems through built in inventory automations, including:
+
+- Product below reorder level
+- Product out of stock
+- Stock item missing supplier
+- Purchase order overdue
+- Partial purchase order stalled
+
+Before ordering, check whether there is already an open replenishment for the product. Ordering twice because the incoming stock was overlooked can create excess inventory.
+
+## 2. Confirm the supplier and product setup
+
+Open the product and verify its supplier and cost context. If the stocked item has no usable supplier relationship, resolve that before the shortage becomes urgent.
+
+Supplier records are managed separately from products so one supplier can participate in multiple procurement records.
+
+If cost, currency or product identity is wrong before ordering, fix the master data before creating the purchase order where possible. Procurement documents should reflect the commercial terms that were actually agreed.
+
+## 3. Create the purchase order
+
+Open **Inventory > Purchase Orders** and create a purchase order.
+
+The current purchase order builder can capture information including:
+
+- supplier
+- purchase order number
+- order date
+- expected date
+- currency and exchange context where applicable
+- payment terms
+- shipping and billing address
+- tax and freight
+- notes
+- ordered products
+- quantity ordered
+- unit cost
+
+A new purchase order starts as a draft. Move it through the appropriate purchasing status when it is ready to represent a real order.
+
+The open purchasing workflow recognizes active statuses such as approved, sent, ordered, open and partially received for outstanding purchase order calculations.
+
+## 4. Receive only what actually arrives
+
+When the supplier delivers goods, create a **Goods Receipt** against the purchase order.
+
+Do not change the original ordered quantity to make it match the delivery. The purchase order answers what you ordered. The goods receipt answers what arrived.
+
+For each received line, record the quantities that apply. The goods receipt editor supports accepted quantity, damaged quantity and quantity placed on hold. It also records receipt date and received time/context where available.
+
+A receipt must contain a receipt number and at least one received quantity before it can represent an actual delivery.
+
+## 5. Handle partial deliveries correctly
+
+If only part of the order arrives, record only that part.
+
+Example:
+
+You ordered 20 units and the supplier delivers 12. Receive 12. The purchase order should continue to carry an outstanding quantity of 8 until the remaining units arrive or the order is otherwise resolved.
+
+Lynka's outstanding purchase order value is based on the remaining quantity, not the full original order value. That keeps incoming stock and purchasing commitments useful after a partial receipt.
+
+A later delivery can be recorded with another goods receipt for the remaining quantity.
+
+## 6. Record damaged or held stock honestly
+
+If part of the delivery cannot be treated as normal available stock, use the damaged or on hold quantities instead of accepting everything.
+
+This creates a clear operational difference between:
+
+- quantity received and accepted
+- quantity received damaged
+- quantity received but placed on hold
+
+Built in automation rules can surface **Damaged stock received** and **Received stock on hold** so those exceptions do not disappear inside an otherwise successful receipt.
+
+## 7. Post the goods receipt
+
+Review the receipt before posting. Posting is the point where the receiving workflow applies the inventory effect.
+
+Once a goods receipt is posted, the current UI treats it as locked. If something needs correction afterward, use the supported adjustment or corrective workflow instead of editing the historical receipt as if the original event never happened.
+
+Lynka can also surface **Goods receipt posting issue** when a posted receipt contains inventory lines that did not apply cleanly.
+
+## 8. Review stock and the remaining order
+
+After posting, check:
+
+- product stock level
+- stock movements
+- purchase order received quantity
+- purchase order outstanding quantity
+- goods in transit
+- inventory value where relevant
+- any receiving review warnings
+
+The stock ledger and product stock level should reconcile. Purchase order received quantities should also agree with the valid receipt history.
+
+## Desktop and mobile
+
+On desktop, Inventory uses tabs for **Overview**, **Products**, **Suppliers**, **Purchase Orders** and **Goods Receipts**, with tables, builders and detail panels.
+
+On mobile, the same records are presented as compact cards and forms. Create and detail flows use mobile full screen or drawer style views. The business rules are the same on both layouts.
+
+## Common problems
+
+### The purchase order still shows outstanding quantity
+
+Check whether the full order was actually received. A partial receipt is meant to leave the unreceived quantity outstanding.
+
+### Stock did not increase after I created a goods receipt
+
+Check whether the receipt is posted and whether there is a posting review issue. Creating a draft receipt is not the same as applying it to inventory.
+
+### I received damaged items
+
+Do not put the whole delivery into accepted quantity. Record the damaged quantity so the inventory state and exception reporting remain honest.
+
+### I cannot edit a posted receipt
+
+That is intentional. Posted receiving history is locked. Use the corrective path rather than rewriting a completed inventory event.
+
+## Related guides
+
+<CardGroup cols={2}>
+  <Card title="Create a purchase order" href="/product/inventory/purchase-orders/create-purchase-order">Enter supplier, items, quantities, cost and expected delivery.</Card>
+  <Card title="Receive a purchase order" href="/product/inventory/purchase-orders/receive-purchase-order">Handle full and partial deliveries.</Card>
+  <Card title="Create a goods receipt" href="/product/inventory/goods-receipts/create-goods-receipt">Record what actually arrived.</Card>
+  <Card title="Post a goods receipt" href="/product/inventory/goods-receipts/post-goods-receipt">Apply the receipt and understand why posted receipts lock.</Card>
+</CardGroup>

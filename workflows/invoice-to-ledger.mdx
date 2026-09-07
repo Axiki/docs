@@ -1,0 +1,143 @@
+---
+title: "Invoice to ledger workflow in Lynka"
+description: "Understand how a customer invoice moves from a commercial document into Accounts Receivable, revenue, tax, payment, cash, and financial reporting in Lynka."
+keywords: ["invoice to ledger", "invoice accounting", "post invoice", "accounts receivable", "invoice journal entry", "customer payment", "general ledger", "trial balance", "Lynka accounting"]
+---
+
+An invoice starts as a commercial document. It becomes part of the accounting record when it is posted through the controlled posting workflow.
+
+That distinction matters because users may need to prepare or review invoices without being allowed to create financial postings. Lynka keeps invoice creation, invoice posting and payment settlement as separate actions with separate permissions and entitlements.
+
+## 1. Create and review the invoice
+
+Open **Agreements > Invoices** and create the invoice for the correct customer or company.
+
+Review the important commercial information before posting:
+
+- customer
+- invoice date and due date
+- currency
+- products or lines
+- quantities and prices
+- discounts
+- tax
+- totals
+- related deal or commercial context where applicable
+
+A draft or editable invoice lets you prepare the billing document without assuming that Accounting should already recognize it.
+
+## 2. Understand the posting boundary
+
+Posting is not just another status change. It is the financial boundary between an editable commercial document and accounting activity.
+
+The user needs the relevant invoice posting permission, and the workspace needs invoice posting capability. Free workspaces can use core Agreements functionality, but Accounting and invoice posting are separate upgrade capabilities. Current commercial terms belong on the Lynka pricing page rather than being duplicated in documentation.
+
+When posting is allowed and the invoice is ready, use the invoice posting action.
+
+## 3. What posting can affect
+
+A correctly posted customer invoice can create accounting treatment for items such as:
+
+- Accounts Receivable
+- sales or revenue accounts
+- tax payable where tax applies
+- other configured financial mappings
+
+The exact ledger accounts depend on the workspace accounting setup and the transaction.
+
+Lynka keeps the operational invoice and the journal history related but distinct. That gives Accounting a traceable financial record without turning the invoice table itself into the General Ledger.
+
+## 4. Revenue is not the same as invoice total
+
+This is an important reporting distinction.
+
+An invoice total can include tax and other billed amounts. Revenue reporting is based on the revenue portion of the financial transaction rather than assuming the entire customer total is sales revenue.
+
+For example, tax collected from the customer can increase the amount due without becoming revenue owned by the business.
+
+This is why a billings chart does not have to equal the Profit & Loss revenue total.
+
+## 5. Record settlement separately
+
+When the customer pays, record the payment through the supported invoice payment workflow.
+
+Settlement logic should use cleared payment activity. Pending or uncleared payment should not reduce Accounts Receivable as if the money has already settled.
+
+A cleared payment can reduce the invoice's remaining receivable and contribute to cash reporting.
+
+If the customer pays only part of the invoice, the remaining balance stays open. If the invoice becomes fully settled, the remaining receivable should reach zero.
+
+## 6. Understand refunds, credits and reversals
+
+Financial corrections should preserve history.
+
+If the transaction needs to be refunded, credited, voided or reversed, use the supported workflow for that action. Do not manually edit historical financial records solely to force a report to match the number you expect.
+
+Lynka uses separate credit note, refund and accounting reversal concepts so corrections can remain auditable.
+
+## 7. Check the accounting result
+
+After posting and settlement, review the relevant financial surfaces.
+
+Useful checks include:
+
+### Accounts Receivable
+
+The outstanding invoice balance should agree with what the customer still owes.
+
+### General Ledger
+
+Use the General Ledger to inspect the financial entries by account and period.
+
+### Trial Balance
+
+The Trial Balance should remain balanced, with total debits equal to total credits.
+
+### Profit & Loss
+
+Use Profit & Loss to review revenue and expenses for the reporting period.
+
+### Balance Sheet
+
+Use the Balance Sheet to review assets, liabilities and equity, including receivables and cash where relevant.
+
+### Cash Flow Statement
+
+Use the Cash Flow Statement to understand the movement in cash rather than confusing invoiced revenue with money already received.
+
+## 8. Stocked products add a fulfillment layer
+
+If the invoice contains stocked products, recognized product cost depends on fulfillment.
+
+Lynka's inventory margin logic uses posted fulfillment cost for stocked items. It does not automatically treat every invoiced unit as fulfilled inventory. That protects margin reporting from showing artificially high profit before the stock movement has actually been recognized.
+
+## Access that commonly matters
+
+Depending on the action, you may need access to create, manage, post, or view invoices, plus access to the relevant financial reports. The workspace plan, product-area access, role, record scope, and invoice state can all affect what is available.
+
+## Common problems
+
+### I can create invoices but I cannot post them
+
+Invoice creation and posting are separate capabilities. Check both your permission and the workspace entitlement.
+
+### The invoice is posted but the customer still owes the full amount
+
+Posting creates the receivable. Settlement happens when valid cleared payment is applied.
+
+### The invoice total is higher than revenue in Profit & Loss
+
+Check tax and other nonrevenue components. Customer billing and accounting revenue are not necessarily the same number.
+
+### Product margin looks incomplete
+
+For stocked products, verify fulfillment. Recognized inventory cost is not fabricated for unfulfilled quantity.
+
+## Related guides
+
+<CardGroup cols={2}>
+  <Card title="Post an invoice" href="/product/agreements/invoices/post-invoice">See the posting requirements and what changes afterward.</Card>
+  <Card title="Record an invoice payment" href="/product/agreements/invoices/record-payment">Understand cleared payment and remaining receivables.</Card>
+  <Card title="Financial reports" href="/product/accounting/financial-reports">Use the ledger reports to verify the result.</Card>
+  <Card title="Invoice fulfillment" href="/product/agreements/invoices/fulfillment">Connect stocked sales to recognized inventory cost.</Card>
+</CardGroup>

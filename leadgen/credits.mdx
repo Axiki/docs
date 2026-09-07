@@ -1,0 +1,72 @@
+---
+title: "LeadGen credits, allowance, charges, and refunds"
+sidebarTitle: "Credits and allowance"
+description: "Understand how Lynka tracks LeadGen run capacity, plan allowance, bonus credits, run cost, remaining balance, and automatic refunds for failed, canceled, or no-result runs."
+keywords: ["LeadGen credits", "lead generation allowance", "LeadGen tokens", "LeadGen refund", "LeadGen run cost", "Lynka plan allowance"]
+---
+
+LeadGen has limited run capacity because each generation run consumes a metered resource. Lynka tracks that capacity separately from ordinary CRM record creation.
+
+This page explains the behavior and the current commercial rules.
+
+## Plan allowance and credit grants
+
+The current backend can draw LeadGen capacity from two broad sources:
+
+**Plan capacity.** The workspace can receive LeadGen allowance as part of its plan and current allowance period.
+
+**Credit grants.** Lynka can also store separate credit grants with their own remaining balance and optional expiry.
+
+## Current paid-plan LeadGen credits
+
+**Pro:** 15 LeadGen credits to get started, then 5 included each month. The first paid subscription provides 5 normal monthly credits plus 10 one-time starter credits.
+
+**Teams:** 30 LeadGen credits to get started, then 10 included each month. The first paid subscription provides 10 normal monthly credits plus 20 one-time starter credits.
+
+Starter credits are granted once per workspace when its first successful paid subscription begins. Upgrading later does not grant another starter package. Additional LeadGen credits can be purchased separately; pack quantities and prices are not published here.
+
+The run record stores which source was charged so Lynka knows where to return capacity if a refund is required.
+
+## A run can have a cost greater than one
+
+Lynka stores a `token_cost` for the run rather than assuming every run always costs exactly one unit. The current plan and product UI should be treated as the source for how a particular run mode is priced at the time you use it.
+
+Do not build internal team procedures around an old copied number from documentation.
+
+## When capacity is charged
+
+The backend validates access and consumes the required capacity as part of the run lifecycle. Browser counters are helpful for the user, but the backend remains authoritative if another run has already used the remaining allowance.
+
+## Refunds
+
+The current finalization logic refunds a charged run when its final status is:
+
+- `failed`
+- `no_results`
+- `canceled`
+
+and the run has not already been refunded.
+
+If the charge came from the plan, Lynka restores the applicable plan or bonus ledger. If the charge came from a credit grant, Lynka restores that grant's remaining balance.
+
+This protects customers from losing charged capacity when a run does not complete as usable prospecting work.
+
+## What is not a refund condition
+
+A completed run that returns prospects you personally decide not to use is different from a backend run finalized with no results.
+
+Targeting quality is still your responsibility. If the run completed normally, changing your mind about the market is not the same as a failed job.
+
+## Why the balance can differ between two screens
+
+If you ever see a stale number immediately after a run, refresh the relevant LeadGen state before assuming the backend charge is wrong. The server-side balance is the authoritative value.
+
+If the mismatch persists, keep the run identifier and report the issue through Support so the charge source and refund state can be inspected.
+
+<Card title="View current plans" href="https://lynkacrm.com/pricing" icon="external-link" cta="Open pricing" arrow="true">
+  Check current prices, included users, and plan packaging on the website.
+</Card>
+
+## Purchased-credit expiry
+
+The current implementation stores an optional expiry field on credit grants, but it does not establish a customer-facing expiry policy for purchased LeadGen credits. Do not assume that purchased credits expire or carry over until Lynka publishes that policy.

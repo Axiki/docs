@@ -1,0 +1,48 @@
+---
+title: "Record a cash receipt"
+sidebarTitle: "Cash receipts"
+description: "Record money received in Accounting, distinguish it from customer invoice settlement, and understand how cleared customer payments reach cash reporting."
+keywords: ["cash receipt", "receive money", "record cash received", "accounting receipt", "customer payment cash", "cash entry"]
+---
+
+Use **Cash Receipts** for money received that needs an Accounting cash entry and is not better handled by a more specific source workflow.
+
+Customer invoice payments are usually recorded through Agreements so Lynka can reduce the invoice balance and connect the settlement to Accounts Receivable. A generic cash receipt should not be used to bypass that relationship.
+
+## Open the cash receipt flow
+
+Go to **Accounting**, then **Cash Receipts**. Creating a cash entry uses the journal-entry creation permission in the current Accounting shell.
+
+On desktop, the create-cash action opens the cash entry editor in the Accounting side panel. Mobile uses the dedicated Accounting flow.
+
+## What a cash receipt should explain
+
+A useful cash entry answers:
+
+- how much money was received
+- when it was received
+- what account or business event it relates to
+- which currency applies
+- what reference lets someone trace the source later
+
+## Customer invoice payments
+
+When cash belongs to an invoice, use the invoice payment flow. Lynka's settlement logic counts cleared payment activity for invoice settlement and Accounting cash reporting.
+
+A pending or uncleared payment should not reduce Accounts Receivable as if the money were already available.
+
+## Cleared cash
+
+The accounting model intentionally distinguishes payment creation from cleared cash. Reports should use cleared payment activity where the metric claims to represent cash that actually settled.
+
+This is why the cash total can differ from a list of every payment attempt or pending payment record.
+
+## Avoid double counting
+
+Do not record a customer invoice payment through Agreements and then create a second generic cash receipt for the same money. That can duplicate cash unless the accounting workflow explicitly expects both records as linked sides of the same transaction.
+
+## Related articles
+
+- [Record an invoice payment](/product/agreements/invoices/record-payment)
+- [Bank reconciliation](/product/accounting/bank/reconcile-bank)
+- [Cash Flow Statement](/product/accounting/financial-reports)

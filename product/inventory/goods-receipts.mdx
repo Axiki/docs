@@ -1,0 +1,41 @@
+---
+title: "Goods receipts in Lynka"
+description: "Learn how Lynka goods receipts record accepted, damaged, and on hold quantities and how posting affects inventory after supplier deliveries."
+keywords: ["goods receipt", "receive stock", "post goods receipt", "damaged stock", "stock on hold", "partial delivery", "inventory receiving", "Lynka inventory"]
+---
+
+A goods receipt records what physically arrived from a supplier. It is the receiving evidence for a purchase order and should describe the delivery as it happened, including shortages, damage or stock that cannot yet be accepted.
+
+Open **Inventory > Goods Receipts** to create and review receipts.
+
+## Information on a receipt
+
+The current receipt flow includes a receipt number, receipt date, received time or context, status, linked purchase order and received lines.
+
+For each line, you can distinguish quantities such as:
+
+- accepted
+- damaged
+- on hold
+- total received
+
+A receipt needs a receipt number and at least one received quantity before it can represent a real delivery.
+
+## Draft versus posted
+
+Creating a receipt does not mean inventory has already been updated. Review the quantities first, then post the receipt when it is ready to apply the stock effect.
+
+Once posted, the current UI treats the receipt as locked. If the historical event needs correction, use the supported corrective or adjustment path instead of editing a posted receipt as if it never happened.
+
+## Receiving exceptions
+
+Lynka can surface receiving problems through automation, including **Damaged stock received**, **Received stock on hold** and **Goods receipt posting issue**.
+
+Those warnings are operational signals, not cosmetic labels. Investigate them before assuming the delivery is clean.
+
+<CardGroup cols={2}>
+  <Card title="Create a goods receipt" href="/product/inventory/goods-receipts/create-goods-receipt">Record what arrived against the purchase order.</Card>
+  <Card title="Post a goods receipt" href="/product/inventory/goods-receipts/post-goods-receipt">Apply the receipt to inventory and understand the lock.</Card>
+  <Card title="Damaged and on hold stock" href="/product/inventory/goods-receipts/damaged-on-hold">Record exceptions instead of accepting everything.</Card>
+  <Card title="Procure to stock" href="/workflows/procure-to-stock">See how receiving fits into the full procurement process.</Card>
+</CardGroup>

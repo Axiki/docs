@@ -1,0 +1,75 @@
+---
+title: "How a LeadGen run works"
+sidebarTitle: "How runs work"
+description: "Understand the lifecycle of a Lynka LeadGen run, including targeting, workspace access, capacity charging, completion, no-result behavior, failures, and refunds."
+keywords: ["how LeadGen works", "lead generation run", "LeadGen credits refund", "LeadGen no results", "LeadGen run failed", "Lynka prospecting"]
+---
+
+A LeadGen run is a tracked piece of work. Lynka records when it starts, which workspace owns it, the run payload, its status, the cost charged to LeadGen capacity, and how it finished.
+
+That matters because prospecting can fail for reasons that are different from ordinary CRM record creation. Lynka needs to know whether a run actually completed before treating its consumed capacity as final.
+
+## Before a run starts
+
+Lynka checks workspace access and the ability to run LeadGen. The backend permission contract uses `lead_gen.run`, so simply reaching the LeadGen page is not enough to bypass run restrictions.
+
+The workspace also needs available capacity. Depending on the current account state, that capacity can come from plan allowance or a valid credit grant.
+
+## Configure the target
+
+The backend run contract currently supports inputs for:
+
+- search terms or queries
+- geography and geographic targets
+- industry or industries
+- optional enrichment
+- result size and run controls used by the service
+
+The UI should be treated as the source for which of those controls a customer can actively change at a given time. The documentation does not invent a filter just because the backend can store it.
+
+## When you submit
+
+Lynka creates a run record and tracks its status from start to finish. The run stores the charge source and LeadGen credit cost so the platform can reconcile the outcome later.
+
+Do not refresh repeatedly or create duplicate runs because a search takes time. Use the run status shown in the product.
+
+## Completed run
+
+A successful run finishes with its result count recorded. Review the generated prospects before treating them as active sales opportunities.
+
+A returned result is discovery, not qualification.
+
+## No results
+
+No results can mean the targeting was too narrow, the search terms did not describe the market well, the selected geography had little matching data, or the underlying provider returned nothing useful for that run.
+
+The current backend finalization logic treats `no_results` as refundable when the run had been charged and had not already been refunded.
+
+That is an important difference from "the search returned ten prospects but I personally did not like them." A completed run with results is not the same outcome as a run finalized with no results.
+
+## Failed or canceled runs
+
+The backend also supports refunding a charged run finalized as `failed` or `canceled`. Lynka records when the refund happened so the same run is not refunded repeatedly.
+
+If the original charge came from plan capacity, the refund goes back through the plan allowance ledger. If the charge came from a credit grant, the remaining balance of that grant is restored.
+
+## If the Run button is disabled
+
+Check these in order:
+
+1. Is the workspace active?
+2. Does the current workspace include LeadGen?
+3. Is LeadGen enabled for the workspace?
+4. Can the current user run LeadGen?
+5. Does the workspace have remaining plan capacity or valid credits?
+
+If you can see the page but cannot run, that usually points to run permission or remaining capacity rather than general navigation access.
+
+## What to do after a successful run
+
+The next step is not "run another search" by default. Review whether the prospects match the target, move the right ones into the CRM workflow, assign responsibility, and schedule follow-up.
+
+<CardGroup cols={2}>
+  <Card title="Review and move results into Sales" href="/leadgen/results-to-crm">Keep discovery separate from qualification.</Card>
+  <Card title="Work LeadGen as a team" href="/leadgen/team-workflow">Assign promising prospects and keep visibility controlled.</Card>
+</CardGroup>

@@ -1,0 +1,36 @@
+---
+title: "Tax and period close in Lynka Accounting"
+description: "Learn how tax settings, accounting periods, period close, reopen controls, and financial review protect completed accounting periods in Lynka."
+keywords: ["tax settings", "accounting period", "close accounting period", "reopen period", "period close", "tax payable", "Lynka accounting"]
+---
+
+Tax and period close are control functions. They are less about entering daily transactions and more about making sure financial treatment is configured correctly and completed periods do not keep changing without review.
+
+## Tax
+
+Open **Accounting > Tax** for tax configuration and review where your role and workspace allow it. Tax can affect quotes, invoices and accounting postings, so changes should be made deliberately.
+
+Lynka keeps tax configuration and audit history separate from individual transaction lines. Posted invoice tax can contribute to tax payable in the ledger based on the configured mapping.
+
+Do not duplicate outdated tax rules in documentation or manually force old transactions to use a new rate without a supported correction process.
+
+## Close Center
+
+Open **Accounting > Close Center** to work with accounting period controls.
+
+Closing a period is a financial control. It signals that the period has been reviewed and should no longer accept ordinary changes. Users need the relevant close permission, such as `period.close`.
+
+Before closing, review the ledger and financial statements for incomplete or inconsistent accounting. The exact checklist depends on the data in the workspace.
+
+## Reopening a period
+
+Reopening should be exceptional and permission controlled. Users need `period.reopen` where the action is available.
+
+If a closed period must be changed, reopen it through the controlled action, make the required correction and close it again after review. That keeps the period history auditable.
+
+<CardGroup cols={2}>
+  <Card title="Tax Center" href="/product/accounting/tax/tax-center">Understand where tax configuration affects financial workflows.</Card>
+  <Card title="Close an accounting period" href="/product/accounting/periods/close-period">Review and lock a completed period.</Card>
+  <Card title="Reopen a period" href="/product/accounting/periods/reopen-period">Correct a closed period through the controlled path.</Card>
+  <Card title="Financial reports" href="/product/accounting/financial-reports">Review the statements used during close.</Card>
+</CardGroup>

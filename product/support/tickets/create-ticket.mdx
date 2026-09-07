@@ -1,0 +1,44 @@
+---
+title: "Create a support ticket"
+sidebarTitle: "Create a ticket"
+description: "Create a customer support ticket with company, related deal, type, category, title, description, impact, priority, assignee, and status context."
+keywords: ["create support ticket", "new ticket", "customer support ticket", "ticket priority", "ticket assignee", "help desk"]
+---
+
+A ticket records a customer problem or support request that needs ownership, status tracking, and possibly SLA monitoring.
+
+## Required customer context
+
+The current ticket creation flow requires a company or customer relationship. A related deal can be selected only from deals that belong to the selected company.
+
+That prevents a ticket from being attached to an unrelated opportunity simply because the deal name looked similar.
+
+## Create the ticket
+
+<Steps>
+  <Step title="Open Support">Go to **Support**, then **Tickets**.</Step>
+  <Step title="Create the ticket">Use the new-ticket action.</Step>
+  <Step title="Choose the company">Select the customer or company the request belongs to.</Step>
+  <Step title="Link the deal if relevant">If the issue relates to a specific commercial opportunity, choose a deal from the selected company's eligible deals.</Step>
+  <Step title="Describe the request">Complete the ticket type, category, title, detailed description, impact, priority, assignee, and status fields that apply.</Step>
+  <Step title="Save">Create the ticket. It enters the support workflow and can participate in assignment, SLA, automation, notes, and activity history.</Step>
+</Steps>
+
+## Priority and impact
+
+Use these fields to describe operational urgency rather than customer importance alone. A large customer with a minor question does not automatically need the same priority as a service outage affecting a smaller account.
+
+## Assignee
+
+Assignment identifies who owns the response. Ticket assignment is protected separately by `ticket.assign`, while creating and editing use `ticket.create` and `ticket.edit`.
+
+The automation catalog includes **Ticket has no assignee** to catch open tickets that nobody owns.
+
+## Desktop and mobile
+
+Desktop can show ticket list or Kanban surfaces with filters and a right-side detail or create panel. Mobile uses ticket cards and compact forms. The company relationship and permission checks are the same.
+
+## Related articles
+
+- [Assign and manage a ticket](/product/support/tickets/assign-manage)
+- [Ticket SLA and response times](/product/support/sla-automation)

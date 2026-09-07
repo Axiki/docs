@@ -1,0 +1,49 @@
+---
+title: "Connect Gmail to Lynka"
+sidebarTitle: "Connect Gmail"
+description: "Connect a Google account, verify the Gmail connection in Lynka, and troubleshoot common mailbox connection problems."
+keywords: ["connect Gmail", "Google integration", "Gmail CRM", "Google OAuth", "email integration", "Gmail not connected"]
+---
+
+The Google integration connects Gmail capabilities to Lynka so email activity can be used from customer and sales records where the feature is available.
+
+## Gmail and Lynka-hosted email are different
+
+**Connected Gmail** sends through the customer’s own Gmail account from Lynka. These messages do not use the workspace’s Lynka-hosted email allowance. Google’s own sending limits, abuse rules, account restrictions, and policies apply.
+
+**Lynka-hosted email** uses Lynka’s hosted sending infrastructure and can consume the workspace allowance. The current maximum monthly allowance is 100 hosted emails for Free, 1,000 for Pro, and 5,000 for Teams. The corresponding plan daily maximums are 50, 250, and 500. These allowances are per workspace, not per individual user, and the daily maximum controls pace rather than adding a second pool.
+
+New or higher-risk workspaces may temporarily have a lower effective daily hosted sending limit while sending history is established. Limits can increase progressively up to the plan’s normal daily maximum. Lynka may also throttle, review, lower, or pause hosted sending when needed to protect recipients, sender reputation, deliverability, or shared infrastructure.
+
+Customer-facing hosted messages may count toward the workspace allowance. Internal Lynka system notifications and operational messages do not use that allowance. Addresses that hard bounce, unsubscribe, generate a spam complaint, or become otherwise suppressed may be blocked from further hosted sending.
+
+## What happens at an allowance limit?
+
+The public plan values are maximum allowances. The current public implementation does not document a guaranteed queue, retry, reset time, upgrade action, or other specific outcome after a daily or monthly hosted-email limit is reached. Do not assume that behavior; contact the published support channel if hosted sending is unavailable.
+
+## Check the connection status
+
+Returning from Google's authorization page is not enough by itself. Confirm that Lynka shows the account as connected before using Gmail features.
+
+## Connect the account
+
+Open **Settings > Google integrations** and start the connection flow. Follow Google's authorization steps and return to Lynka.
+
+After the flow completes, verify that Lynka reports a connected state from the backend.
+
+## If the connection does not complete
+
+If Lynka returns an error or does not show the account as connected, retry the connection from **Settings > Google integrations**. If the problem continues, contact support and include the message shown by Lynka. Do not treat a successful browser redirect as proof that the connection is ready.
+
+## Email history and record links
+
+Lynka stores Gmail messages and record links separately from the browser connection UI. Email can be associated with CRM records so sales context is not trapped only inside the user's inbox.
+
+## Permissions
+
+The current Settings navigation allows Google integration access for roles such as owner, admin, manager, and sales, subject to the final workspace access rules.
+
+## Related articles
+
+- [Notifications and email settings](/workspace/notifications)
+- [Search and command palette](/productivity/search-command)

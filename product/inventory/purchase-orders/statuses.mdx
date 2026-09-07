@@ -1,0 +1,38 @@
+---
+title: "Purchase order statuses and outstanding quantity"
+sidebarTitle: "PO statuses"
+description: "Understand draft, open, partially received, received, closed, and cancelled purchasing states and how Lynka calculates what is still outstanding."
+keywords: ["purchase order status", "partially received PO", "outstanding quantity", "open purchase order", "received purchase order", "PO status"]
+---
+
+Purchase order status tells you where the order is in the procurement lifecycle. Outstanding quantity tells you how much of the order still has not been received. Both are needed to understand open purchasing correctly.
+
+## Open purchasing
+
+Inventory reporting treats approved, sent, ordered, open, and partially received states as open purchasing where the current report semantics apply.
+
+A purchase order can therefore remain operationally open after the first delivery. The important question is not "Has any receipt happened?" but "Is there quantity still outstanding?"
+
+## Partially received
+
+When only part of a PO arrives, record the delivered quantity on a goods receipt. The order can remain partially received while the difference between ordered quantity and received quantity stays outstanding.
+
+This is what allows Lynka to calculate **Goods in Transit** and **Open Purchase Orders** without counting the entire original order forever.
+
+## Outstanding value
+
+Outstanding purchase order value is based on the remaining quantity multiplied by the relevant base unit cost. It is not simply the original PO total when part of the order has already arrived.
+
+That distinction is especially important for partially received orders.
+
+## Terminal states
+
+Received and closed states represent completed procurement outcomes in the current UI. Cancelled orders are no longer expected to arrive. Status transitions can become locked once a terminal state is reached.
+
+The mobile action sheet and desktop editor use the same procurement status rules and can show a reason when a record is locked.
+
+## If you cannot change the status
+
+Check whether the current state is terminal, whether the next transition is allowed by the procurement status resolver, and whether you have the relevant purchase-order management permission.
+
+Do not force a status just to remove an overdue warning. If quantity is still expected, correct the expected date or receiving data. If the order is no longer valid, close or cancel it through the supported lifecycle.

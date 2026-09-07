@@ -1,0 +1,38 @@
+---
+title: "Use the Tax Center"
+sidebarTitle: "Tax Center"
+description: "Understand how tax configuration, invoice tax lines, tax payable, and accounting reports relate without treating tax collected as revenue."
+keywords: ["tax center", "sales tax", "VAT", "tax payable", "invoice tax", "tax accounting"]
+---
+
+Tax is part of the invoice and accounting workflow, but tax collected from a customer is not the same thing as business revenue.
+
+## Tax on commercial documents
+
+Quotes and invoices can carry tax lines according to the workspace tax configuration and the document's taxable or tax-exempt state.
+
+The quote calculation engine handles inclusive and exclusive tax separately so a tax-inclusive price is not taxed twice.
+
+## Tax payable
+
+When a taxable invoice is posted, the tax component can post to a tax payable account rather than Sales Revenue.
+
+This is why invoice total and ledger revenue can differ even when the accounting is correct.
+
+## Tax Center
+
+Open **Accounting > Tax** to review the tax surfaces available to your finance role. Financial report access protects the current tax tab, while tax configuration actions can have additional administrative permissions.
+
+## Tax-exempt documents
+
+A tax-exempt quote or invoice should not retain active tax lines that contradict the exemption. The server calculation clears or ignores tax lines according to the supported tax-exempt behavior.
+
+## Audit history
+
+Lynka stores tax audit information for configuration changes. Treat a tax setting change as an accounting policy change that can affect future documents, not as a tool for rewriting historical posted invoices.
+
+## Related articles
+
+- [Create a quote](/product/agreements/quotes/create-quote)
+- [Post an invoice](/product/agreements/invoices/post-invoice)
+- [Accounting calculations](/reference/calculations/accounting-metrics)

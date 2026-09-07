@@ -1,0 +1,54 @@
+---
+title: "Post, reverse, or correct a journal entry"
+sidebarTitle: "Post or reverse a journal"
+description: "Understand the difference between editing a draft, posting a journal, reversing a posted entry, and making an auditable accounting correction."
+keywords: ["post journal", "reverse journal", "unpost journal", "correct journal entry", "journal posting", "accounting correction"]
+---
+
+Journal status controls whether an accounting entry is still being prepared or has become part of the ledger. Once an entry has affected financial reports, corrections should preserve an audit trail rather than rewriting history casually.
+
+## Posting
+
+Posting makes the journal part of the ledger used by financial reports. A posted journal must balance and should have enough reference information to explain why it exists.
+
+Posting requires `journal.post`. Viewing or editing ordinary journal data does not automatically grant posting authority.
+
+## Reversing a posted entry
+
+Reversal creates an auditable accounting path that offsets the original entry instead of pretending it never existed. The permission model includes `journal.reverse` for this reason.
+
+Use reversal when the original posting was validly recorded but needs to be undone in the accounting history.
+
+## Correcting historical errors
+
+When an old source posting is provably wrong, prefer an explicit correction or reversal entry over rewriting the original posted amounts.
+
+This is how Lynka's accounting cleanup handled a historical duplicate FX invoice posting: the correction reversed the extra Accounts Receivable and revenue effect with a separate auditable journal rather than mutating the old journal in place.
+
+That approach preserves the sequence of events for later audit and reconciliation.
+
+## Draft edits versus posted edits
+
+Draft entries can be edited while the workflow and permissions allow it. Posted records are more constrained because reports and account balances already depend on them.
+
+If the UI blocks editing a posted entry, that is a protection, not a broken form. Choose the supported reverse or correction path instead.
+
+## Period controls
+
+A posted date belongs to an accounting period. Closed periods can block new postings or corrections until an authorized user reopens the period. `period.reopen` is separate from ordinary journal permissions.
+
+## Check the effect
+
+After a material correction, verify the relevant report rather than only checking that the journal saved. Useful checks include:
+
+- Trial Balance still balances
+- Balance Sheet still satisfies the accounting equation
+- Accounts Receivable agrees with operational open invoices where it should
+- cash agrees with cleared cash activity where it should
+- inventory account value agrees with the operational inventory basis where the same valuation method applies
+
+## Related articles
+
+- [Create a journal entry](/product/accounting/journals/create-journal-entry)
+- [Close an accounting period](/product/accounting/periods/close-period)
+- [Reopen a closed accounting period](/product/accounting/periods/reopen-period)

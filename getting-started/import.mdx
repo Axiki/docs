@@ -1,0 +1,33 @@
+---
+title: "Import existing data"
+description: "Prepare data for import, avoid duplicates and verify the records after processing."
+keywords: ["import", "existing", "data", "prepare", "avoid", "duplicates", "verify", "records", "after", "processing"]
+---
+
+Imports are useful when you already have CRM data outside Lynka. They are also one of the fastest ways to create a messy workspace if you upload before deciding how ownership, statuses and duplicates should work.
+
+## Before you import
+
+Clean obvious duplicates and decide which fields are authoritative. For Sales data, make sure you can distinguish leads from existing customers or companies. For deals, make sure ownership and status values are meaningful enough to map.
+
+If your role does not have the import permission for that entity, the import action can be hidden or blocked.
+
+<Steps>
+  <Step title="Start with a small sample">
+    Import a small representative file first. Use rows that include normal records, missing optional fields and at least one value you expect to map to a status or owner.
+  </Step>
+  <Step title="Review mapping and validation">
+    Map the incoming columns to Lynka fields. Upload validation checks file type, extension agreement, size and server side checks where supported. Fix validation problems before attempting a larger batch.
+  </Step>
+  <Step title="Process the sample">
+    Let Lynka create the records, then open the resulting list. Search for several imported names instead of assuming a successful upload means every row became a valid record.
+  </Step>
+  <Step title="Check duplicates and lifecycle state">
+    Verify imported leads and deals did not create duplicate companies or misleading lifecycle states. Imported historical data often needs more cleanup than current operational data.
+  </Step>
+  <Step title="Run the full import">
+    Once the sample behaves correctly, process the full file and repeat the same verification with counts, owners, statuses and a few spot checks.
+  </Step>
+</Steps>
+
+If the import fails, see [Import problems](/troubleshooting/import-errors).

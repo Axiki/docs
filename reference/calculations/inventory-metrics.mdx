@@ -1,0 +1,48 @@
+---
+title: "Inventory calculations: stock, valuation, open POs, and product margin"
+sidebarTitle: "Inventory calculations"
+description: "Understand the formulas behind available stock, inventory valuation, outstanding purchase orders, goods in transit, reorder risk, and margin."
+keywords: ["inventory metrics", "inventory valuation", "open PO value", "goods in transit", "reorder list", "product margin formula"]
+---
+
+Inventory reporting combines quantity, purchasing, cost, and fulfillment. A useful calculation must use the right event for each question.
+
+## Stock quantity
+
+Current stocked quantity should reconcile with the quantity movement ledger. Opening stock, receipts, and other supported movements explain how the current number changed.
+
+## Inventory valuation
+
+Inventory valuation uses the active stocked product universe and the configured current-cost basis used by the canonical report. Reporting-excluded fixtures and installation or non-stock records are not allowed to inflate the real inventory total.
+
+## Open purchase order value
+
+Open PO value uses **outstanding quantity**, not the full original PO value after partial receipt.
+
+Conceptually:
+
+`remaining quantity x base unit cost = outstanding base value`
+
+Open purchasing includes the canonical active PO statuses used by the Inventory release logic.
+
+## Goods in transit
+
+Goods in transit represents quantity still expected on open purchasing. Partially received quantity that already arrived is not counted again as in transit.
+
+## Reorder and stock risk
+
+Stock risk can include out-of-stock products and stocked items below their configured minimum, with open replenishment considered by the relevant automation or view.
+
+## Product margin
+
+For stocked products:
+
+`gross profit = invoice net revenue - recognized fulfillment cost`
+
+Recognized cost comes from posted fulfillment quantity and cost snapshot. If stocked invoiced quantity is not fully fulfilled, margin can remain incomplete rather than assuming zero cost.
+
+For non-stock or service items, invoice-line cost snapshots can be used where appropriate.
+
+## Slow-moving stock
+
+Slow-moving stock is a separate operational question from out-of-stock or reorder risk. A product can have plenty of stock and still be slow moving.

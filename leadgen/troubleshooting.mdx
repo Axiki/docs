@@ -1,0 +1,55 @@
+---
+title: "Troubleshoot LeadGen runs and access"
+sidebarTitle: "Troubleshoot LeadGen"
+description: "Fix common Lynka LeadGen problems including missing access, disabled Run actions, exhausted allowance, no-result runs, failed runs, stale balance, and duplicate prospects."
+keywords: ["LeadGen not working", "LeadGen run disabled", "LeadGen no results", "LeadGen credits missing", "LeadGen failed", "duplicate leads"]
+---
+
+Use the symptom to decide where to look. LeadGen can fail at access, capacity, targeting, provider execution, or the later CRM handoff.
+
+## I cannot see LeadGen
+
+Check the workspace plan, installed product areas, and your user access. LeadGen is separately gated from ordinary Marketing campaign access.
+
+If another user can see LeadGen and you cannot, compare user-level product access and role permissions.
+
+## I can see LeadGen but cannot run it
+
+This usually means the view is available but the run requirement is not.
+
+Check:
+
+1. workspace access state
+2. `lead_gen.run` permission
+3. remaining plan capacity or valid credit grants
+4. whether the backend has already consumed the last available capacity in another run
+
+## The run returned no results
+
+Review geography, industry, and search terms. A very narrow combination can legitimately return nothing.
+
+The backend finalization path treats a run finalized with `no_results` as refundable when it had been charged and had not already been refunded.
+
+## The run failed
+
+Do not immediately submit several replacement runs. First check whether the failed run has finalized and whether the charged capacity was restored.
+
+Failed and canceled runs are also refundable under the current backend finalization logic.
+
+## The balance looks stale
+
+Refresh the LeadGen state. The backend balance is authoritative.
+
+If the mismatch persists, keep the run ID and report the problem so the charge source, charged amount, and refund timestamp can be checked.
+
+## The same company already exists in Sales
+
+Do not create a second active record just because the prospect appeared in another generation run. Use the existing record or the duplicate review flow where appropriate.
+
+## The results are poor but the run succeeded
+
+That is usually a targeting problem rather than a failed job. Narrow the market, adjust one major targeting dimension, and compare the next run rather than changing everything at once.
+
+<Card title="Improve targeting" href="/leadgen/search-targeting" icon="sliders-horizontal">
+  Start with the customer you can actually serve, then use geography, industry, and search terms to describe that market.
+</Card>

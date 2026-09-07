@@ -1,0 +1,49 @@
+---
+title: "Create a goods receipt"
+sidebarTitle: "Create a goods receipt"
+description: "Record a supplier delivery with GRN number, dates, linked purchase order, accepted quantity, damaged quantity, and on-hold quantity."
+keywords: ["create goods receipt", "create GRN", "goods received note", "receive stock", "accepted quantity", "damaged quantity", "on hold stock"]
+---
+
+A goods receipt, sometimes called a GRN, records a physical supplier delivery. It is the evidence that items arrived and is the bridge between a purchase order and actual received inventory.
+
+## Information in the receipt
+
+The current receipt editor supports a receipt number, receipt date, received-at time, status, purchase order relationship, and receipt lines.
+
+Each line can carry:
+
+- accepted quantity
+- damaged quantity
+- on-hold quantity
+- total quantity received
+
+The editor shows the ordered quantity from the purchase order line so the receiving user can compare the delivery with what was expected.
+
+## Create the receipt
+
+<Steps>
+  <Step title="Open Goods Receipts">Go to **Inventory**, then **Goods Receipts**.</Step>
+  <Step title="Link the purchase order">Choose the purchase order the delivery belongs to. This gives the receipt the ordered lines and quantity context.</Step>
+  <Step title="Enter the receipt identity">Provide the GRN or receipt number and the relevant receipt date or received-at time.</Step>
+  <Step title="Record quantities">For each delivered line, separate accepted, damaged, and on-hold units instead of putting every unit into accepted stock.</Step>
+  <Step title="Save the draft">Save the receipt. At least one line must contain received quantity for the editor to accept the receipt content.</Step>
+</Steps>
+
+## Validation rules visible in the editor
+
+The receipt requires a nonempty receipt number. It also requires at least one line with received quantity. The edit flow explicitly warns when there are no accepted, damaged, or on-hold quantities on any line.
+
+## Save versus post
+
+Saving and posting are not the same thing. A saved receipt can still be edited while its status allows changes. A posted receipt is locked for ordinary editing and should be corrected through an adjustment path rather than quietly rewritten.
+
+This protects the stock and accounting history from changing underneath previously posted records.
+
+## Permissions
+
+Goods receipt creation and editing depend on the procurement permission model. A user can have Inventory visibility without having authority to post or change procurement records.
+
+## Mobile
+
+Mobile uses goods receipt cards and an action sheet with actions such as opening the full record, editing a draft, changing allowed status, and exporting. Terminal status rules are shared with desktop.

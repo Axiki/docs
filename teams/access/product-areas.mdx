@@ -1,0 +1,63 @@
+---
+title: "Control which product areas a user can access"
+sidebarTitle: "Product area access"
+description: "Understand plan access, workspace-enabled areas, role defaults, and user-level area overrides for Sales, Accounting, Inventory, Support, Marketing, and Reports."
+keywords: ["product area access", "hub access", "user access", "disable accounting user", "role area access", "workspace modules"]
+---
+
+Lynka does not decide access from one role field. Product area visibility is resolved from the plan, workspace configuration, role defaults, and user-specific access decisions.
+
+This lets an owner build a workspace where one person uses only Sales and Agreements while another uses Accounting and Inventory.
+
+## The access chain
+
+For an ordinary workspace user, Lynka checks that the workspace is active, the plan allows the area, the workspace has enabled the area, and the role or user access permits it.
+
+Role defaults then describe broad access patterns. A user-specific area row can narrow or override those defaults according to the resolver.
+
+## Current role default patterns
+
+The live default model includes these broad examples:
+
+| Role | Default product area pattern |
+|---|---|
+| Owner | Write across all major areas |
+| Admin | Write across all major areas |
+| Finance | Accounting and Agreements write, Inventory read |
+| Marketing | Marketing and LeadGen write |
+| Support | Support write |
+| Sales, Rep, Member | Sales and Agreements write |
+
+These are defaults, not a promise that every user receives those areas. The plan and user-level access still apply.
+
+## User-level deny
+
+Where explicit allow and deny rows conflict, Lynka's frontend resolver uses deny-first behavior. That prevents a stale allow from reopening an area that an admin explicitly removed.
+
+Hiding an area from navigation is not the same as granting or removing permission to perform an action. Check the relevant action permissions separately.
+
+## Example: Sales plus Accounting only
+
+If a user should work in Sales and Accounting but not Inventory or Marketing:
+
+1. make sure the workspace plan includes Accounting
+2. ensure Sales and Accounting are enabled for the workspace
+3. assign a role that provides an appropriate starting point
+4. allow the required Sales and Accounting areas
+5. deny or leave disabled the areas the person should not use
+6. configure the action permissions inside those areas
+7. test record scope with the user's actual account
+
+## Area access versus action permission
+
+Area access answers **Can this person enter this part of Lynka?**
+
+Action permission answers **What can they do once they are there?**
+
+A finance user can have read access to Inventory but not `product.manage`. A salesperson can enter Agreements but still lack invoice posting authority.
+
+## Related articles
+
+- [Roles and permissions](/teams/roles-permissions)
+- [Customize action permissions](/teams/access/action-permissions)
+- [Record scope and visibility](/teams/access-scopes)

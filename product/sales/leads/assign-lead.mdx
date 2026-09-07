@@ -1,0 +1,52 @@
+---
+title: "Assign a lead to an owner"
+sidebarTitle: "Assign a lead"
+description: "Assign or reassign a lead, understand owner visibility, and troubleshoot cases where a user can edit a lead but cannot assign it."
+keywords: ["assign lead", "lead owner", "reassign lead", "lead assignment", "sales owner", "lead permissions"]
+---
+
+Lead ownership answers a simple operational question: **who is responsible for the next action?** It also affects how Mine, team, and broader workspace scopes behave for users who do not have unrestricted access.
+
+## Assign the owner
+
+Open the lead and use the owner or assignment control available in the lead detail or list action surface. Select the workspace member who should own the record, then save or confirm the change.
+
+On mobile, owner assignment is exposed through the lead card or action flow rather than relying on a desktop table cell.
+
+## Permission required
+
+Assignment is controlled separately from normal editing. A user can have `lead.edit` and still be blocked from changing the owner if they do not have `lead.assign`.
+
+This is deliberate. Editing a phone number and changing who is responsible for a prospect are different actions.
+
+## Ownership and visibility are not the same thing
+
+Being the owner usually makes a lead part of the user's **Mine** scope, but record visibility can also come from team scope, workspace-wide access, role defaults, or an explicit access decision.
+
+Users with `lead.view_all` can see the broader workspace lead set allowed by the backend. Other users can be limited to records they own or records available through their permitted scope.
+
+<Info>
+If a person can see a lead but cannot assign it, check action permissions. If they cannot see the lead at all, check area access and data scope first.
+</Info>
+
+## Use ownership with activities
+
+Assignment is most useful when the record also has a next action. After assigning the lead, schedule the call, follow-up, meeting, email, or other activity that should move it forward.
+
+Lynka has a built in **Lead has no owner** automation and a separate **Lead needs attention** automation in its automation catalog. Those rules can surface active records that have nobody responsible or have gone too long without completed customer-facing activity.
+
+## Common problems
+
+**The member is not available in the owner picker.** Confirm the person is an active workspace member and has the necessary access to Sales.
+
+**The assignment control is missing or disabled.** Check `lead.assign`, the user's role, and any user-specific permission override.
+
+**The owner changed but the record is still visible to the previous owner.** Visibility can come from team or workspace scope. Ownership is not the only access rule.
+
+**A manager needs to see the team's leads.** Use the appropriate team or broader data scope. Do not solve reporting access by making the manager the owner of every lead.
+
+## Related articles
+
+- [Record scope and who can see what](/teams/access-scopes)
+- [Roles and permissions](/teams/roles-permissions)
+- [Work with lead lists and filters](/product/sales/leads/filter-leads)

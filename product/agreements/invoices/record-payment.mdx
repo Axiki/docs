@@ -1,0 +1,44 @@
+---
+title: "Record an invoice payment"
+sidebarTitle: "Record a payment"
+description: "Record customer payment against an invoice, understand cleared versus pending settlement, and prevent overpayment or currency mismatch errors."
+keywords: ["record invoice payment", "customer payment", "invoice paid", "partial payment", "cleared payment", "accounts receivable payment"]
+---
+
+An invoice payment settles all or part of the amount the customer owes. The payment should stay connected to the invoice so Agreements and Accounting can agree on the remaining receivable.
+
+## Record the payment
+
+Open the invoice and use the payment action available to your role and plan. Enter the amount, payment details, and currency information required by the form.
+
+The invoice can move through partial and full settlement as cleared payments accumulate.
+
+## Cleared versus pending
+
+Lynka's canonical settlement logic counts payments and refunds only when their clearance state is **cleared**.
+
+A pending or uncleared payment should not reduce Accounts Receivable or mark the invoice paid as if the cash were already settled.
+
+This protects both the invoice balance and the cash position from optimistic payment records.
+
+## Partial payments
+
+A cleared payment smaller than the amount due reduces the balance without closing the invoice as fully paid. The automation catalog includes **Partial payment needs follow-up** for partially paid invoices with no payment movement for the configured period.
+
+## Overpayment
+
+Payment logic should prevent a payment from exceeding the valid outstanding amount unless a supported credit or overpayment workflow explicitly handles it. Do not enter a larger payment and manually adjust the invoice total to make it fit.
+
+## Currency
+
+Payment currency must be compatible with the invoice and the payment record's FX capabilities. If a payment table does not carry the necessary FX snapshot, Lynka should reject an unsupported currency mismatch rather than silently treating two currencies as equal.
+
+## Accounting effect
+
+When the invoice is posted and the payment clears, the accounting chain should reduce Accounts Receivable and increase the appropriate cash account according to the payment posting logic.
+
+## Related articles
+
+- [Post an invoice](/product/agreements/invoices/post-invoice)
+- [Cash receipts](/product/accounting/cash/cash-receipts)
+- [A/R Aging and financial reports](/product/accounting/financial-reports)

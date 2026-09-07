@@ -1,0 +1,64 @@
+---
+title: "Reports and analytics in Lynka"
+sidebarTitle: "Reports overview"
+description: "Use Lynka Reports to answer sales, receivables, inventory, finance, support, and campaign questions with canonical calculations, scope, filters, exports, and scheduled runs."
+keywords: ["CRM analytics", "business reports", "sales reports", "financial reports", "inventory reports", "report builder", "scheduled reports"]
+---
+
+Reports turns operational records into repeatable business questions. The goal is not to create as many charts as possible. It is to make sure the same question uses the same calculation wherever it appears.
+
+The current Reports area contains **Overview**, **Builder**, and scheduled or run history where the enabled feature set exposes them.
+
+## Canonical report catalog
+
+Lynka has an active catalog of 41 implemented reports across Sales, Agreements, Inventory, Finance, and Support.
+
+Each catalog entry can carry report semantics, scope mode, implementation status, calculation version, source information, and audit notes. That makes the formula reviewable instead of letting every widget invent a different definition.
+
+Examples include:
+
+- Win Rate
+- Pipeline Value by Stage
+- Deals Needing Attention
+- Quote Acceptance Rate
+- A/R Aging Summary
+- Inventory Valuation Summary
+- Margin by Product
+- Trial Balance
+- Profit & Loss
+- Balance Sheet
+- SLA Compliance
+- Ticket Backlog by Status
+
+## Scope before comparison
+
+A report is only comparable when the data scope, period, timezone, and currency basis match.
+
+A team manager can see a smaller pipeline than the owner because the manager is looking at team scope. That is not automatically a calculation error.
+
+## Builder
+
+The report builder supports domain filters, report search, scope controls, presets, layout, and supported display types. Use the canonical report when a trusted definition already exists rather than recreating Win Rate or A/R Aging from arbitrary fields.
+
+## Scheduled reports and runs
+
+Where plan and feature flags allow it, reports can have scheduled or run history. A scheduled report should preserve the calculation and scope that made the original report meaningful.
+
+## Export
+
+Report viewing and export are separate permissions. `report.export` can be withheld even when a user is allowed to view the report in Lynka.
+
+## Basic charts versus Reports
+
+Basic dashboard charts are a separate entitlement from the advanced Reports area. This is why a workspace can have dashboard visualization without every report-builder feature.
+
+## Search and AI discoverability
+
+Each documentation page in this rebuild uses specific titles, descriptions, and internal-search keywords. Mintlify uses page descriptions in its generated AI index and automatically exposes `llms.txt` and `llms-full.txt` for public documentation.
+
+## Next steps
+
+- [Use the report catalog](/product/reports/use-report-catalog)
+- [Build and save a report](/product/reports/build-report)
+- [Schedule reports](/product/reports/schedule-report)
+- [Sales calculations](/reference/calculations/sales-metrics)

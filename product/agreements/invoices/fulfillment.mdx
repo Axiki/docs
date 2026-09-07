@@ -1,0 +1,40 @@
+---
+title: "Fulfill stocked invoice items"
+sidebarTitle: "Stock fulfillment"
+description: "Understand why invoicing and stock fulfillment are separate, how fulfillment affects recognized inventory cost, and why margin can remain incomplete until stock is posted out."
+keywords: ["invoice fulfillment", "stock fulfillment", "inventory COGS", "fulfill invoice", "invoice stock", "recognized cost"]
+---
+
+For stocked products, billing the customer and moving inventory are separate events. Lynka keeps them separate so stock, margin, and Accounting do not assume goods left the business simply because an invoice exists.
+
+## Invoice versus fulfillment
+
+The invoice proves what you billed.
+
+The fulfillment proves which stocked quantity was actually delivered or issued from inventory under the supported fulfillment workflow.
+
+A posted or paid invoice can therefore still have incomplete stock fulfillment if the physical inventory event was not recorded correctly.
+
+## Recognized cost
+
+Stocked product margin uses posted fulfillment quantity multiplied by the fulfillment unit-cost snapshot. It does not blindly subtract the invoice line's base cost from revenue when the stock event is missing.
+
+If invoiced quantity has not been fully fulfilled, the product margin report can mark the result incomplete.
+
+## Why this protects margin
+
+Suppose an invoice contains 10 stocked units but only 6 have posted fulfillment. Treating all 10 as having zero cost until the stock movement appears would overstate margin. Treating all 10 as fulfilled from an unrelated current product cost could also misstate history.
+
+The fulfillment snapshot preserves the cost associated with the actual recognized movement.
+
+## Troubleshooting missing cost
+
+If a stocked invoice shows revenue but product margin is incomplete, inspect the invoice fulfillment and posted fulfillment lines before editing product cost or the invoice total.
+
+The issue can be operational fulfillment, not a calculation bug.
+
+## Related articles
+
+- [Product margin](/product/inventory/products/product-margin)
+- [Stock levels and movements](/product/inventory/products/stock-levels)
+- [Invoice to ledger](/workflows/invoice-to-ledger)

@@ -1,0 +1,69 @@
+---
+title: "Trial Balance: check whether the ledger balances"
+sidebarTitle: "Trial Balance"
+description: "Understand what the Lynka Trial Balance shows, why debits and credits should balance, what an imbalance means, and how to investigate account balances."
+keywords: ["Lynka Trial Balance", "trial balance report", "debits credits balance", "accounting ledger check", "trial balance small business"]
+---
+
+The **Trial Balance** is one of the best places to start when you are checking whether the posted ledger is structurally sound.
+
+It lists balances by account and compares the debit side of the books with the credit side. In a valid double-entry ledger, total posted debits and total posted credits should balance.
+
+## What the Trial Balance tells you
+
+The report answers two questions:
+
+1. What balance does each ledger account currently carry for the selected reporting context?
+2. Does the posted debit-credit structure balance overall?
+
+It does not tell you whether every transaction was posted to the *correct* account. A balanced ledger can still contain a classification mistake. That is why Trial Balance is a structural check, not the final answer to every accounting question.
+
+## How to read the accounts
+
+Accounts usually belong to broader accounting categories such as assets, liabilities, equity, revenue, and expenses. The Trial Balance shows the account-level balances that later feed reports such as Profit & Loss and the Balance Sheet.
+
+If a number surprises you, do not edit the report. Trace the account back to the General Ledger and the Journal Entries that created the balance.
+
+## Why total debits and credits should match
+
+Lynka's posted journal model follows double-entry accounting. Each posted Journal Entry should have equal debit and credit totals. The combined Trial Balance should therefore also reconcile.
+
+If the totals do not match, investigate posting integrity rather than trying to force the report to a target number.
+
+## A balanced Trial Balance can still be wrong
+
+Examples:
+
+- a supplier expense was posted to the wrong expense account
+- a customer payment was posted to the wrong cash or bank account
+- revenue was classified to the wrong revenue account
+- an opening balance was entered to the wrong account pair
+
+Those mistakes can preserve equal debits and credits while still producing misleading financial statements.
+
+## Use the General Ledger to investigate
+
+Open [General Ledger](/product/accounting/reports/general-ledger) when you need to see the journal activity behind an account.
+
+A practical investigation is:
+
+1. identify the account with the surprising balance
+2. open the General Ledger for that account and period
+3. review the posted entries that increased or decreased it
+4. open the underlying Journal or source transaction
+5. correct through the appropriate auditable workflow rather than rewriting history silently
+
+## Before period close
+
+The Trial Balance is a useful pre-close check. Make sure the books balance, investigate unexpected account balances, and reconcile the major control accounts before closing the period.
+
+That does not replace bank reconciliation, receivables review, payables review, or tax review. It is one part of the close process.
+
+## Permissions and scope
+
+Financial reports are protected separately from ordinary Accounting navigation. A user may be able to work an Accounting task without having permission to view every financial statement.
+
+<CardGroup cols={2}>
+  <Card title="General Ledger" href="/product/accounting/reports/general-ledger">Trace an account balance to the posted entries behind it.</Card>
+  <Card title="Close a period" href="/product/accounting/periods/close-period">Use the Trial Balance as part of your close review.</Card>
+</CardGroup>

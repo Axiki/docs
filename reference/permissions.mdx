@@ -1,0 +1,141 @@
+---
+title: "Permission reference: what people can do in Lynka"
+description: "Understand Lynka permission families for LeadGen, Sales, Agreements, Inventory, Accounting, Support, Reports, and Teams, and how action permissions differ from product access and record visibility."
+keywords: ["Lynka permissions", "CRM permissions", "LeadGen permission", "invoice posting permission", "accounting permissions", "team permissions", "record visibility"]
+---
+
+Permissions answer **what action a user is allowed to perform** after the broader workspace, plan, product-area, and record-scope checks have already passed.
+
+This separation is what lets a small team share Lynka without giving every user the same level of control.
+
+## The access chain
+
+When a user asks "Why can't I do this?", check the layers in this order:
+
+1. Is the workspace active?
+2. Does the current plan include the capability?
+3. Is the product area enabled for the workspace?
+4. Is the user allowed to open that product area?
+5. Is the record inside the user's allowed scope?
+6. Does the user have the action permission?
+7. Does the backend lifecycle rule allow the action on this particular record?
+
+A failure at any one layer can correctly block the action.
+
+## LeadGen
+
+LeadGen run access is separate from ordinary Marketing visibility. A user may be able to open Marketing without being allowed to start a LeadGen run or use the workspace allowance.
+
+This means a user can potentially have broad Marketing visibility without being allowed to spend LeadGen allowance.
+
+## Sales
+
+Important Sales permission examples include:
+
+- `lead.create`
+- `lead.edit`
+- `lead.delete`
+- `lead.assign`
+- `lead.view_all`
+- `deal.create`
+- `deal.edit`
+- `deal.assign`
+- `deal.reopen_closed`
+- `deal.view_all`
+
+Visibility permissions such as `view_all` expand which records a user can see. They do not automatically grant create, edit, assignment, or close actions.
+
+## Agreements
+
+Examples include:
+
+- `quote.create`
+- `quote.edit`
+- `quote.void`
+- `quote.view_all`
+- `invoice.create`
+- `invoice.manage`
+- `invoice.post`
+- `invoice.view`
+- `invoice.view_all`
+
+Posting an Invoice is intentionally separate from simply creating or viewing one because posting can have Accounting consequences.
+
+Payment capture, posting, voiding, and refund behavior can also depend on plan entitlements and record state, not only one permission key.
+
+## Inventory
+
+Inventory uses permissions around Products, Suppliers, Purchase Orders, and Goods Receipts. `product.manage` is one verified product example, while procurement actions use their own permission families.
+
+A finance user can have read-oriented Inventory access without receiving the same write access as an operations user.
+
+## Accounting
+
+Examples include:
+
+- `journal.create`
+- `journal.post`
+- `journal.reverse`
+- `journal.delete`
+- `bill.create`
+- `bill.post`
+- `bill.void`
+- `period.close`
+- `period.reopen`
+
+These permissions are separated because the risk is different. Viewing a Journal is not equivalent to posting it. Posting a Journal is not equivalent to reversing history. Closing a period is a higher-control action than entering a draft transaction.
+
+## Support
+
+Examples include:
+
+- `ticket.create`
+- `ticket.edit`
+- `ticket.assign`
+
+Ticket visibility, assignment, SLA controls, and automation can still depend on the user's Support access and data scope.
+
+## Reports
+
+`report.view` controls report access and `report.export` controls export actions where exposed. Financial reports can have additional finance-specific permission checks.
+
+A dashboard chart does not imply full Reports permission.
+
+## Teams
+
+`team.manage` protects team-management actions. Access control, approvals, membership, product-area overrides, and permission administration can have additional controls in the relevant settings surfaces.
+
+Do not give `team.manage` to a person simply because they need to see their teammates.
+
+## Role defaults
+
+The current role defaults are designed as starting patterns:
+
+| Role pattern | Default product-area idea |
+| --- | --- |
+| Owner | Broad write access across the major enabled areas |
+| Admin | Broad write access across the major enabled areas |
+| Finance | Accounting and Agreements write, Inventory read |
+| Marketing | Marketing and LeadGen write |
+| Sales / Rep | Sales and Agreements write |
+| Member | Sales and Agreements write |
+| Support | Support write |
+
+Those are defaults, not a promise that every user with that label will always see the same thing. The workspace plan, enabled areas, overrides, and record scope still matter.
+
+## User-level overrides
+
+A user can be an exception to the role default. Where the resolver defines it, a user-level deny can override a broader role grant.
+
+Use overrides for genuine exceptions. If every person in a role needs the same exception, change the role or access design instead of creating a pile of one-off rules.
+
+## When the screen and the result disagree
+
+Lynka applies the final access decision when an action is submitted. If a button is visible but the action is refused, refresh the page and check the workspace, role, scope, and record state. If the result still does not match the access shown in the app, contact support with the affected area and action. Do not work around the refusal by changing unrelated permissions.
+
+<CardGroup cols={2}>
+  <Card title="Roles and permissions" href="/teams/roles-permissions">Design sensible defaults for a small team.</Card>
+  <Card title="Product area access" href="/teams/access/product-areas">Control which parts of Lynka a person can open.</Card>
+  <Card title="Record scope" href="/reference/data-scopes">Control which records appear after the user enters an area.</Card>
+  <Card title="Troubleshoot permissions" href="/troubleshooting/permissions">Diagnose a real blocked action.</Card>
+</CardGroup>

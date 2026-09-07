@@ -1,0 +1,77 @@
+---
+title: "Qualify a lead into a deal"
+sidebarTitle: "Qualify a lead"
+description: "Use Lynka's qualification checklist to confirm sales readiness, create the related deal, and keep lead and deal lifecycle reporting clean."
+keywords: ["qualify lead", "convert lead to deal", "lead qualification", "qualification checklist", "create deal from lead", "sales qualification"]
+---
+
+Qualifying a lead is the point where Lynka turns an early prospect into a commercial opportunity. The action is intentionally stricter than changing a status label. It uses a qualification checklist, saves that readiness state, and then creates the deal only when the required conditions pass.
+
+## What qualification means in Lynka
+
+The qualification wizard currently checks four confirmations:
+
+- the need has been confirmed
+- the decision maker has been identified
+- budget has been discussed
+- the timeline is known
+
+It also requires a nonempty **Next action** and a name for the deal that will be created.
+
+The checklist is confirmation based. It does not secretly edit owner, budget, contact, or timeline fields elsewhere on the lead. If you need those fields recorded separately, update the relevant lead or deal data directly.
+
+## Qualify the lead
+
+<Steps>
+  <Step title="Open the lead">Open the lead you want to qualify and review the contact, owner, recent activity, and any open deal context.</Step>
+  <Step title="Start qualification">Choose the qualification action. Lynka opens the qualification wizard and loads the saved readiness checklist for that lead.</Step>
+  <Step title="Confirm the four readiness checks">Confirm need, decision maker, budget, and timeline. If any item is missing, the wizard shows what is still required.</Step>
+  <Step title="Add the next action">Enter a concrete next action. This is required. Use something a salesperson can act on, such as "Send revised proposal Friday" rather than a vague note such as "Follow up".</Step>
+  <Step title="Name the deal">Enter the deal name that should appear in Deals.</Step>
+  <Step title="Qualify and continue">Lynka saves the checklist first, verifies readiness, then performs the qualification transition. When it succeeds, the confirmation lets you open the new deal or stay on the lead.</Step>
+</Steps>
+
+## What Lynka creates
+
+The qualification lifecycle creates the commercial deal related to the lead. The product model also connects the qualified sales relationship to the account or company context used by the rest of Sales.
+
+After qualification, manage commercial value, stage, expected close date, next activity, and final outcome on the **deal**, not on the lead.
+
+<Warning>
+Do not mark a lead as "won" to represent a sale. Leads do not own the won or lost opportunity outcome. The deal is the record that closes as won, lost, or disqualified.
+</Warning>
+
+## Why the wizard can refuse qualification
+
+The primary reasons are straightforward:
+
+**A checklist item is not confirmed.** The wizard shows the missing readiness item.
+
+**Next action is empty.** Qualification requires a concrete next step.
+
+**Deal name is empty.** Lynka needs a name for the deal record it will create.
+
+**The checklist could not be loaded or saved.** The wizard fails closed rather than pretending qualification succeeded.
+
+**The backend lifecycle check rejects the transition.** The database contract is authoritative. A frontend button alone cannot bypass the qualification rules.
+
+## Qualification review
+
+Sales includes a qualification review queue for records whose qualification data needs attention. That is separate from the normal qualification wizard. Use it when the workspace surfaces a record for review rather than trying to force the lifecycle forward.
+
+## What happens to the lead afterward?
+
+The lead remains part of the relationship history and shows the qualified lifecycle state. The newly created deal becomes the place where you track the opportunity through pipeline stages and eventually close it.
+
+This separation is important for reporting. Lead qualification metrics measure movement from prospect to qualified lead. Pipeline, weighted pipeline, win rate, won value, and sales cycle metrics belong to deals.
+
+## Mobile behavior
+
+On mobile, the qualification action is still confirmation based and uses the same backend contract. The layout is adapted for the smaller screen, but the readiness checks and next action requirement do not change.
+
+## Related articles
+
+- [Create a lead](/product/sales/leads/create-lead)
+- [Manage deals through the pipeline](/product/sales/deals/manage-pipeline)
+- [Close a deal as won, lost, or disqualified](/product/sales/deals/close-deal)
+- [Understand Sales metrics](/reference/calculations/sales-metrics)

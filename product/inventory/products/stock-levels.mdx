@@ -1,0 +1,50 @@
+---
+title: "Understand stock levels and stock movements"
+sidebarTitle: "Stock levels and movements"
+description: "Learn how Lynka reconciles current stock with movement history, opening quantity, goods receipts, fulfillment, and stock health reporting."
+keywords: ["stock level", "stock movement", "inventory quantity", "opening stock", "inventory ledger", "out of stock", "reorder level"]
+---
+
+A current stock number is useful only if Lynka can explain how the quantity changed. The stock movement ledger provides that explanation.
+
+## Current stock versus movement history
+
+The product record exposes the current stock level. The movement history records quantity-changing events such as opening stock, receipts, and other inventory movements supported by the backend.
+
+The integrity rule is simple: the movement ledger and the current product quantity should reconcile.
+
+Lynka includes an on-demand calculation integrity check that can detect stock ledger mismatches. This check is not a recurring cron job, so it does not create constant background workload.
+
+## Opening quantity
+
+When opening inventory is created through the supported product flow, Lynka writes the quantity opening movement as well as the accounting opening balance logic that applies to the product. This prevents the quantity ledger from starting with an unexplained gap.
+
+## Goods receipts
+
+A purchase order is only the intention to buy. Stock is received through a goods receipt. Accepted, damaged, and on-hold quantities are captured separately in the receipt line editor.
+
+Posting rules then determine what quantity is actually applied to inventory and whether the receipt needs review.
+
+## Fulfillment and outgoing stock
+
+For stocked products sold on invoices, inventory cost recognition should follow fulfillment rather than assuming the invoice line alone proves the stock moved. This is why product margin can be incomplete when an invoiced stocked quantity has not been fully fulfilled.
+
+## Stock risk
+
+Inventory surfaces stock risk separately from raw item count. The current inventory calculations can identify out-of-stock products, items below reorder level, goods in transit, incoming purchase orders, slow-moving stock, and other attention conditions.
+
+Built in automations include:
+
+- Product out of stock
+- Product below reorder level
+- Stock item missing supplier
+- Purchase order overdue
+- Partial purchase order stalled
+
+## Why a product can show zero stock
+
+Common reasons include a genuinely depleted item, missing opening quantity, unposted or incomplete receiving, or data that was imported without a movement history. Use the product movement history and related goods receipts before manually editing a number to make the screen look correct.
+
+## Related reports
+
+The active Inventory report catalog includes Available Stock, Inventory Valuation Summary, Stock Movements, Reorder List, Goods in Transit, Slow Moving Stock, Open Purchase Orders, and Margin by Product.

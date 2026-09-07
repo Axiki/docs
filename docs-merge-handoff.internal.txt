@@ -1,0 +1,28 @@
+# Lynka Docs merge handoff
+
+This handoff records the docs-only changes from the Lynka public website and documentation completion pass. The scope is `E:\Website\docs\docs`; the marketing website is separate at `E:\Website\lynkanewest`. Do not merge marketing website, CRM, Supabase, authentication, backend, or environment files into this project.
+
+## Docs changes
+
+- `docs.json` preserves the existing Mintlify navigation, content structure, Lynka colors, and logo paths.
+- The dark theme token is `#1D5FB8` for stronger contrast; primary remains `#1D71DB` and light remains `#6FA3F2`.
+- The existing Lynka PostHog project is configured in `docs.json`: project ID `216415`, public key `phc_ycfX3Eghzduigz3vAVrKdtKGV2fb4Ew7DmfNBNxS9Pc7`, host `https://us.i.posthog.com`, and `sessionRecording: false`. This is a client/public key, not a private server credential. Keep the same project and do not create a second analytics project.
+- No new public analytics article is present in the current docs tree. Keep analytics/search guidance internal unless the docs owner explicitly approves a published page.
+- Preserve `favicon.svg`, `logo/light.svg`, and `logo/dark.svg` and the existing logo paths in `docs.json`.
+
+## Validation and merge rules
+
+The handoff reports that `npx mintlify validate` and `npx mintlify a11y` passed. The complete reconciliation is in `MINTLIFY_BROKEN_LINK_RECONCILIATION.md`: 254 reported occurrences map to 76 unique file-backed routes, with zero genuinely broken or ambiguous targets.
+
+Preserve navigation groups, page order, theme settings, logo paths, and merger-specific configuration. Do not add fake analytics IDs, reviews, ratings, prices, customer counts, support promises, or product claims. Do not modify CRM, Supabase, authentication, billing, reporting, permissions, or backend files.
+
+## Checks still required
+
+Run `npx mintlify validate`, `npx mintlify a11y`, and `npx mintlify broken-links` from the final docs root. Manually verify the homepage, major navigation groups, sidebar/mobile navigation, search, previous/next links, breadcrumbs, keyboard focus, responsive tables/code blocks, metadata, sitemap, robots, 404 behavior, and browser-console errors.
+
+## Owner decisions
+
+- No PostHog owner decision remains; verify the configured public project in the hosted docs deployment.
+- Whether `marketing-analytics-and-search.md` is public and where it belongs in navigation.
+- Final hosted docs domain and canonical, sitemap, robots, and 404 verification.
+- Confirmation that existing legal and product terminology remains authoritative.

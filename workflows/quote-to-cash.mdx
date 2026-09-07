@@ -1,0 +1,129 @@
+---
+title: "Quote to cash workflow in Lynka"
+description: "Follow the complete Lynka quote to cash process from preparing a quote through invoicing, posting, payment, fulfillment, and receivables reporting."
+keywords: ["quote to cash", "create quote", "accepted quote", "create invoice", "post invoice", "record invoice payment", "accounts receivable", "invoice fulfillment", "Lynka agreements"]
+---
+
+Quote to cash is the path from a commercial offer to an amount that has been billed and settled. In Lynka, each step has its own record and its own meaning. A quote is not an invoice, an invoice is not a payment, and a won deal is not replaced by either one.
+
+That separation keeps Sales, Agreements and Accounting aligned without making one record do everything.
+
+## 1. Start from the correct customer context
+
+Open **Agreements > Quotes** and create a quote for the customer or company you are working with. Link the relevant lead or deal when that relationship exists so the commercial history stays connected.
+
+Before adding prices, confirm that the customer and currency are correct. A quote can contain products or custom lines, quantities, prices, discounts, taxes, notes, terms and other document details exposed by the builder.
+
+On desktop, the quote builder uses the full document workspace. On mobile, the same workflow is presented in a compact full screen or overlay experience.
+
+## 2. Build and save the quote
+
+Add the items and commercial terms that the customer should see. Lynka recalculates quote totals on the server after line and tax information is saved rather than relying only on a total supplied by the browser.
+
+This is especially important when a quote contains discounts or inclusive tax. The server calculation keeps line amounts, discounts, tax lines, fees and the final total consistent.
+
+If the quote is tax exempt, the tax treatment should reflect that state instead of leaving stale tax lines behind.
+
+<Info>
+A quote's valid until date controls whether the offer has expired. Expired is not a stored quote status in the current model. A sent or viewed quote can become expired because its valid until date has passed.
+</Info>
+
+## 3. Send the quote and follow the decision
+
+Use the available preview, export and email actions to deliver the quote. Then track the customer's decision and the valid until date.
+
+Lynka can surface commercial follow up through built in automation rules such as:
+
+- Quote waiting for response
+- Quote expires soon
+- Quote expired without decision
+- Accepted quote missing invoice
+
+Those rules are useful because a sent quote can look finished while still requiring a follow up action.
+
+## 4. Create the invoice when work reaches billing
+
+Once the sale reaches the invoicing stage, create the invoice from the appropriate customer and commercial context. Add or verify the invoice lines, taxes, currency, due date and related records.
+
+Creating the invoice does not necessarily mean it has affected Accounting yet. Drafting and posting are separate capabilities.
+
+If your workspace allows invoice creation but does not allow posting, you can still prepare the commercial document while the accounting action remains locked.
+
+## 5. Post the invoice when it is ready for Accounting
+
+Posting is the step that makes the invoice part of the accounting workflow. The user needs the relevant invoice permission, and the workspace must have invoice posting enabled.
+
+A correctly posted invoice can create the accounting links required for receivables, revenue, tax and other financial treatment based on the document.
+
+Do not post an invoice merely to make it look complete. Review the customer, currency, lines, tax and totals first. Once financial records exist, corrections should use the supported accounting workflow rather than silently rewriting history.
+
+## 6. Fulfill stocked items when inventory is involved
+
+If the invoice contains stocked products, fulfillment is a separate operational step from billing.
+
+Fulfillment records how much stocked inventory was actually delivered or consumed. Lynka's product margin reporting uses recognized fulfillment cost for stocked products rather than pretending that every invoiced quantity has already left inventory.
+
+That means a stocked invoice can exist while margin remains incomplete until the relevant fulfillment has been posted.
+
+## 7. Record customer payment
+
+Open the invoice and use the payment workflow available to your role and plan. A payment should be associated with the correct invoice and currency context.
+
+For settlement and receivables, Lynka counts **cleared** payment activity. A pending or uncleared payment should not quietly reduce Accounts Receivable or mark an invoice paid.
+
+This distinction protects cash reporting and prevents a promise to pay from being treated as cash already received.
+
+If a refund or reversal is needed, use the supported refund or credit workflow rather than entering a second positive payment to cancel the first.
+
+## 8. Review receivables and cash
+
+After posting and settlement, use Agreements and Accounting reports to understand what remains open.
+
+Useful views include:
+
+- A/R Aging Summary
+- Invoices Due Soon
+- Overdue Invoices
+- General Ledger
+- Trial Balance
+- Cash Flow Statement
+
+A fully settled invoice should no longer contribute an outstanding receivable. An open or partially paid invoice continues to contribute its remaining balance.
+
+## How the records differ
+
+| Record | What it represents |
+| --- | --- |
+| Deal | The commercial opportunity and final sales outcome |
+| Quote | The offer made to the customer |
+| Invoice | The amount billed |
+| Fulfillment | Stocked goods actually fulfilled |
+| Payment | Customer settlement activity |
+| Journal entry | The accounting effect of the financial transaction |
+
+## Common problems
+
+### The quote says expired but its status did not change to Expired
+
+That is expected. Expiry is calculated from the valid until date, not stored as a separate quote status.
+
+### The invoice exists but Accounting did not change
+
+Check whether the invoice is posted. Also verify the user's invoice posting permission and the workspace entitlement.
+
+### A customer says they paid but the invoice is still outstanding
+
+Check whether the payment is cleared and applied to the correct invoice. Pending activity should not reduce the receivable.
+
+### Product margin is incomplete
+
+For stocked products, check fulfillment. Lynka does not invent recognized cost for invoiced stock that has not been fulfilled.
+
+## Related guides
+
+<CardGroup cols={2}>
+  <Card title="Create a quote" href="/product/agreements/quotes/create-quote">Build a quote with the right customer, lines, tax and terms.</Card>
+  <Card title="Post an invoice" href="/product/agreements/invoices/post-invoice">Understand when an invoice starts affecting Accounting.</Card>
+  <Card title="Record invoice payment" href="/product/agreements/invoices/record-payment">Apply settlement without corrupting receivables.</Card>
+  <Card title="Invoice fulfillment" href="/product/agreements/invoices/fulfillment">Connect stocked invoices to recognized inventory cost.</Card>
+</CardGroup>

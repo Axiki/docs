@@ -1,0 +1,38 @@
+---
+title: "Supplier bills and payables in Lynka Accounting"
+description: "Learn how Lynka tracks supplier bills, approvals, payments, Accounts Payable, due dates, and A/P aging."
+keywords: ["accounts payable", "supplier bill", "vendor bill", "pay supplier", "A/P aging", "bill approval", "Lynka accounting"]
+---
+
+Payables answer a simple question: **what does the business still owe suppliers?** Lynka keeps supplier bills, approval or posting actions and payments connected so an unpaid bill remains visible until it is actually settled.
+
+Open **Accounting > Payables** to review supplier bills and **Accounting > Payments** for related payment activity.
+
+## Supplier bills
+
+A supplier bill records an amount owed to a vendor. Depending on the workflow, users can create, view, post, void or delete bills with permissions such as `bill.create`, `bill.view`, `bill.post`, `bill.void` and `bill.delete`.
+
+Use the correct supplier, dates, currency, amounts and accounting context. A bill should reflect the supplier obligation, not merely a note that a purchase happened.
+
+## Approval and posting
+
+Where the workflow exposes approval, review the bill before it affects the books. Posting moves the bill into the accounting record and contributes to Accounts Payable.
+
+If a posted bill needs correction, use the supported void, reversal or credit workflow rather than silently changing historical accounting.
+
+## Paying a bill
+
+Record payment when the business actually settles the supplier obligation. Partial payment can leave a remaining payable, while full settlement should remove the outstanding amount.
+
+Use **A/P Aging** to see supplier balances grouped by age and identify bills that need attention.
+
+## Procurement and payables are related but different
+
+A purchase order records what you ordered. A goods receipt records what arrived. A supplier bill records what the supplier says you owe. Those records can refer to the same business purchase without being interchangeable.
+
+<CardGroup cols={2}>
+  <Card title="Create a supplier bill" href="/product/accounting/payables/create-supplier-bill">Record a supplier obligation correctly.</Card>
+  <Card title="Approve and pay a bill" href="/product/accounting/payables/approve-pay-bill">Move the payable through review and settlement.</Card>
+  <Card title="Procure to stock" href="/workflows/procure-to-stock">Understand purchasing and receiving before the payable.</Card>
+  <Card title="Financial reports" href="/product/accounting/financial-reports">Use A/P Aging and ledger reports to verify balances.</Card>
+</CardGroup>

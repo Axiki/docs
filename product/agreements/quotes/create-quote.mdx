@@ -1,0 +1,44 @@
+---
+title: "Create a quote"
+sidebarTitle: "Create a quote"
+description: "Build a customer quote with products, quantities, discounts, tax, currency, terms, notes, and server-calculated totals before sending it."
+keywords: ["create quote", "sales quote", "quotation", "quote builder", "quote tax", "quote discount", "CRM quote"]
+---
+
+A quote is the commercial offer you send before invoicing. It records what you are offering, at what price, under which tax and commercial terms, and for which customer or deal.
+
+## Start from the right sales context
+
+A quote can be linked to customer, company, lead, or deal context supported by the builder. If a lead is not yet qualified and the quote workflow requires an opportunity, Lynka can prompt you through qualification rather than inventing a deal relationship behind the scenes.
+
+## Build the quote
+
+<Steps>
+  <Step title="Open Quotes">Go to **Agreements**, then **Quotes**.</Step>
+  <Step title="Create the quote">Start a new quote and select the customer or sales relationship.</Step>
+  <Step title="Add products and lines">Add the products or services, quantities, prices, and line details that make up the offer.</Step>
+  <Step title="Review discounts and adjustments">Apply the supported line or header discounts and any fees or adjustments. Do not calculate the final total manually outside Lynka and paste only the result.</Step>
+  <Step title="Add tax">Apply the appropriate tax lines and inclusive or exclusive tax behavior configured for the quote. Tax-exempt quotes should not carry active tax lines.</Step>
+  <Step title="Confirm currency and terms">Review the quote currency, validity period, terms, notes, and other commercial details.</Step>
+  <Step title="Save">Save the quote. The server recalculates the canonical header totals from the saved line and tax data rather than trusting a browser-supplied total alone.</Step>
+</Steps>
+
+## How totals are protected
+
+The server calculation follows the commercial structure of the document: line amounts, discounts, inclusive-tax handling, tax lines, fees or surcharges, then final total.
+
+For taxable quotes, the backend expects the tax snapshot data needed to calculate the total. It should reject an ambiguous taxable payload rather than guess a tax amount.
+
+## Permissions
+
+Quote creation requires `quote.create`. Editing, voiding, viewing all records, and overriding locks are separate controls.
+
+## What happens next
+
+Preview the document, send it through the available email path, and follow the quote through response or expiry. Acceptance can lead into invoicing, while the automation catalog can surface quotes waiting for response, expiring soon, or expired without a decision.
+
+## Related articles
+
+- [Send and follow up on a quote](/product/agreements/quotes/send-follow-up)
+- [Quote status and expiry](/product/agreements/quotes/status-expiry)
+- [Quote to cash workflow](/workflows/quote-to-cash)

@@ -1,0 +1,60 @@
+---
+title: "Manage deals through the sales pipeline"
+sidebarTitle: "Manage the pipeline"
+description: "Move open deals through stages, use table or Kanban views, keep next actions current, and understand what makes a deal show up as needing attention."
+keywords: ["sales pipeline", "deal stages", "move deal stage", "deal kanban", "pipeline management", "deals needing attention"]
+---
+
+The pipeline is the working view of open commercial opportunities. Its job is not to make every deal look healthy. It should make stale, overdue, ownerless, and actionless work easy to spot.
+
+## Open deals and stages
+
+The built in stage set includes `new`, `qualified`, and `proposition` before final states such as won, lost, and disqualified. Workspaces can expose configured labels and colors.
+
+A deal can move through open stages as the commercial conversation progresses. Final outcomes are different because they close the opportunity lifecycle and can require close reasons, dates, and amounts.
+
+## Table or Kanban
+
+Use **table view** when you need dense comparison, sorting, filtering, pagination, or quick scanning across many fields.
+
+Use **Kanban** when stage distribution matters. Each column represents a stage and can use independent loading or pagination. Moving a card changes the opportunity stage only when the transition is allowed.
+
+Closed deals can be movement locked. A user with `deal.reopen_closed` can have additional actions that ordinary editors do not.
+
+## Keep the next action current
+
+A healthy deal should usually answer:
+
+1. Who owns it?
+2. What is the next customer-facing action?
+3. When should that action happen?
+4. What is the current expected commercial value?
+5. When do we expect a decision?
+
+Lynka's automation catalog checks these conditions directly. Sales rules include **Deal follow-up due**, **Deal has no next step**, **Deal stuck in stage**, **Deal close date approaching**, and **Deal close date passed**.
+
+## Deals Needing Attention
+
+The Sales report catalog includes **Deals Needing Attention**. The attention logic can prioritize reasons such as overdue follow-up, past close date, never contacted, no next activity, or stale progress.
+
+That report is not the same thing as "bad deals." It is an operational queue for records that need somebody to do something.
+
+## Value and probability
+
+Pipeline value uses open deal value. Weighted pipeline applies the deal probability to the transaction amount before the reporting conversion to base currency. This avoids inconsistent rounding between dashboard and management views.
+
+For the exact metric definitions, see [Sales calculations and metrics](/reference/calculations/sales-metrics).
+
+## Desktop and mobile
+
+Desktop supports dense table and Kanban workflows inside the Sales shell, with detail content opening alongside the list where the drawer pattern is used. Mobile turns rows into cards and uses compact action surfaces and full-screen detail flows. The lifecycle and permissions are the same.
+
+## When a stage change is blocked
+
+Common causes include a final closed outcome, missing permission to edit or reopen, a required closing flow, or a backend lifecycle rule. If the new stage is won, lost, or disqualified, use the closing workflow rather than trying to treat it like a normal open-stage move.
+
+## Related articles
+
+- [Close a deal](/product/sales/deals/close-deal)
+- [Reopen a closed deal](/product/sales/deals/reopen-deal)
+- [Deal value, pipeline and weighted pipeline](/product/sales/deals/deal-value)

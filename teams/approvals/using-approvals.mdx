@@ -1,0 +1,39 @@
+---
+title: "Use approvals in Lynka"
+sidebarTitle: "Using approvals"
+description: "Understand approval requests, reviewer access, plan requirements, and why approval should gate a sensitive action instead of replacing the source workflow."
+keywords: ["approvals", "approval request", "review request", "manager approval", "Teams approval", "approval permission"]
+---
+
+Approvals add a review step before or around a sensitive business action. They are useful when one person prepares work and another person must authorize it.
+
+The current frontend exposes approvals in Settings and the Owner workspace, and team collaboration or approval features depend on the relevant entitlement.
+
+## What approvals are for
+
+An approval request should point to a real operational item that needs review. Examples can include financial, access, or operational actions supported by the configured approval flow.
+
+Approvals do not replace the source record. Approving a request does not mean you should duplicate the transaction in a second place. The source invoice, bill, access change, or other item remains the business record.
+
+## Reviewer access
+
+Owners and admins can receive broader review capability depending on permissions. A reviewer still needs access to enough source context to make the decision safely.
+
+## Approval state and action state
+
+Keep these concepts separate:
+
+- the **approval request** can be pending, approved, rejected, or otherwise resolved by the approval workflow
+- the **source record** has its own lifecycle and can still require posting, sending, payment, or another action after approval
+
+This separation prevents an "Approved" badge from being mistaken for a posted financial transaction.
+
+## Plan capability
+
+Team collaboration and approvals are part of the collaboration capability rather than the single-user Pro model. For current commercial packaging, use the [pricing page](https://lynkacrm.com/pricing) instead of relying on a copied price in documentation.
+
+## Related articles
+
+- [Owner workspace](/workspace/owner-workspace)
+- [Roles and permissions](/teams/roles-permissions)
+- [Plans and capabilities](/workspace/plans)

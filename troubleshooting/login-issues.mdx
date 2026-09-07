@@ -1,0 +1,40 @@
+---
+title: "Troubleshoot Lynka login and workspace access"
+description: "Fix Lynka login and workspace access problems caused by membership, profile status, onboarding, workspace locks, or Google integration confusion."
+keywords: ["Lynka login problem", "workspace locked", "cannot access workspace", "workspace membership", "onboarding locked", "Google sign in"]
+---
+
+Being able to authenticate does not guarantee that a user can enter every Lynka workspace. Authentication, workspace membership, profile state and entitlement checks are separate parts of access.
+
+## You signed in but the workspace does not open
+
+Confirm that the user has an active membership in the intended workspace and an active profile there.
+
+A revoked membership or inactive profile can block the authenticated app even though the email and password or identity provider login succeeded.
+
+## The workspace is locked
+
+Lynka can replace the normal app with an access lock when the workspace is inactive, expired, paused, or otherwise not permitted to continue.
+
+Owner or billing attention may be required before normal navigation returns.
+
+## Onboarding keeps appearing
+
+Onboarding completion is stored with the workspace. A local or cached completion value should not override the current workspace state if onboarding is still required.
+
+Complete the required onboarding flow or investigate the backend state rather than forcing the frontend past the gate.
+
+## You are in the wrong workspace
+
+Permissions and data are workspace-specific. The same user account can belong to more than one workspace without merging those workspaces together.
+
+Confirm the selected workspace before concluding that records disappeared.
+
+## Google login and Gmail connection are different
+
+Signing in to Lynka with Google does not automatically connect Gmail for CRM email. Gmail integration has its own OAuth and provider configuration flow.
+
+<CardGroup cols={2}>
+  <Card title="Plans and capabilities" href="/workspace/plans">Understand workspace access and feature locks.</Card>
+  <Card title="Connect Gmail" href="/workspace/gmail-integration">Troubleshoot mailbox connection separately from login.</Card>
+</CardGroup>

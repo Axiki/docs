@@ -1,0 +1,25 @@
+---
+title: "Products and stock"
+description: "Create products with pricing, cost and stock settings that other workflows can reuse."
+keywords: ["products", "stock", "create", "pricing", "cost", "settings", "that", "other", "workflows", "can"]
+---
+
+Products are reused by quotes, invoices, purchasing and inventory reporting. Keeping the product record accurate reduces repeated manual line entry and gives Inventory a stable place for cost and stock rules.
+
+Product create and edit flows can include identity, category, pricing, cost, stock related fields, images and product health or status fields where the current form exposes them.
+
+## Stocked products and service style items
+
+Not every product needs quantity tracking. Stocked products participate in stock movement, reorder and fulfillment logic. Service or nonstock items can still appear on quotes and invoices without pretending a physical quantity exists in the warehouse.
+
+## Cost and margin
+
+Product cost history and fulfillment snapshots protect margin reporting from using only today's cost. For stocked products, recognized margin depends on posted fulfillment cost. If invoiced stock has not been fully fulfilled, the report can mark the margin incomplete instead of inventing cost.
+
+## Reorder settings
+
+A stocked product can participate in reorder level checks. The built in automation looks for active stocked products below their configured minimum when there is no open replenishment covering the problem.
+
+## Supplier relationship
+
+Products can have supplier relationships. If a stocked item has no preferred supplier, automation can flag it because a reorder warning is less useful when nobody knows where to buy the item.

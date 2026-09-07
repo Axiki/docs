@@ -1,0 +1,52 @@
+---
+title: "Close an accounting period"
+sidebarTitle: "Close a period"
+description: "Lock a completed accounting period after review so new postings cannot silently change financial history that has already been reported."
+keywords: ["close accounting period", "period close", "month end close", "close books", "accounting lock", "close center"]
+---
+
+Closing an accounting period is a control step. It tells Lynka that the period has been reviewed and should no longer accept ordinary changes that would rewrite previously reported numbers.
+
+The Accounting navigation exposes this work in **Close Center**.
+
+## Before closing
+
+Review the period rather than using Close as a housekeeping button. At minimum, check the areas relevant to your business:
+
+- unposted or unbalanced journals
+- open Accounts Receivable and Accounts Payable that need attention
+- cash and bank reconciliation status
+- inventory posting review items
+- tax balances
+- unusual account balances
+- Trial Balance
+- Profit & Loss
+- Balance Sheet
+
+The exact close checklist depends on the workspace and accounting process.
+
+## Close the period
+
+<Steps>
+  <Step title="Open Close Center">Go to **Accounting > Close Center**.</Step>
+  <Step title="Select the period">Choose the accounting period you have finished reviewing.</Step>
+  <Step title="Resolve blocking issues">If Lynka surfaces health or posting issues, investigate them before locking the period.</Step>
+  <Step title="Close">Use the close action. Closing requires `period.close`.</Step>
+  <Step title="Confirm the result">Verify that the period now shows the closed state and that ordinary backdated posting is blocked as expected.</Step>
+</Steps>
+
+## Why period close matters
+
+Without a close control, a backdated journal entered next month can silently change last month's P&L, Balance Sheet, tax numbers, or cash-flow history.
+
+A close creates a clear boundary between ordinary processing and an exceptional correction that needs authorization.
+
+## Audit history
+
+Lynka stores period close audit information so closing and reopening actions can be reviewed later. Use meaningful correction workflows instead of repeatedly reopening and closing periods just to bypass validation.
+
+## Related articles
+
+- [Reopen a closed period](/product/accounting/periods/reopen-period)
+- [Post or reverse a journal](/product/accounting/journals/post-reverse)
+- [Financial reports](/product/accounting/financial-reports)

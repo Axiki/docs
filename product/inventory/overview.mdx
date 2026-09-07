@@ -1,0 +1,71 @@
+---
+title: "Inventory and purchasing in Lynka"
+sidebarTitle: "Inventory overview"
+description: "Learn how products, suppliers, purchase orders, goods receipts, stock movements, replenishment, valuation, fulfillment, and margin work together."
+keywords: ["inventory management", "purchase orders", "goods receipts", "stock movements", "inventory valuation", "suppliers", "reorder stock"]
+---
+
+Inventory tracks what you sell, what you have on hand, what you are buying, what actually arrived, and what inventory cost has been recognized.
+
+The area is split into **Products**, **Suppliers**, **Purchase Orders**, and **Goods Receipts** because ordering stock and receiving stock are separate events.
+
+## Products
+
+Products carry identity, category, selling price, cost, stock behavior, images, and supplier relationships where configured. Stocked products participate in quantity movements and inventory valuation. Service or non-stock products can use different cost semantics because there is no physical inventory fulfillment to record.
+
+Start with [Create a product](/product/inventory/products/create-product) and [Stock levels and movements](/product/inventory/products/stock-levels).
+
+## Suppliers
+
+Supplier records store procurement identity and reusable defaults. Product-supplier relationships can hold vendor SKU, vendor price, currency, preferred status, and active state.
+
+A preferred supplier helps the business act quickly when a product reaches its reorder threshold.
+
+## Purchase Orders
+
+A purchase order is the intent to buy. The builder supports supplier, PO number, order and expected dates, currency, exchange-rate context, terms, shipping and billing addresses, tax, freight, notes, and product lines with quantity and unit cost.
+
+Creating a PO does **not** increase stock.
+
+For a full walkthrough, see [Create a purchase order](/product/inventory/purchase-orders/create-purchase-order).
+
+## Goods Receipts
+
+A goods receipt records what physically arrived. It can separate accepted, damaged, and on-hold quantities and can represent partial delivery against a larger purchase order.
+
+Posting the receipt locks it for ordinary editing and applies the supported inventory consequences. If only part of the order arrived, the purchase order can remain partially received with the remaining quantity outstanding.
+
+<CardGroup cols={2}>
+  <Card title="Receive a purchase order" href="/product/inventory/purchase-orders/receive-purchase-order">Record a partial or full supplier delivery correctly.</Card>
+  <Card title="Post a goods receipt" href="/product/inventory/goods-receipts/post-goods-receipt">Understand the posting lock and stock consequences.</Card>
+</CardGroup>
+
+## Stock movements and integrity
+
+Current product stock should reconcile with the quantity movement ledger. Opening stock, receiving, fulfillment, and other supported movements should explain how the quantity changed.
+
+Do not fix an unexplained stock balance by editing the product number until you understand the source movement that is missing or wrong.
+
+## Replenishment and exceptions
+
+Inventory automation can surface out-of-stock products, items below reorder level, overdue purchase orders, stalled partial orders, missing preferred suppliers, damaged deliveries, on-hold stock, and receipt posting issues.
+
+The Inventory overview also exposes attention metrics such as stock risk, incoming stock, overdue POs, outstanding PO value, active suppliers, and receipt posting review.
+
+## Inventory reporting
+
+The active catalog includes Available Stock, Inventory Valuation Summary, Stock Movements, Reorder List, Goods in Transit, Slow Moving Stock, Open Purchase Orders, and Margin by Product.
+
+Open PO value uses the **remaining quantity**, not the original order total after partial receipt. Product margin for stocked items uses recognized fulfillment cost rather than assuming an invoice alone proves stock was delivered.
+
+## Permissions
+
+Inventory access, product management, supplier actions, purchase orders, and goods receipts can be controlled separately. A finance user can have Inventory read access while operations users have broader procurement actions.
+
+## Next steps
+
+- [Create and manage products](/product/inventory/products)
+- [Create a supplier](/product/inventory/suppliers/create-supplier)
+- [Purchase order statuses](/product/inventory/purchase-orders/statuses)
+- [Damaged and on-hold stock](/product/inventory/goods-receipts/damaged-on-hold)
+- [Inventory calculations](/reference/calculations/inventory-metrics)

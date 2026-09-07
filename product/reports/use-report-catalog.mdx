@@ -1,0 +1,54 @@
+---
+title: "Use the Lynka report catalog"
+sidebarTitle: "Use the report catalog"
+description: "Find operational and financial reports by business question, apply scope and period filters, and understand why two reports can show different totals."
+keywords: ["report catalog", "CRM reports", "sales reports", "inventory reports", "financial reports", "support reports", "report scope"]
+---
+
+The report catalog is a library of canonical reports with defined calculations. Use it when you need a business answer that should be consistent across users, periods, and dashboards rather than rebuilding the formula manually each time.
+
+## Active report areas
+
+The current production catalog includes active reports across:
+
+- Sales and campaign performance
+- Agreements and receivables
+- Inventory and procurement
+- Finance and Accounting
+- Support and SLA
+
+The current active set contains 41 implemented reports.
+
+## Start with the question
+
+Choose the report whose definition matches the question you are asking.
+
+If you want "What is still owed by customers?" use A/R Aging or overdue invoice reporting.
+
+If you want "What revenue was posted?" use the P&L or ledger-based finance report.
+
+If you want "What did we bill?" use invoice or Agreements reporting.
+
+If you want "What did we win?" use deal outcome reporting.
+
+These values can differ correctly because they represent different business events.
+
+## Scope and period
+
+Before comparing two numbers, confirm both views use the same workspace, data scope, reporting period, timezone, currency basis, and exclusions.
+
+A manager looking at team scope can legitimately see a different pipeline total from an owner looking at workspace scope.
+
+## Canonical calculations
+
+The report catalog stores report semantics and calculation versions. That allows the product to audit a report definition rather than letting every screen invent a slightly different formula.
+
+## Export
+
+Report viewing and export are separate permissions. A user can be allowed to read reports without `report.export`.
+
+## Related articles
+
+- [Sales metrics](/reference/calculations/sales-metrics)
+- [Inventory metrics](/reference/calculations/inventory-metrics)
+- [Accounting metrics and reconciliation](/reference/calculations/accounting-metrics)

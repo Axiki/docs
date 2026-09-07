@@ -1,0 +1,56 @@
+---
+title: "Find and filter leads"
+sidebarTitle: "Find and filter leads"
+description: "Use lead search, status, owner, priority, language, scope, table, and Kanban controls to find the prospects that need attention."
+keywords: ["filter leads", "search leads", "lead list", "lead kanban", "lead owner filter", "sales filters", "CRM search"]
+---
+
+The Leads view is designed for working a queue, not just storing contacts. Use search, filters, sort, scope, and table or Kanban presentation to reduce the list to the records you can act on now.
+
+## Search and filters
+
+The lead filter model includes status, owner, priority, text query, and language. The surrounding Sales workspace can also expose scope controls such as Mine, team, or workspace where your permissions allow them.
+
+A text search is useful when you know part of a lead, company, email, or other indexed detail. Use structured filters when you are trying to answer an operational question such as "Which contacted leads owned by me still need action?"
+
+## Table and Kanban
+
+**Table view** is best when you need dense comparison, sorting, pagination, or many rows at once.
+
+**Kanban view** groups leads by lifecycle status. It is useful for seeing the balance between new, contacted, qualified, lost, and disqualified work, or the configured equivalents in your workspace.
+
+Lynka uses server-side search, filters, sorting, and pagination for entity lists. Kanban columns can load their own pages where supported, so a column is not necessarily the entire data set at once.
+
+## Scope before filters
+
+If a lead seems to be missing, check the data scope before assuming the search is broken. A filter only works on records that your current scope and permissions allow you to access.
+
+Typical causes of a smaller list include:
+
+- **Mine** scope showing only records owned by you
+- a team scope limiting the list to records available through that team
+- missing `lead.view_all`
+- a user-level area or permission deny
+- Sales not being enabled for the user
+
+## Background loading behavior
+
+When Lynka already has usable rows, a background refresh should preserve them while the new request runs. Initial skeletons are intended for the first load before usable data exists. Fetch-more loading belongs at the end of the table or Kanban column rather than replacing the whole page.
+
+That distinction matters when you are troubleshooting a list that "flashes empty" versus a list that is legitimately returning no records.
+
+## Mobile
+
+On mobile, lead table rows become cards and desktop column controls are replaced by mobile filter and sort controls. The same server-side query rules apply, so switching devices does not change which records you are allowed to see.
+
+## Useful queue ideas
+
+Try these patterns when your workspace data supports them:
+
+- status = New, owner = Me
+- status = Contacted, sorted by oldest activity
+- unassigned leads that need an owner
+- high scoring leads that are not yet qualified
+- qualified leads that need review
+
+For pipeline work after qualification, switch to [Deals](/product/sales/deals).

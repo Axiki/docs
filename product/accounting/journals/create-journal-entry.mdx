@@ -1,0 +1,61 @@
+---
+title: "Create a journal entry"
+sidebarTitle: "Create a journal"
+description: "Create a balanced accounting journal with the right date, accounts, debits, credits, reference, and supporting context before posting."
+keywords: ["create journal entry", "manual journal", "debit credit", "general ledger entry", "accounting journal", "balanced journal"]
+---
+
+Use a manual journal entry when you need to record an accounting event that is not better represented by a source workflow such as an invoice, payment, supplier bill, cash entry, or goods receipt.
+
+A journal must explain the event and balance. It should not be used as a shortcut for fixing a source document while leaving the operational record wrong.
+
+## Before you start
+
+Identify the business event, the accounting date, the accounts affected, and the debit and credit amount for each line. If the entry is correcting another posting, keep a clear reference to the original record or journal.
+
+Creating journals requires the relevant journal create permission. Posting is a separate permission.
+
+## Debit and credit rule
+
+For a valid journal:
+
+`Total debits = Total credits`
+
+Lynka's integrity checks treat an unbalanced posted journal as a structural accounting error. The journal header total must also agree with its lines.
+
+## Create the journal
+
+<Steps>
+  <Step title="Open Journal">Go to **Accounting**, then **Journal**.</Step>
+  <Step title="Create the entry">Start a new journal entry. Use the accounting date that belongs to the transaction rather than the date you happen to be entering it.</Step>
+  <Step title="Add a useful reference">Describe what the entry represents. If it corrects another document, include the source reference that lets a reviewer trace it.</Step>
+  <Step title="Add journal lines">Choose the appropriate accounts and enter the debit or credit amount for each line.</Step>
+  <Step title="Check the balance">Confirm total debits equal total credits and review the account classification.</Step>
+  <Step title="Save before posting">Save the draft if the workflow allows review before posting. Posting should be the deliberate point where the entry becomes part of the ledger.</Step>
+</Steps>
+
+## Example: simple owner-funded cash opening
+
+If an owner contributes cash to the business, a simple journal could debit Cash and credit an Equity account for the same amount. The exact account names depend on your chart of accounts.
+
+The important part is not memorizing that example. It is keeping the entry balanced and using accounts that represent the actual event.
+
+## Do not use journals to hide workflow problems
+
+If an invoice is wrong, correct the invoice or use the supported credit or void flow.
+
+If a supplier bill is wrong, correct the bill through the payables workflow.
+
+If a goods receipt was posted incorrectly, use the supported adjustment or review path.
+
+A manual journal can correct the accounting consequence, but it does not automatically fix the source document that operational reports still use.
+
+## Period controls
+
+A journal date can be blocked when the accounting period is closed or when the user lacks the required period permission. Reopening a period is a controlled owner or finance action, not a normal workaround for every posting error.
+
+## Related articles
+
+- [Post, reverse, or correct a journal](/product/accounting/journals/post-reverse)
+- [Close an accounting period](/product/accounting/periods/close-period)
+- [Chart of accounts](/product/accounting/chart-of-accounts)

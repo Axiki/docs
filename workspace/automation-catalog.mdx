@@ -1,0 +1,75 @@
+---
+title: "Automation catalog"
+description: "The active built in attention rules in the current Lynka automation catalog."
+keywords: ["automation", "catalog", "active", "built", "attention", "rules", "current", "docs", "workspace"]
+---
+
+These rules inspect workspace records on a schedule and surface conditions that need attention. They do not replace the underlying record. Fix the lead, deal, quote, invoice, product, purchase order, receipt or ticket so the next evaluation sees the corrected state.
+
+## Sales
+
+| Rule | What it checks | Cadence |
+|---|---|---|
+| Lead has no owner | Active leads with nobody responsible | Daily |
+| Lead needs attention | Active leads with no recent completed customer facing activity | Daily |
+| Qualification needs review | Qualified leads with an incomplete or flagged qualification checklist | Daily |
+| Deal follow up due | Open deals with no completed customer facing activity for the configured number of days | Every 15 minutes |
+| Deal has no next step | Open deals with no future activity scheduled | Daily |
+| Deal stuck in stage | Open deals that have not changed stage for the configured number of days | Daily |
+| Deal close date approaching | Open deals whose expected close date is approaching | Hourly |
+| Deal close date passed | Open deals whose expected close date has passed | Hourly |
+| Lost deal missing reason | Lost deals without a close reason | Daily |
+| Won deal missing invoice | Won deals where automatic invoice creation did not produce a usable invoice | Daily |
+
+## Agreements
+
+| Rule | What it checks | Cadence |
+|---|---|---|
+| Quote expires soon | Open quotes approaching their valid until date | Hourly |
+| Quote expired without decision | Sent or viewed quotes past their valid until date | Hourly |
+| Quote waiting for response | Sent quotes with no decision after the configured number of days | Daily |
+| Accepted quote missing invoice | Accepted quotes without a usable invoice | Daily |
+| Invoice due soon | Open invoices approaching their due date | Every 15 minutes |
+| Invoice overdue | Open invoices with an outstanding balance past due | Hourly |
+| Partial payment needs follow up | Partially paid invoices with no payment movement for the configured number of days | Daily |
+
+## Inventory
+
+| Rule | What it checks | Cadence |
+|---|---|---|
+| Product below reorder level | Stocked products below their configured minimum with no open replenishment | Hourly |
+| Product out of stock | Active stocked products with no stock available | Hourly |
+| Stock item missing supplier | Stocked products without a preferred supplier | Daily |
+| Purchase order overdue | Open purchase orders with outstanding quantity past the expected date | Daily |
+| Partial purchase order stalled | Partially received purchase orders with no movement for several days | Daily |
+| Damaged stock received | Goods receipts containing damaged quantity | Daily |
+| Received stock on hold | Goods receipts containing stock on hold | Daily |
+| Goods receipt posting issue | Posted receipts with inventory lines that did not apply cleanly | Hourly |
+
+## Accounting
+
+| Rule | What it checks | Cadence |
+|---|---|---|
+| Invoice accounting posting incomplete | Issued or settled invoices missing required accounting links | Hourly |
+
+## Marketing
+
+| Rule | What it checks | Cadence |
+|---|---|---|
+| Active campaign has no leads | Active campaigns with no leads after launch | Daily |
+| Campaign ended but still active | Campaigns whose end date passed while the status remains active | Daily |
+
+## Support
+
+| Rule | What it checks | Cadence |
+|---|---|---|
+| Ticket waiting for first response | Open tickets beyond their response window | Every 15 minutes |
+| Ticket SLA at risk | Open tickets approaching first response or resolution SLA | Every 15 minutes |
+| Ticket SLA breached | Open tickets past first response or resolution SLA | Every 15 minutes |
+| Ticket has no assignee | Open tickets with nobody responsible | Hourly |
+| Ticket idle too long | Open tickets with no update for the configured number of days | Hourly |
+| Ticket reopened repeatedly | Tickets reopened at least twice | Daily |
+
+<Info>
+  The catalog describes built in rule types. Your workspace can still have rule settings, workflow configuration, channels, and enable or disable controls that change what actually runs.
+</Info>

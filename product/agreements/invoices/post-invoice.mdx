@@ -1,0 +1,47 @@
+---
+title: "Post an invoice to Accounting"
+sidebarTitle: "Post an invoice"
+description: "Understand what invoice posting does, which permissions and plan capability control it, and how it creates the accounting side of customer billing."
+keywords: ["post invoice", "invoice accounting posting", "accounts receivable invoice", "invoice journal", "invoice posting permission"]
+---
+
+Posting is the bridge between the customer invoice and the accounting ledger. It turns the commercial billing document into the Accounts Receivable, revenue, tax, and other accounting consequences defined by the posting logic.
+
+## Posting is not the same as sending
+
+You can prepare or send an invoice without treating it as paid. Posting also does not mean cash was received. It records the accounting obligation created by billing the customer.
+
+## Access required
+
+Posting is controlled by both plan capability and permission. The workspace entitlement must allow invoice posting, and the user needs the relevant posting or invoice management authority such as `invoice.post`.
+
+Free workspaces do not have invoice posting enabled in the current entitlement model. Pro and Teams enable Accounting and invoice posting when the workspace and user access allow it.
+
+## What the accounting entry represents
+
+A typical posted customer invoice can affect:
+
+- Accounts Receivable for the amount the customer owes
+- revenue for the net revenue portion
+- tax payable for tax collected on behalf of the tax authority
+- other configured accounts where the invoice structure requires them
+
+The exact journal depends on the invoice and accounting configuration.
+
+## Billings versus revenue
+
+Invoice totals can include tax. Revenue reporting can use the revenue or subtotal amount. Therefore the Agreements billings trend does not have to equal Sales Revenue in the ledger.
+
+That difference is expected when the two metrics answer different questions.
+
+## Posting problems
+
+Lynka includes **Invoice accounting posting incomplete** in the automation catalog. It looks for issued or settled invoices missing required accounting links.
+
+If posting fails, do not mark the invoice paid or create a manual revenue journal just to make the dashboard look right. Resolve the posting issue so the source invoice and ledger remain connected.
+
+## Related articles
+
+- [Invoice to ledger workflow](/workflows/invoice-to-ledger)
+- [Record an invoice payment](/product/agreements/invoices/record-payment)
+- [Financial reports](/product/accounting/financial-reports)

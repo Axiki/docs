@@ -1,0 +1,52 @@
+---
+title: "Accounting calculations and reconciliation rules"
+sidebarTitle: "Accounting calculations"
+description: "Understand how Lynka reconciles Accounts Receivable, revenue, cash, inventory, tax, Trial Balance, and the Balance Sheet without forcing unlike metrics to match."
+keywords: ["accounting metrics", "accounts receivable reconciliation", "cash reconciliation", "trial balance", "balance sheet equation", "revenue vs billings"]
+---
+
+Accounting integrity is not one number. Lynka checks several relationships that should reconcile when they describe the same business event, while keeping different concepts separate when they do not.
+
+## Trial Balance
+
+Posted journal debits and credits must balance. The journal header total must also agree with the lines.
+
+## Balance Sheet
+
+Assets should equal liabilities plus equity, including current-period earnings where appropriate.
+
+## Accounts Receivable
+
+Operational A/R comes from posted customer invoices minus valid cleared settlement. The ledger A/R account should reconcile to the same real, non-excluded customer receivables when both sides use the same scope.
+
+A pending payment does not reduce the receivable as if it were cleared cash.
+
+## Revenue versus invoice total
+
+Invoice total can include tax and other billing components. Ledger Sales Revenue represents the revenue portion. Therefore total billings can be higher than revenue even when both are correct.
+
+## Cash
+
+Cash reporting uses cleared, non-excluded payment activity where the metric claims to represent settled cash. Pending payment attempts are not cash.
+
+## Tax payable
+
+Tax payable should reconcile to the tax component of posted taxable activity under the configured accounting rules. Tax is not revenue.
+
+## Inventory
+
+The Inventory ledger account should reconcile with operational inventory value when both use the same real-stock universe and valuation basis. Reporting-excluded test or fixture products should not leak into one side only.
+
+## Historical corrections
+
+When an old posted journal is wrong, use an auditable correction or reversal where possible. Rewriting a settled historical source can make the ledger appear cleaner while destroying the evidence needed to understand what happened.
+
+## Different metrics that should not be forced together
+
+- won deal value and invoice total
+- invoice total and revenue
+- revenue and cash
+- purchase order value and Accounts Payable
+- goods received and supplier bill amount
+
+Each pair can relate, but they answer different questions and can occur at different times.

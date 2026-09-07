@@ -1,0 +1,57 @@
+---
+title: "Chart of accounts in Lynka"
+sidebarTitle: "Chart of accounts"
+description: "Understand how the chart of accounts organizes assets, liabilities, equity, revenue, and expenses and how it connects to journals and reports."
+keywords: ["chart of accounts", "CoA", "general ledger accounts", "accounting accounts", "assets liabilities equity", "Lynka accounting"]
+---
+
+The chart of accounts is the structure behind Lynka's general ledger. Every posted journal line points to an account, and financial reports group those balances into the accounting categories that make the ledger understandable.
+
+## What the chart of accounts is for
+
+A chart of accounts gives each type of financial activity a consistent home. Instead of storing a payment as an unexplained number, Accounting can post it against accounts such as cash, Accounts Receivable, revenue, tax payable, inventory, or another configured account.
+
+The current Accounting navigation exposes **CoA** inside the Ledger group. Viewing it requires chart-of-accounts access, while account management actions can have stricter permissions.
+
+## Account categories
+
+The familiar accounting equation still applies:
+
+`Assets = Liabilities + Equity`
+
+Revenue and expense activity flows through the period result and ultimately affects equity. Lynka's Balance Sheet and Profit & Loss reports depend on the account classification being correct.
+
+## Why account choice matters
+
+A journal can balance mathematically and still be wrong if it posts to the wrong account. For example, a customer payment posted directly to revenue instead of Accounts Receivable can make the cash balance look right while receivables remain overstated.
+
+Use the transaction workflow that matches the business event whenever possible. Invoice posting, payment clearing, bills, goods receipts, and other operational records can carry the accounting context needed to keep the ledger connected to the source document.
+
+## Opening inventory
+
+For stocked products with opening inventory, Lynka's supported opening flow keeps the operational quantity movement and the accounting opening value aligned. This prevents a chart-of-accounts inventory balance from existing with no quantity history explaining the stock.
+
+## Reports that depend on the CoA
+
+The active Finance report catalog includes:
+
+- Chart of Accounts Balances
+- General Ledger
+- Trial Balance
+- Profit & Loss
+- Balance Sheet
+- Cash Flow Statement
+- A/P Aging
+- Bank Reconciliation Readiness
+
+If a report balance looks wrong, inspect the source journal and account mapping before editing the report itself.
+
+## Permissions
+
+The Accounting shell checks `accounting.view` before exposing the area and uses specific permissions for sections such as chart of accounts, journals, periods, bank reconciliation, and financial reports.
+
+## Related articles
+
+- [Create a journal entry](/product/accounting/journals/create-journal-entry)
+- [Post, reverse, or correct a journal](/product/accounting/journals/post-reverse)
+- [Understand the Trial Balance, P&L, and Balance Sheet](/product/accounting/financial-reports)

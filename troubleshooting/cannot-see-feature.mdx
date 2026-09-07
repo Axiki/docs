@@ -1,0 +1,44 @@
+---
+title: "Why a Lynka feature or product area is missing"
+sidebarTitle: "Missing or locked features"
+description: "Troubleshoot missing navigation, locked pages, upgrade prompts, and features that another workspace member can see but you cannot."
+keywords: ["feature missing", "cannot see accounting", "locked feature", "upgrade prompt", "missing menu", "permission denied"]
+---
+
+When a feature is missing, do not start by reinstalling the app or clearing the browser. Lynka resolves product access through several independent layers.
+
+## Check the access chain
+
+1. **Workspace status:** access must be active.
+2. **Plan:** the current plan must include the product capability.
+3. **Installed area:** the workspace must have the area enabled.
+4. **Role default:** the user's role must provide an appropriate starting access pattern.
+5. **User override:** an explicit deny can remove area access.
+6. **Action permission:** the user can enter an area but still be blocked from a particular action.
+7. **Record scope:** the user can have the feature but see fewer records than another teammate.
+
+## Common examples
+
+**Accounting is missing on Free.** Accounting is not part of the current Free entitlement model.
+
+**Teams settings are missing on Pro.** Team collaboration is a Teams capability in the current model.
+
+**Reports can be entered but scheduling settings are missing.** Some advanced reporting administration can have a stricter plan or owner/admin gate than basic report viewing.
+
+**A user can see Invoices but cannot post one.** Invoice posting has both entitlement and permission checks.
+
+**A salesperson cannot see another rep's lead.** The problem can be record scope or missing `lead.view_all`, not the Leads feature itself.
+
+## Refresh after access changes
+
+Permission snapshots are cached briefly and have realtime invalidation paths. After an admin changes access, refresh the affected session if the old navigation remains visible for a short time.
+
+## If the frontend and backend disagree
+
+The backend must win. A button that appears because of stale frontend state does not grant security permission. Likewise, a backend permission error should not be dismissed only because the control was visible.
+
+## Related articles
+
+- [Product area access](/teams/access/product-areas)
+- [Action permissions](/teams/access/action-permissions)
+- [Record scope](/teams/access-scopes)

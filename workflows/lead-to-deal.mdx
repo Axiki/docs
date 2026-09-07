@@ -1,0 +1,120 @@
+---
+title: "Lead to deal workflow in Lynka"
+description: "Learn how to capture a lead, qualify it, create the related deal, manage the opportunity, and close the commercial outcome in Lynka."
+keywords: ["lead to deal", "qualify a lead", "lead qualification", "create deal from lead", "sales pipeline", "close deal", "won deal", "lost deal", "Lynka sales"]
+---
+
+A lead and a deal are deliberately different records in Lynka. A lead represents a prospect that is still being qualified. A deal represents a commercial opportunity that is real enough to manage through a pipeline and eventually close.
+
+Keeping those records separate prevents an early prospect from being counted as won revenue and gives your team a clear handoff between prospecting and opportunity management.
+
+## 1. Capture the lead
+
+Open **Sales > Leads** and create the prospect. Add the information your team needs to identify the person or business and decide what should happen next.
+
+At this stage, focus on useful sales context rather than filling every possible field. The important question is whether someone can open the record later and understand who the prospect is, who owns it, and what the next action should be.
+
+If your workspace uses assignment controls, choose the owner who is responsible for the lead. Users need the appropriate lead permissions to create or assign records.
+
+On mobile, the lead list is shown as a compact card based view instead of the full desktop table. Create and edit flows use the mobile form or full screen panel, but they act on the same lead record.
+
+## 2. Work the lead before qualification
+
+Use activities, notes, email and other available record actions to keep the customer history on the lead. The lead status can move through the active statuses configured for your workspace.
+
+Typical reasons to keep a prospect as a lead include:
+
+- you have not confirmed that there is a real opportunity yet
+- the buyer, need, timing or budget is still unclear
+- the next action is prospecting rather than managing a sales opportunity
+- the prospect has not reached your qualification standard
+
+Lynka can also surface leads that need attention, including leads with no owner or leads that have gone too long without customer facing activity when the related automations are enabled.
+
+## 3. Qualify the lead when the opportunity is real
+
+Qualification is not a status shortcut. It is a controlled lifecycle action.
+
+Open the lead and start the qualification flow. The current qualification workflow asks you to confirm the required qualification checks and provide a real next action. Those confirmations are not hidden editors for fields such as owner, budget or timeline. They are confirmations that the qualification criteria have been reviewed.
+
+The database lifecycle contract requires the required confirmations and a nonempty next action before qualification can complete.
+
+<Warning>
+Do not use a lead as the final sales outcome. A lead can be qualified, lost or disqualified. The related deal is the record that carries a won or lost commercial outcome.
+</Warning>
+
+## 4. Let Lynka create the related deal
+
+When qualification succeeds, Lynka creates the related deal through the qualification lifecycle. The UI confirms that the deal was created and lets you continue to the deal or remain in the current context, depending on where you started the flow.
+
+This matters because the deal is not simply a copied lead. It becomes the commercial record used for pipeline management, expected value, expected close timing, activities and final outcome.
+
+If qualification fails, do not manually pretend the lead was qualified. Review the validation message and complete the missing requirement first.
+
+## 5. Manage the opportunity in Deals
+
+Open **Sales > Deals**. On desktop, you can work in table or Kanban views where available. On mobile, deal records are presented as compact cards with mobile filters and detail panels.
+
+Use the deal to manage information such as:
+
+- stage
+- expected value
+- probability where used by the pipeline
+- expected close date
+- company and contact context
+- assigned owner
+- next activities and follow ups
+- related quotes and invoices where applicable
+
+The built in open pipeline stages include **New**, **Qualified** and **Proposition**. Workspaces can also use configured stage labels and colors through status settings.
+
+Lynka can flag open deals that need attention, including deals with no next step, deals with a passed expected close date, deals stuck in a stage or deals that have not had recent customer facing activity.
+
+## 6. Close the deal with the real outcome
+
+When the opportunity is finished, close the deal using the appropriate outcome. Won, lost and disqualified are final commercial outcomes, not ordinary progress stages.
+
+A close reason is part of the controlled close workflow where required. Closing the deal also creates lifecycle history that reporting can use to understand won and lost performance.
+
+For won deals, Lynka uses the deal close value as the sales outcome. It does not treat invoice totals or payment totals as a replacement for the deal's commercial value. That distinction prevents installments, multiple invoices or later settlement activity from rewriting what the sale was worth when it closed.
+
+If a closed deal needs to return to active selling, use the controlled reopen action. The user needs `deal.reopen_closed` permission for that action.
+
+## What each record answers
+
+| Record | Main question |
+| --- | --- |
+| Lead | Is this prospect qualified enough to become an opportunity? |
+| Deal | What commercial opportunity are we trying to win? |
+| Quote | What are we offering the customer? |
+| Invoice | What are we billing the customer? |
+| Payment | What has actually been settled? |
+
+Keeping those meanings separate is important for clean reporting.
+
+## Common mistakes
+
+### Marking a lead as won
+
+Do not do this. Qualify the lead and close the resulting deal instead.
+
+### Creating a second deal manually after qualification
+
+Check whether qualification already created the deal before creating another one. Duplicate opportunities distort pipeline value and sales reporting.
+
+### Closing a deal without a useful reason
+
+Where the close workflow asks for a reason, record the real reason. Lynka can surface lost deals that are missing one.
+
+### Treating invoice payment as deal value
+
+Payment settles an invoice. It does not redefine the original won deal value.
+
+## Related guides
+
+<CardGroup cols={2}>
+  <Card title="Qualify a lead into a deal" href="/product/sales/leads/qualify-lead">See the qualification checks and what happens after qualification.</Card>
+  <Card title="Manage the sales pipeline" href="/product/sales/deals/manage-pipeline">Work with open deals, stages and attention signals.</Card>
+  <Card title="Close a deal" href="/product/sales/deals/close-deal">Use won, lost or disqualified correctly.</Card>
+  <Card title="Understand deal value" href="/product/sales/deals/deal-value">Learn how Lynka separates deal value, pipeline value and settlement.</Card>
+</CardGroup>

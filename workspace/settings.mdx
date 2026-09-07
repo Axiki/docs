@@ -1,0 +1,76 @@
+---
+title: "Settings reference"
+description: "Where workspace owners, admins and members change product, access and personal behavior."
+keywords: ["settings", "reference", "where", "workspace", "owners", "admins", "members", "change", "product", "access"]
+---
+
+Settings is not one giant preferences page. It is split by domain so the control lives close to the work it changes. What you see depends on the workspace plan, enabled product areas, your role and any user access rules.
+
+<Tabs>
+  <Tab title="Desktop">
+    Desktop keeps a persistent Settings sidebar beside the active settings page. You can move between domains without leaving the settings shell.
+  </Tab>
+  <Tab title="Mobile">
+    Mobile uses a list and detail pattern. Choose the settings destination first, then work inside its page. Long desktop sidebars are not compressed into the phone layout.
+  </Tab>
+</Tabs>
+
+## General workspace settings
+
+| Destination | What it controls | Typical access |
+|---|---|---|
+| Profile | Your identity and profile details | Individual user |
+| Preferences | Personal display and workspace preferences | Individual user |
+| Billing | Workspace plan and billing management | Role controlled |
+| Installed apps | Which supported product apps are installed or available | Owner |
+| Google integrations | Google or Gmail connection and provider status | Owner, admin, manager or Sales role where allowed |
+| Security | Workspace and account security controls exposed by the app | Role controlled |
+| Notifications | User and workspace notification preferences | Role controlled |
+| Workspace activity | Administrative activity view | Pro capability, owner or admin |
+| Data tools | Data management and cleanup surfaces | Depends on destination |
+| Custom fields | Workspace field configuration where enabled | Paid capability, owner or admin |
+| Territories | Territory configuration where enabled | Paid capability |
+
+Some system-health settings are reserved for service administration and are not normal workspace-owner features.
+
+## Sales settings
+
+Sales settings cover CRM defaults, lead and deal statuses, status colors, sales configuration, custom fields, territories and targets where those controls are enabled.
+
+Status settings change the labels and colors users see in lists and Kanban. They do not change the lifecycle rule that qualification belongs to the lead and the won or lost outcome belongs to the deal.
+
+## Agreements settings
+
+Agreements settings include quote and invoice behavior, document statuses, invoicing and templates. Custom templates can require a paid capability. Posting and payment capture remain server controlled entitlements even if a user can create an invoice.
+
+## Inventory settings
+
+Inventory settings are separated into product, stock, pricing and inventory accounting concerns. Use them to control product behavior and stock rules rather than editing every product to work around a workspace level decision.
+
+## Accounting settings
+
+Accounting settings include finance organization and the controls needed by Accounting. Currency, tax, chart of accounts and posting assumptions deserve extra care once real financial activity exists.
+
+## Marketing settings
+
+Marketing can expose defaults and lead source configuration. These settings depend on the paid Marketing capability and the user's role.
+
+## Support settings
+
+Support settings can include ticket statuses, SLA, assignment, escalation and ticket automation. These are separate because changing an SLA timer is a different decision from changing who receives a ticket.
+
+## Reporting settings
+
+Reporting can expose schedules and usage. Some scheduling and reporting administration is Teams gated even when the standard Reports area is available on another paid plan.
+
+## Teams settings
+
+Teams, Approvals and Access appear for workspaces with collaboration capability and the necessary owner or admin access. Use these pages to manage team membership, approval workflows, product area access and permission decisions.
+
+## Personal settings
+
+Preferences, status colors, shortcuts and some notification choices belong to the individual. Changing them should not silently rewrite the workspace defaults for everyone else.
+
+<Card title="Troubleshoot missing settings" href="/troubleshooting/permissions" icon="shield-question">
+  If a settings page is missing, check plan capability, enabled areas, role access and system administration restrictions before assuming the route is broken.
+</Card>

@@ -1,0 +1,51 @@
+---
+title: "Currency, base currency, and FX in Lynka"
+sidebarTitle: "Currency and FX"
+description: "Understand workspace base currency, document currency, exchange rates, reporting normalization, and missing FX behavior in Lynka."
+keywords: ["multi currency CRM", "base currency", "invoice currency", "FX reporting", "exchange rate CRM", "multi currency accounting"]
+---
+
+Currency in Lynka has more than one meaning. The currency on a Quote or Invoice can describe the customer transaction, while the workspace base currency gives Accounting and cross-record reporting a common financial reference.
+
+## Base currency
+
+The base currency belongs to the workspace finance configuration. Use the currency that represents the business's primary accounting and reporting context.
+
+Set this carefully before posting real financial activity. A base currency is not just a visual preference.
+
+## Transaction currency
+
+Where the document workflow supports it, a Quote or Invoice can use the currency of the commercial transaction.
+
+For example, a business whose books are primarily in GHS may still quote a customer in USD. A company with EUR as its base currency may invoice a Middle East customer in another supported currency.
+
+The document amount remains the amount in that transaction currency.
+
+## Reporting conversion
+
+Cross-currency reporting needs a valid exchange rate or defensible stored base amount. Lynka's reporting logic should not silently invent an FX rate when one is missing.
+
+If a historical record cannot be normalized because no valid rate exists, the correct behavior is to surface the missing FX condition rather than fabricate a converted total.
+
+## Why two users can disagree about a number
+
+Before treating a currency total as wrong, compare:
+
+- transaction currency
+- workspace base currency
+- report period
+- FX availability for the relevant date
+- whether the metric uses a stored base amount or a current display conversion
+- user data scope
+
+## Changing currency after the fact
+
+Changing a document's currency or the workspace base currency after financial activity has been posted can have accounting consequences. Treat it differently from editing a label or note.
+
+If the change affects posted financial records, follow your finance control process rather than editing around the ledger.
+
+## Regional examples
+
+The documentation uses examples from multiple currencies and regions on purpose. The product should not imply that GHS, USD, EUR, GBP, AED, SAR, or another currency is universally correct.
+
+Your workspace configuration decides the accounting context.

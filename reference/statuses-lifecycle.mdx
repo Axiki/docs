@@ -1,0 +1,94 @@
+---
+title: "Statuses and lifecycle: what each state means"
+description: "Understand the lifecycle meaning of Lynka Lead, Deal, Quote, Invoice, Purchase Order, Goods Receipt, and Ticket states without confusing configurable labels with business outcomes."
+keywords: ["Lynka statuses", "lead status", "deal stage", "quote status", "invoice status", "ticket status", "CRM lifecycle"]
+---
+
+A status tells you where a record is in its own lifecycle. The same word can mean something different on another record type, and a custom label does not change the underlying business meaning.
+
+The most important rule is to keep **discovery, qualification, commercial outcome, billing, settlement, fulfillment, and service resolution** separate.
+
+## Leads: qualification, not revenue
+
+A Lead represents a prospect that is still being evaluated. The standard lifecycle includes states such as New, Contacted, Qualified, Lost, and Disqualified, while a workspace can customize the visible labels and colors.
+
+**Qualified** means the Lead passed the qualification workflow and the commercial Deal was created or linked according to the lifecycle contract.
+
+A Lead is **not won**. Winning belongs to the Deal. If a workspace contains a custom Lead label that sounds like a sales outcome, do not use that label to replace the actual Deal close lifecycle.
+
+Why this matters: Lead-to-qualified reporting answers whether prospecting and qualification are working. Win rate answers whether Deals are closing. Mixing those events destroys both metrics.
+
+## Deals: open pipeline and final outcomes
+
+Deals represent commercial opportunities. Open stages can describe progress such as New, Qualified, or Proposition according to the workspace configuration.
+
+The Deal outcome separates active pipeline from final results. Final outcomes include Won, Lost, and Disqualified in the current lifecycle model.
+
+Closing a Deal is not the same as dragging a card for visual organization. Final outcomes affect reporting, close dates, reasons, won value, and sales-cycle metrics.
+
+Use [Close a Deal](/product/sales/deals/close-deal) for the supported close flow.
+
+## Quotes: proposal state and date-based expiry
+
+A Quote is a commercial proposal. Common states include Draft, Sent, Viewed, Accepted, and Rejected, while the workspace can configure labels and colors.
+
+Expiry deserves special care. The business meaning of an expired Quote comes from the **valid-until date** and current time. Do not assume a stored status label is the only source of truth for whether a Quote is past its validity period.
+
+That distinction allows automation and reporting to identify a sent or viewed Quote whose validity date has passed even when nobody manually changed its label.
+
+## Invoices: document state, posting, and settlement
+
+Invoice lifecycle has several dimensions that should not be collapsed into one word.
+
+**Drafting** means the commercial document is still being prepared.
+
+**Posting** is an accounting action when the workspace has the required entitlement and permission. Posting can create the financial effect that turns the Invoice into a ledger-backed receivable.
+
+**Payment state** describes how much valid settlement has been recognized. An Invoice can be unpaid, partially paid, or fully paid according to the payment records and settlement rules.
+
+**Void and refund** are corrective commercial or financial actions with their own permissions and consequences.
+
+Do not manually treat an Invoice as paid because the customer says they transferred money. Record and clear the Payment using the supported workflow.
+
+## Purchase Orders: what you asked a supplier to provide
+
+Purchase Order status describes the procurement document and its progress. Ordered quantity and received quantity remain separate.
+
+A partially received Purchase Order is still open for the outstanding quantity. Receiving the rest later should continue the same procurement relationship rather than pretending the original order was fully complete.
+
+A Purchase Order is not Accounts Payable by itself. It represents an order, not necessarily a supplier Bill.
+
+## Goods Receipts: what actually arrived
+
+A Goods Receipt records the physical receipt against purchasing. Drafting the receipt and posting it are different events.
+
+Posting is the point where the receiving record is applied to inventory according to the current workflow. Damaged or on-hold quantities should not be treated as ordinary available stock simply because the truck arrived.
+
+## Tickets: service progress and resolution
+
+Ticket statuses are configurable around the service workflow. Common lifecycle concepts include New or Open, In Progress, Waiting, Resolved, and Closed.
+
+SLA calculations also use response and resolution timing, not only the visible status label. A Ticket can therefore be at risk because of elapsed service time even before someone manually changes the status.
+
+## Configurable labels versus fixed meaning
+
+Lynka lets workspaces configure status labels and colors in several areas. That flexibility is useful for matching the language a small business already uses.
+
+But some lifecycle semantics remain important for reporting and automation:
+
+- Lead qualification is not Deal win.
+- Quote validity depends on date, not only a label.
+- Invoice payment depends on recognized settlement.
+- Posting is not the same thing as sending a document.
+- Purchase order receipt quantity is not the same as ordered quantity.
+- Ticket SLA depends on timing and service events, not only status color.
+
+<Info>
+Use the labels shown in your workspace when following the UI. Use these lifecycle rules when deciding what the state actually means for reporting, automation, and downstream records.
+</Info>
+
+## When a status looks wrong
+
+Before editing configuration, ask whether the problem is the **label**, the **record state**, or the **underlying transaction**.
+
+If a Quote says Sent but the valid-until date passed, the issue may be date-based expiry. If an Invoice says Partially Paid, inspect Payments. If a Deal looks open after a final outcome, inspect the close lifecycle rather than only the stage label.

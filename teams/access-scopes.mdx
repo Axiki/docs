@@ -1,0 +1,25 @@
+---
+title: "Product access and record scope"
+description: "Separate which product areas a person can open from which records they can see inside them."
+keywords: ["product", "access", "record", "scope", "separate", "which", "areas", "person", "can", "open"]
+---
+
+Product access answers "Can this user open Sales?" Record scope answers "Which Sales records can this user see?"
+
+Lynka can resolve scope to your own records, a selected user, a team or the workspace when the role and permissions allow it.
+
+## Product area access
+
+For an ordinary user, Lynka checks that the workspace is active, the plan allows the area, the workspace has enabled the area, and the role or user access permits it. Owners and admins are not limited by member-specific area overrides, but they are still limited by the workspace plan and enabled areas.
+
+## Record scope
+
+Sales and reports can expose scope controls such as Mine, user, team or workspace. A manager can receive team scope without receiving workspace scope. A user with a `view_all` permission can see more than a user who only owns individual records.
+
+## User overrides
+
+Per user access can grant or deny an area relative to role defaults. Use overrides for exceptions. If every user in a role needs the same exception, fix the role or workspace design instead of creating many one off overrides.
+
+## Troubleshoot scope
+
+If a user can open an area but a record is missing, compare record ownership, team membership and `view_team` or `view_all` style permissions. If the whole area is missing, inspect plan, enabled area and product access first.

@@ -3,182 +3,405 @@
   "theme": "mint",
   "name": "Lynka CRM",
   "colors": {
-    "primary": "#A20616",
-    "light": "#CB1D31",
-    "dark": "#820512"
+    "primary": "#1D71DB",
+    "light": "#6FA3F2",
+    "dark": "#1D5FB8"
   },
   "favicon": "/favicon.svg",
+  "integrations": {
+    "ga4": {
+      "measurementId": "G-7CWTYHDW5G"
+    },
+    "posthog": {
+      "apiKey": "phc_ycfX3Eghzduigz3vAVrKdtKGV2fb4Ew7DmfNBNxS9Pc7",
+      "apiHost": "https://us.i.posthog.com",
+      "sessionRecording": false
+    }
+  },
   "navigation": {
-    "tabs": [
+    "groups": [
       {
-        "tab": "Guides",
-        "groups": [
+        "group": "Start here",
+        "root": "index",
+        "directory": "card",
+        "pages": [
+          "getting-started/what-is-lynka",
+          "getting-started/choose-your-workflow",
+          "getting-started/setup",
+          "getting-started/navigation",
+          "getting-started/mobile-desktop",
+          "getting-started/import"
+        ]
+      },
+      {
+        "group": "Run your business",
+        "directory": "card",
+        "pages": [
+          "workflows/daily-business-review",
+          "workflows/find-to-cash",
+          "workflows/lead-to-deal",
+          "workflows/quote-to-cash",
+          "workflows/procure-to-stock",
+          "workflows/invoice-to-ledger",
+          "workflows/support-resolution"
+        ]
+      },
+      {
+        "group": "Lead Generator",
+        "root": "leadgen/overview",
+        "directory": "accordion",
+        "pages": [
+          "leadgen/how-it-works",
+          "leadgen/search-targeting",
+          "leadgen/results-to-crm",
+          "leadgen/credits",
+          "leadgen/team-workflow",
+          "leadgen/measure-results",
+          "leadgen/privacy-acceptable-use",
+          "leadgen/troubleshooting",
+          "leadgen/faq"
+        ]
+      },
+      {
+        "group": "Sales",
+        "root": "product/sales/overview",
+        "directory": "accordion",
+        "pages": [
+          "product/dashboard",
+          "product/dashboard/customize-dashboard",
           {
-            "group": "Getting started",
+            "group": "Leads",
+            "root": "product/sales/leads",
             "pages": [
-              "index",
-              "quickstart",
-              "development"
+              "product/sales/leads/create-lead",
+              "product/sales/leads/assign-lead",
+              "product/sales/leads/filter-leads",
+              "product/sales/leads/qualify-lead",
+              "product/sales/leads/lost-disqualified"
             ]
           },
           {
-            "group": "Customization",
+            "group": "Deals",
+            "root": "product/sales/deals",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
+              "product/sales/deals/create-deal",
+              "product/sales/deals/manage-pipeline",
+              "product/sales/deals/deal-value",
+              "product/sales/deals/close-deal",
+              "product/sales/deals/reopen-deal"
             ]
           },
           {
-            "group": "Writing content",
+            "group": "Companies and activity",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
+              "product/sales/companies",
+              "product/sales/companies/manage-company",
+              "product/sales/activities",
+              "product/sales/activities/log-activity"
             ]
           }
         ]
       },
       {
-        "tab": "CRM Documentation",
-        "groups": [
+        "group": "Agreements",
+        "root": "product/agreements/overview",
+        "directory": "accordion",
+        "pages": [
           {
-            "group": "Getting Started",
+            "group": "Quotes",
+            "root": "product/agreements/quotes",
             "pages": [
-              "crm",
-              "crm/getting-started",
-              "crm/account-setup",
-              "crm/data-import",
-              "crm/onboarding"
+              "product/agreements/quotes/create-quote",
+              "product/agreements/quotes/send-follow-up",
+              "product/agreements/quotes/status-expiry",
+              "product/agreements/quotes/revisions"
             ]
           },
           {
-            "group": "Core Features",
+            "group": "Invoices",
+            "root": "product/agreements/invoices",
             "pages": [
-              "crm/interface",
-              "crm/settings",
-              "crm/team",
-              "crm/reporting",
-              "crm/integrations"
+              "product/agreements/invoices/create-invoice",
+              "product/agreements/invoices/post-invoice",
+              "product/agreements/invoices/record-payment",
+              "product/agreements/invoices/fulfillment",
+              "product/agreements/invoices/void-refund"
+            ]
+          },
+          "product/agreements/contracts",
+          "product/agreements/templates"
+        ]
+      },
+      {
+        "group": "Inventory",
+        "root": "product/inventory/overview",
+        "directory": "accordion",
+        "pages": [
+          {
+            "group": "Products",
+            "root": "product/inventory/products",
+            "pages": [
+              "product/inventory/products/create-product",
+              "product/inventory/products/stock-levels",
+              "product/inventory/products/reorder-stock",
+              "product/inventory/products/product-margin"
             ]
           },
           {
-            "group": "CRM Modules",
+            "group": "Suppliers",
+            "root": "product/inventory/suppliers",
             "pages": [
-              "crm/modules",
-              "crm/leads",
-              "crm/opportunities",
-              "crm/quotes",
-              "crm/invoices",
-              "crm/products",
-              "crm/tasks-activities"
+              "product/inventory/suppliers/create-supplier"
             ]
           },
           {
-            "group": "Marketing Tools",
+            "group": "Purchase orders",
+            "root": "product/inventory/purchase-orders",
             "pages": [
-              "crm/marketing-tools"
+              "product/inventory/purchase-orders/create-purchase-order",
+              "product/inventory/purchase-orders/statuses",
+              "product/inventory/purchase-orders/receive-purchase-order"
             ]
           },
           {
-            "group": "Mobile Experience",
+            "group": "Goods receipts",
+            "root": "product/inventory/goods-receipts",
             "pages": [
-              "crm/mobile-experience"
-            ]
-          },
-          {
-            "group": "Best Practices",
-            "pages": [
-              "crm/best-practices"
-            ]
-          },
-          {
-            "group": "Security & Compliance",
-            "pages": [
-              "crm/security-best-practices"
-            ]
-          },
-          {
-            "group": "Performance & Optimization",
-            "pages": [
-              "crm/performance-optimization"
-            ]
-          },
-          {
-            "group": "Customization",
-            "pages": [
-              "crm/customization-options"
-            ]
-          },
-          {
-            "group": "API Documentation",
-            "pages": [
-              "crm/api"
-            ]
-          },
-          {
-            "group": "Troubleshooting",
-            "pages": [
-              "crm/troubleshooting-comprehensive"
-            ]
-          },
-          {
-            "group": "Support",
-            "pages": [
-              "crm/support"
-            ]
-          },
-          {
-            "group": "Glossary",
-            "pages": [
-              "crm/glossary"
+              "product/inventory/goods-receipts/create-goods-receipt",
+              "product/inventory/goods-receipts/post-goods-receipt",
+              "product/inventory/goods-receipts/damaged-on-hold"
             ]
           }
         ]
       },
       {
-        "tab": "API reference",
-        "groups": [
+        "group": "Accounting",
+        "root": "product/accounting/overview",
+        "directory": "accordion",
+        "pages": [
           {
-            "group": "API documentation",
+            "group": "Ledger",
             "pages": [
-              "api-reference/introduction"
+              "product/accounting/chart-of-accounts",
+              "product/accounting/ledger",
+              "product/accounting/journals/create-journal-entry",
+              "product/accounting/journals/post-reverse",
+              {
+                "group": "Financial reports",
+                "root": "product/accounting/financial-reports",
+                "pages": [
+                  "product/accounting/reports/trial-balance",
+                  "product/accounting/reports/general-ledger",
+                  "product/accounting/reports/chart-balances",
+                  "product/accounting/reports/profit-loss",
+                  "product/accounting/reports/balance-sheet",
+                  "product/accounting/reports/cash-flow",
+                  "product/accounting/reports/ar-aging",
+                  "product/accounting/reports/ap-aging",
+                  "product/accounting/reports/bank-reconciliation-readiness"
+                ]
+              },
+              "product/accounting/budgets/manage-budgets",
+              "product/accounting/credit-notes"
             ]
           },
           {
-            "group": "Endpoint examples",
+            "group": "Payables",
+            "root": "product/accounting/payables",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "product/accounting/payables/create-supplier-bill",
+              "product/accounting/payables/approve-pay-bill"
+            ]
+          },
+          {
+            "group": "Cash and bank",
+            "root": "product/accounting/cash-bank",
+            "pages": [
+              "product/accounting/cash/cash-receipts",
+              "product/accounting/cash/cash-disbursements",
+              "product/accounting/bank/reconcile-bank"
+            ]
+          },
+          {
+            "group": "Tax and close",
+            "root": "product/accounting/tax-close",
+            "pages": [
+              "product/accounting/tax/tax-center",
+              "product/accounting/periods/close-period",
+              "product/accounting/periods/reopen-period"
             ]
           }
+        ]
+      },
+      {
+        "group": "Support",
+        "root": "product/support/overview",
+        "directory": "accordion",
+        "pages": [
+          {
+            "group": "Tickets",
+            "root": "product/support/tickets",
+            "pages": [
+              "product/support/tickets/create-ticket",
+              "product/support/tickets/assign-manage"
+            ]
+          },
+          {
+            "group": "SLA and automation",
+            "root": "product/support/sla-automation",
+            "pages": [
+              "product/support/sla/understand-sla"
+            ]
+          }
+        ]
+      },
+      {
+        "group": "Marketing",
+        "root": "product/marketing/overview",
+        "directory": "accordion",
+        "pages": [
+          {
+            "group": "Campaigns",
+            "root": "product/marketing/campaigns",
+            "pages": [
+              "product/marketing/campaigns/create-campaign"
+            ]
+          }
+        ]
+      },
+      {
+        "group": "Reports",
+        "root": "product/reports/overview",
+        "directory": "card",
+        "pages": [
+          "product/reports/catalog",
+          "product/reports/use-report-catalog",
+          "product/reports/build-report",
+          "product/reports/schedule-report",
+          "product/reports/builder-schedules"
+        ]
+      },
+      {
+        "group": "Teams",
+        "root": "teams/overview",
+        "directory": "accordion",
+        "pages": [
+          "teams/run-small-team",
+          {
+            "group": "Members and responsibility",
+            "root": "teams/members",
+            "pages": [
+              "teams/members/invite-member",
+              "teams/teams/create-team",
+              "teams/assign-work",
+              "teams/manager-visibility",
+              "teams/member-leaves"
+            ]
+          },
+          {
+            "group": "Roles and access",
+            "root": "teams/roles-permissions",
+            "pages": [
+              "teams/access/product-areas",
+              "teams/access/action-permissions",
+              "teams/access-scopes"
+            ]
+          },
+          {
+            "group": "Approvals",
+            "root": "teams/approvals",
+            "pages": [
+              "teams/approvals/using-approvals"
+            ]
+          }
+        ]
+      },
+      {
+        "group": "Owner and workspace",
+        "directory": "accordion",
+        "pages": [
+          "workspace/owner-workspace",
+          "workspace/installed-apps",
+          "workspace/settings",
+          {
+            "group": "Automation",
+            "root": "workspace/automation",
+            "pages": [
+              "workspace/automation/how-automation-works",
+              "workspace/automation-catalog"
+            ]
+          },
+          "workspace/notifications",
+          "workspace/gmail-integration",
+          "workspace/integrations",
+          "workspace/plans"
+        ]
+      },
+      {
+        "group": "Regional setup",
+        "root": "regional/overview",
+        "directory": "card",
+        "pages": [
+          "regional/currency-fx",
+          "regional/tax",
+          "regional/timezone-dates",
+          "regional/privacy-data"
+        ]
+      },
+      {
+        "group": "Productivity",
+        "pages": [
+          "productivity/search-command",
+          "productivity/tasks-notes",
+          "productivity/chat-documents"
+        ]
+      },
+      {
+        "group": "Reference",
+        "directory": "accordion",
+        "pages": [
+          {
+            "group": "Calculations",
+            "pages": [
+              "reference/calculations/sales-metrics",
+              "reference/calculations/inventory-metrics",
+              "reference/calculations/accounting-metrics"
+            ]
+          },
+          "reference/statuses-lifecycle",
+          "reference/permissions",
+          "reference/data-scopes",
+          "reference/field-glossary",
+          "reference/changelog"
+        ]
+      },
+      {
+        "group": "Troubleshooting",
+        "pages": [
+          "troubleshooting/common-issues",
+          "troubleshooting/cannot-see-feature",
+          "troubleshooting/permissions",
+          "troubleshooting/invoice-not-paid",
+          "troubleshooting/goods-receipt-locked",
+          "troubleshooting/import-errors",
+          "troubleshooting/login-issues"
+        ]
+      },
+      {
+        "group": "Legal",
+        "pages": [
+          "terms-and-conditions",
+          "privacy-policy",
+          "data-processing-agreement",
+          "refund-policy",
+          "cookie-policy",
+          "acceptable-use",
+          "security",
+          "subprocessors",
+          "service-support"
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
+    ]
   },
   "logo": {
     "light": "/logo/light.svg",
@@ -187,33 +410,202 @@
   "navbar": {
     "links": [
       {
+        "label": "Pricing",
+        "href": "https://lynkacrm.com/pricing"
+      },
+      {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "https://lynkacrm.com/contact"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Open App",
+      "href": "https://app.lynkacrm.com"
     }
   },
-  "contextual": {
-    "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
-  },
-  "footer": {
-    "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+  "redirects": [
+    {
+      "source": "/guides/sales-hub",
+      "destination": "/product/sales/overview"
+    },
+    {
+      "source": "/guides/agreements-hub",
+      "destination": "/product/agreements/overview"
+    },
+    {
+      "source": "/guides/inventory-hub",
+      "destination": "/product/inventory/overview"
+    },
+    {
+      "source": "/guides/accounting-hub",
+      "destination": "/product/accounting/overview"
+    },
+    {
+      "source": "/guides/tickets-hub",
+      "destination": "/product/support/overview"
+    },
+    {
+      "source": "/guides/reporting-hub",
+      "destination": "/product/reports/overview"
+    },
+    {
+      "source": "/guides/campaigns",
+      "destination": "/product/marketing/campaigns"
+    },
+    {
+      "source": "/guides/lead-generation",
+      "destination": "/leadgen/overview"
+    },
+    {
+      "source": "/guides/activities",
+      "destination": "/product/sales/activities"
+    },
+    {
+      "source": "/guides/team-management",
+      "destination": "/teams/overview"
+    },
+    {
+      "source": "/guides/settings-teams",
+      "destination": "/teams/overview"
+    },
+    {
+      "source": "/guides/approvals",
+      "destination": "/teams/approvals"
+    },
+    {
+      "source": "/guides/automation",
+      "destination": "/workspace/automation"
+    },
+    {
+      "source": "/guides/notifications",
+      "destination": "/workspace/notifications"
+    },
+    {
+      "source": "/guides/search",
+      "destination": "/productivity/search-command"
+    },
+    {
+      "source": "/guides/command-palette",
+      "destination": "/productivity/search-command"
+    },
+    {
+      "source": "/guides/templates",
+      "destination": "/product/agreements/templates"
+    },
+    {
+      "source": "/guides/sales-targets",
+      "destination": "/product/reports/overview"
+    },
+    {
+      "source": "/guides/sla-escalation",
+      "destination": "/product/support/sla-automation"
+    },
+    {
+      "source": "/reference/access-model",
+      "destination": "/teams/access-scopes"
+    },
+    {
+      "source": "/reference/action-matrix",
+      "destination": "/reference/permissions"
+    },
+    {
+      "source": "/reference/plans-features",
+      "destination": "/workspace/plans"
+    },
+    {
+      "source": "/guides/settings-general",
+      "destination": "/workspace/settings"
+    },
+    {
+      "source": "/guides/settings-sales",
+      "destination": "/workspace/settings"
+    },
+    {
+      "source": "/guides/settings-agreements",
+      "destination": "/workspace/settings"
+    },
+    {
+      "source": "/guides/settings-inventory",
+      "destination": "/workspace/settings"
+    },
+    {
+      "source": "/guides/settings-accounting",
+      "destination": "/workspace/settings"
+    },
+    {
+      "source": "/guides/settings-marketing",
+      "destination": "/workspace/settings"
+    },
+    {
+      "source": "/guides/settings-ticketing",
+      "destination": "/workspace/settings"
+    },
+    {
+      "source": "/guides/settings-reporting",
+      "destination": "/workspace/settings"
+    },
+    {
+      "source": "/guides/settings-data",
+      "destination": "/workspace/settings"
+    },
+    {
+      "source": "/guides/how-to",
+      "destination": "/index"
+    },
+    {
+      "source": "/guides/operations-playbook",
+      "destination": "/workflows/lead-to-deal"
+    },
+    {
+      "source": "/guides/personalization",
+      "destination": "/workspace/settings"
+    },
+    {
+      "source": "/guides/focus-mode",
+      "destination": "/productivity/tasks-notes"
+    },
+    {
+      "source": "/guides/network",
+      "destination": "/productivity/chat-documents"
+    },
+    {
+      "source": "/product/accounting/budgets-credits",
+      "destination": "/product/accounting/budgets/manage-budgets"
+    },
+    {
+      "source": "/teams/access-scopes-deep",
+      "destination": "/teams/access-scopes"
+    },
+    {
+      "source": "/workspace/owner-admin",
+      "destination": "/workspace/owner-workspace"
+    },
+    {
+      "source": "/product/marketing/leadgen",
+      "destination": "/leadgen/overview"
+    },
+    {
+      "source": "/product/marketing/leadgen/run-leadgen",
+      "destination": "/leadgen/how-it-works"
     }
+  ],
+  "icons": {
+    "library": "lucide"
+  },
+  "styling": {
+    "eyebrows": "breadcrumbs"
+  },
+  "interaction": {
+    "drilldown": false
+  },
+  "description": "Lynka documentation for entrepreneurs and small teams: built-in lead generation, CRM, sales, quotes, invoices, inventory, accounting, support, reports, automation, permissions, and end-to-end business workflows.",
+  "seo": {
+    "metatags": {
+      "canonical": "https://docs.lynkacrm.com"
+    }
+  },
+  "metadata": {
+    "timestamp": true
   }
 }

@@ -1,0 +1,51 @@
+---
+title: "Create a purchase order"
+sidebarTitle: "Create a purchase order"
+description: "Create a supplier purchase order with line quantities, unit costs, currency, dates, tax, freight, payment terms, addresses, and FX context."
+keywords: ["create purchase order", "new PO", "supplier order", "purchase order line", "unit cost", "expected date", "procurement"]
+---
+
+A purchase order records what you intend to buy from a supplier. It does not increase stock by itself. Stock changes when goods are received through the goods receipt workflow.
+
+## What the purchase order builder stores
+
+The current builder supports supplier, PO number, order date, expected date, currency, exchange-rate snapshot context, payment terms, shipping address, billing address, tax amount, freight amount, notes, and product lines with quantity ordered and unit cost.
+
+The builder calculates line totals from quantity times unit cost, then combines subtotal, tax, and freight for the order total.
+
+## Create the PO
+
+<Steps>
+  <Step title="Open Purchase Orders">Go to **Inventory**, then **Purchase Orders**.</Step>
+  <Step title="Choose the supplier">Select an existing supplier. If the supplier is new, the builder can open the quick-create supplier flow.</Step>
+  <Step title="Confirm dates and currency">Review the PO number, order date, expected date, transaction currency, and any exchange-rate context. Supplier defaults can prefill some of these values.</Step>
+  <Step title="Add products and quantities">Add each product line, enter the quantity ordered, and confirm the unit cost. Supplier-product relationships can provide supplier-specific pricing where available.</Step>
+  <Step title="Complete commercial details">Review payment terms, addresses, tax, freight, and notes.</Step>
+  <Step title="Create the order">Save the purchase order. New purchase orders are created in `draft` status by the current builder.</Step>
+</Steps>
+
+## Currency and base amounts
+
+If the purchase order uses a currency different from the workspace base currency, Lynka resolves an FX snapshot for base-currency reporting. The builder stores base amount fields when the supported backend columns are available.
+
+Do not manually convert line costs into the base currency and then label the PO with the foreign currency. Keep the transaction amount in its real currency and let the FX layer preserve the base-currency view.
+
+## Expected date
+
+The expected date is operational, not decorative. It is used when Lynka decides whether an open order is overdue. The **Purchase order overdue** automation looks for open purchase orders with outstanding quantity past the expected date.
+
+## Draft persistence
+
+The create form stores draft state locally so accidental navigation or interruption does not have to mean re-entering the entire order. The draft includes supplier, dates, currency, terms, addresses, amounts, notes, lines, and quick-created supplier state.
+
+## What happens after creation?
+
+A draft PO becomes part of the procurement workflow but it does not represent received stock. Move it through the allowed purchasing statuses and create a goods receipt when the supplier actually delivers items.
+
+For partially delivered orders, receive only what arrived. The remaining quantity stays outstanding.
+
+## Related articles
+
+- [Purchase order statuses and outstanding quantity](/product/inventory/purchase-orders/statuses)
+- [Receive a purchase order](/product/inventory/purchase-orders/receive-purchase-order)
+- [Create a goods receipt](/product/inventory/goods-receipts/create-goods-receipt)

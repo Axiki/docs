@@ -1,0 +1,35 @@
+---
+title: "Record a cash disbursement"
+sidebarTitle: "Cash disbursements"
+description: "Record money spent from Accounting without bypassing supplier bill or other source workflows that should own the transaction."
+keywords: ["cash disbursement", "spend money", "record expense payment", "cash outflow", "accounting spend money"]
+---
+
+Use **Cash Disbursements** for outgoing cash that belongs in Accounting and is not better represented by a supplier bill payment or another dedicated source workflow.
+
+## Choose the source workflow first
+
+If you are paying a recorded supplier bill, settle the bill through Payables so Accounts Payable is reduced correctly.
+
+If there is no payable and the transaction is a direct cash expense or other supported cash event, use Cash Disbursements.
+
+## Create the entry
+
+Open **Accounting > Cash Disbursements** and start the cash entry flow. The current Accounting shell protects receive-money and spend-money creation with the journal-entry create permission.
+
+Record the amount, date, account context, currency, counterparty or reference information available in the builder, and a description that lets another person understand why the money left the business.
+
+## Avoid duplicate expense recognition
+
+A common accounting mistake is to post an expense when a supplier bill is created and then post the expense again when the bill is paid. Payment should usually settle the liability, not create the same expense twice.
+
+Use the bill and payment workflow when Accounts Payable is involved.
+
+## Bank reconciliation
+
+A cash disbursement can later be matched to bank statement activity. The accounting record and the bank line describe the same economic movement from two sources. Reconciliation connects them rather than creating a second journal for the same payment.
+
+## Related articles
+
+- [Approve and pay a supplier bill](/product/accounting/payables/approve-pay-bill)
+- [Reconcile bank activity](/product/accounting/bank/reconcile-bank)

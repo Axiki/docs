@@ -1,0 +1,45 @@
+---
+title: "Send a quote and follow up"
+sidebarTitle: "Send and follow up"
+description: "Preview and send a customer quote, track response state, and use Lynka automation to surface quotes that need a decision or are approaching expiry."
+keywords: ["send quote", "email quote", "quote follow up", "quote waiting response", "quote expires soon", "quotation email"]
+---
+
+After a quote is correct, the next job is to get a decision. Lynka keeps the quote document, status, customer context, validity date, and follow-up signals together so you do not have to manage the offer in a separate spreadsheet.
+
+## Before sending
+
+Preview the document and check customer identity, line items, quantities, prices, discounts, tax, currency, validity date, terms, notes, and total.
+
+Once a commercial document has been sent or accepted, editing can be more restricted than editing a draft. Fix mistakes before the customer sees the document whenever possible.
+
+## Send the quote
+
+Use the available quote send or email action. Email availability depends on the workspace email/provider configuration. A provider connection failure should not be presented as a successful send.
+
+If the message is sent through Lynka-hosted email, it may count toward the workspace’s hosted email allowance. If it is sent through a connected Gmail account, it uses the customer’s Gmail account instead and does not use the Lynka-hosted allowance. Google’s own sending limits and policies apply.
+
+The quote status history records lifecycle movement so the workspace can distinguish draft preparation from customer-facing states.
+
+## Follow-up signals
+
+Lynka's built in Agreements automation catalog includes:
+
+- **Quote waiting for response** for sent quotes with no decision after the configured number of days
+- **Quote expires soon** for open quotes approaching the valid-until date
+- **Quote expired without decision** for sent or viewed quotes that passed the valid-until date
+
+These rules are more useful than manually scanning every quote each morning.
+
+## If the customer accepts
+
+Acceptance is a commercial decision, not payment. The accepted quote can move into the invoicing workflow. Lynka also includes **Accepted quote missing invoice** to catch accepted quotes that do not have a usable invoice when one is expected.
+
+## If the customer asks for changes
+
+Use the supported revision or edit flow rather than overwriting the history of what was originally sent. Quote revisions exist so the commercial record can preserve the document sequence.
+
+## Related articles
+
+- [Quote status and expiry](/product/agreements/quotes/status-expiry)
+- [Create an invoice](/product/agreements/invoices/create-invoice)

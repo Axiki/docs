@@ -1,0 +1,25 @@
+---
+title: "Quotes: create and manage customer proposals"
+description: "Build, send and follow a quote through acceptance or rejection."
+keywords: ["quotes", "build", "send", "follow", "quote", "through", "acceptance", "rejection", "product", "agreements"]
+---
+
+A quote is the commercial offer before invoicing. Use it to capture the exact customer, lines, quantities, pricing, discounts, taxes, currency, terms and related sales context that should appear on the offer.
+
+## Build the quote
+
+The builder supports product or line items, customer and company selection, lead or deal relationships, tax rows, notes, terms and totals. The server recalculates canonical totals from the saved line and tax data rather than treating a browser total as the final accounting truth.
+
+## Send and follow up
+
+A quote can be previewed, exported and sent through the available email path. The system tracks status and history so you can see whether the quote is still waiting for a decision.
+
+Expiry is date driven. A quote that passed its valid until date can be treated as expired for workflow and automation even though `expired` should not be assumed to be a stored status value.
+
+## Useful automation
+
+Active agreement rules include quotes expiring soon, quotes that passed their valid until date without a decision and sent quotes waiting too long for a response.
+
+## Payments on quotes
+
+If your workflow records a quote payment, Lynka validates the quote, amount and currency. A payment does not recalculate the quote's commercial pricing. Currency mismatch is rejected where the payment record has no FX snapshot to defend a conversion.

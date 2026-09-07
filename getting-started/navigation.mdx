@@ -1,0 +1,34 @@
+---
+title: "Find your way around Lynka"
+description: "How the header, sidebar, mobile navigation, product tabs, drawers and shared controls fit together."
+keywords: ["find", "way", "around", "header", "sidebar", "mobile", "navigation", "product", "tabs", "drawers"]
+---
+
+Lynka keeps the main shell mounted while you move between product areas. The active page changes inside that shell, while search, notifications, profile controls and global overlays stay available.
+
+<Tabs>
+  <Tab title="Desktop">
+    The desktop shell has a persistent header, a collapsible sidebar and the active work area. Product pages can add their own tabs, breadcrumbs, actions, scope controls and right side panels.
+
+    Lists use tables where the extra columns are useful. Lead and deal pages can also use Kanban. Detail work often opens in a drawer or dedicated detail surface without forcing you to abandon the list you came from.
+  </Tab>
+  <Tab title="Mobile">
+    Mobile replaces the desktop sidebar with a fixed bottom navigation and a **More** sheet. Lists become cards, table controls become compact filter and sort controls, and detail or create flows can take over the screen.
+
+    Do not expect desktop push drawer behavior on mobile. The record and actions are the same, but the layout is optimized for the smaller screen.
+  </Tab>
+</Tabs>
+
+## Search and notifications
+
+The header exposes global search or command controls and notifications. Record pages also have their own search, filters, sorting and scope controls. A notification can route you back to the relevant record when routing information is available.
+
+## Product tabs
+
+Each area uses tabs that match its work. Sales has Overview, Leads, Deals, Companies and Activities. Inventory has Overview, Products, Suppliers, Purchase Orders and Goods Receipts. Accounting uses grouped tabs because it covers more operations than can fit comfortably in one row.
+
+## Loading and refresh behavior
+
+Initial loading can show skeletons inside the current page. When a page already has usable data, background refresh should keep that data visible instead of blanking the whole screen. Pagination and Kanban load more states appear close to the list or column that is fetching.
+
+If you see an access lock instead of the normal shell, the workspace access state or plan access has stopped normal navigation. See [Plans and capabilities](/workspace/plans).

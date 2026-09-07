@@ -1,0 +1,34 @@
+---
+title: "Using Lynka on desktop and mobile"
+description: "Learn how Lynka navigation, lists, drawers, detail pages, filters, and settings differ between desktop and mobile without changing the underlying workflow."
+keywords: ["Lynka mobile", "Lynka desktop", "mobile navigation", "desktop sidebar", "mobile CRM", "responsive CRM"]
+---
+
+Lynka uses the same workspace and records on desktop and mobile, but the navigation and detail patterns change to fit the screen.
+
+## Desktop navigation
+
+Desktop keeps the authenticated header and sidebar visible while you work. The sidebar is collapsible and only shows product areas that are installed and allowed by the workspace, plan and access model.
+
+Product areas use tabs, tables, Kanban views, builders and right side detail panels where appropriate. On desktop, record drawers can keep the surrounding workspace visible while you inspect or edit a record.
+
+## Mobile navigation
+
+Mobile replaces the desktop sidebar with a fixed bottom navigation bar and a **More** panel. The More panel provides additional navigation, search and account actions without forcing every destination into the bottom bar.
+
+Lists become compact cards. Desktop table column controls are replaced with mobile search, filter and sort controls. Detail and create flows commonly open as full screen or mobile panel experiences.
+
+## What does not change
+
+Permissions, plan gates, record ownership and backend validation are the same business rules on both layouts. Mobile is not a simplified security mode.
+
+For example, qualifying a lead, posting an invoice or receiving stock still uses the same underlying lifecycle rules even though the controls are arranged differently.
+
+## Loading and refresh behavior
+
+The shell stays mounted while individual pages or widgets load. Initial skeletons are used when no usable data exists, while background refresh should preserve existing rows instead of blanking the screen.
+
+<CardGroup cols={2}>
+  <Card title="Navigate Lynka" href="/getting-started/navigation">Learn the main product areas and shell.</Card>
+  <Card title="Plans and capabilities" href="/workspace/plans">Understand why some navigation can be hidden or locked.</Card>
+</CardGroup>

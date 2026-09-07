@@ -1,0 +1,36 @@
+---
+title: "Bank Reconciliation Readiness: check whether reconciliation can be trusted"
+sidebarTitle: "Reconciliation readiness"
+description: "Understand the Lynka Bank Reconciliation Readiness report and why missing statement or reconciliation data should produce an unavailable result rather than a fabricated score."
+keywords: ["bank reconciliation readiness", "bank reconciliation report", "Lynka bank readiness", "unreconciled bank transactions"]
+---
+
+The **Bank Reconciliation Readiness** report helps you decide whether the available bank and accounting data are in a state where reconciliation can be meaningfully reviewed.
+
+It is not useful to show a reassuring percentage when the underlying bank statement or reconciliation data is missing.
+
+## What readiness means
+
+A useful readiness view considers whether the workspace has the data required to compare accounting activity with bank activity and whether unresolved reconciliation work remains.
+
+## When the result can be unavailable
+
+If no bank statement, statement lines, or reconciliation data exists for the context being reviewed, Lynka should prefer an unavailable or not-ready result over a fabricated 100 percent value.
+
+No data is not the same as perfectly reconciled data.
+
+## What to do when readiness is poor
+
+Check:
+
+- whether the correct bank account exists
+- whether the statement or bank lines are present
+- whether the reporting period matches the statement
+- whether transactions are still unmatched
+- whether opening balances or prior periods create a carry-forward difference
+
+Then open [Reconcile bank transactions](/product/accounting/bank/reconcile-bank) to work the underlying lines.
+
+## Readiness is not the reconciliation itself
+
+This report is a diagnostic view. The actual reconciliation happens in the bank reconciliation workflow where accounting entries and bank statement lines are matched or exceptions are resolved.

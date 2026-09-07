@@ -1,0 +1,55 @@
+---
+title: "Give managers visibility without giving full admin access"
+sidebarTitle: "Manager visibility"
+description: "Configure Lynka so managers can review team work and reporting while sensitive product areas and administrative actions remain separately controlled."
+keywords: ["CRM manager visibility", "team scope CRM", "sales manager permissions", "manager without admin", "small business access control"]
+---
+
+A manager usually needs broader visibility than an individual contributor, but that does not mean the manager needs every administrative permission in the workspace.
+
+Lynka separates team or wider record scope from product access and action permissions so you can widen review without automatically widening control.
+
+## Example: sales manager
+
+A sales manager may need to:
+
+- see Deals owned by the Sales team
+- review pipeline by stage
+- inspect Deals needing attention
+- reassign a Lead or Deal when necessary
+- review activity and close reasons
+- see team-level Sales reports
+
+The same manager may not need to:
+
+- post accounting journals
+- close accounting periods
+- manage tax settings
+- change workspace billing
+- manage every team in the company
+
+## Start with the team
+
+Make sure the manager and the people they supervise are in the correct team structure. Team membership provides the grouping Lynka can use for team-level scope where supported.
+
+## Add the scope the manager needs
+
+Give team-level visibility where the product area supports it. Avoid granting workspace-wide `view_all` style access unless the manager genuinely needs all records across the company.
+
+## Keep sensitive actions separate
+
+A manager can be allowed to review a record without being allowed to perform every lifecycle action on it.
+
+For example, viewing an Invoice is different from posting it. Viewing a Journal is different from reversing it. Viewing team records is different from managing team configuration.
+
+## Reports follow data access
+
+When report results use the current user's scope, two managers can see different totals if they manage different teams. That is expected behavior, not necessarily a reporting bug.
+
+Before comparing numbers, compare scope.
+
+## Owner versus manager
+
+The owner may need cross-functional visibility across Sales, finance, inventory, support, and workspace health. A manager should normally receive the cross-record visibility needed for their responsibility, not a copy of Owner access.
+
+That keeps a small-team permission model understandable as the company grows.

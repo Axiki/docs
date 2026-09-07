@@ -1,0 +1,50 @@
+---
+title: "Create a deal"
+sidebarTitle: "Create a deal"
+description: "Create a sales deal directly, add the commercial context that drives pipeline reporting, and understand when qualification should create the deal instead."
+keywords: ["create deal", "new opportunity", "sales opportunity", "deal value", "expected close date", "CRM deal"]
+---
+
+A deal represents a commercial opportunity that belongs in your pipeline. It is the record that carries stage, expected value, expected close timing, ownership, activities, and the final won, lost, or disqualified outcome.
+
+## Should you create the deal directly?
+
+If you are still working an unqualified prospect, start with a lead and use the qualification flow. Qualification creates the related deal after the readiness checklist passes.
+
+Create a deal directly when the opportunity already exists at a commercial stage and you do not need to represent an earlier lead qualification step.
+
+## Create the deal
+
+<Steps>
+  <Step title="Open Deals">Go to **Sales**, then **Deals**.</Step>
+  <Step title="Start the create flow">Use **Create deal** or the equivalent create action in the current layout.</Step>
+  <Step title="Name the opportunity">Use a name your team will recognize in the pipeline. A useful convention combines the account and the specific opportunity rather than only the customer name.</Step>
+  <Step title="Add commercial context">Complete the available company or contact relationship, owner, stage, expected amount, expected close date, probability, and next action context that your process uses.</Step>
+  <Step title="Save">Save the deal. It now contributes to the open pipeline according to its outcome, value, currency, and stage.</Step>
+</Steps>
+
+## The fields that affect reporting most
+
+**Outcome** determines whether the opportunity is open or finally closed. Open pipeline reporting should use the open outcome rather than trying to infer openness from a list of stage names.
+
+**Expected amount** represents the commercial value while the deal is open. When the deal closes as won, Lynka can preserve the actual won amount separately.
+
+**Probability** is used for weighted pipeline calculations when the deal has a usable value.
+
+**Expected close date** drives attention rules such as **Deal close date approaching** and **Deal close date passed**.
+
+**Owner** affects Mine, team, and broader reporting scope.
+
+**Next activity or next step** helps prevent deals from sitting in the pipeline without a clear action. The automation catalog includes **Deal has no next step** and **Deal follow-up due**.
+
+## Currency
+
+Deal reporting normalizes values into the workspace base currency where the necessary FX information exists. Do not manually rewrite a foreign-currency deal just to make a dashboard total look right. The reporting layer should convert it or flag missing FX information rather than inventing a value.
+
+## Permissions
+
+Creating a deal requires `deal.create`. Editing and reassignment are separate permissions. Reopening a closed deal requires `deal.reopen_closed`.
+
+## Next steps
+
+Once the deal exists, [manage it through the pipeline](/product/sales/deals/manage-pipeline), schedule the next activity, create the commercial documents when appropriate, and [close the deal](/product/sales/deals/close-deal) when the outcome is known.

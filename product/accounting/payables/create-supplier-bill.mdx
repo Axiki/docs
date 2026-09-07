@@ -1,0 +1,43 @@
+---
+title: "Create a supplier bill"
+sidebarTitle: "Create a supplier bill"
+description: "Record an amount owed to a supplier, review the source and accounting context, and prepare the bill for approval, posting, and payment."
+keywords: ["create supplier bill", "vendor bill", "accounts payable bill", "AP bill", "supplier invoice", "payables"]
+---
+
+A supplier bill records money your business owes to a vendor. It belongs in Accounts Payable, not in the customer invoice workflow.
+
+Use a bill when a supplier has invoiced you for goods or services and the obligation needs to appear in payables and Accounting.
+
+## Where to create it
+
+Open **Accounting**, then **Payables**. The Accounting shell maps the bill builder into the Payables section, and creating a bill requires `bill.create`.
+
+## Source context
+
+A bill can be related to procurement evidence such as goods receipts where the workflow supports that relationship. Keeping the supplier bill connected to the receiving event makes it easier to understand whether you are paying for stock that was actually received.
+
+## Create the bill
+
+<Steps>
+  <Step title="Open Payables">Go to **Accounting > Payables**.</Step>
+  <Step title="Start a supplier bill">Use the create bill action. Desktop can open the bill builder in the Accounting side panel, while mobile uses the dedicated compact flow.</Step>
+  <Step title="Select the supplier">Choose the vendor that issued the bill.</Step>
+  <Step title="Enter bill identity and dates">Record the supplier reference, bill date, due date, currency, and other available commercial details.</Step>
+  <Step title="Add the amount and accounting lines">Enter the bill lines or accounting allocation required by the builder.</Step>
+  <Step title="Review and save">Save the bill before posting or approval. Do not post a document that still needs commercial correction.</Step>
+</Steps>
+
+## Bill lifecycle and permissions
+
+The permission model separates `bill.create`, `bill.view`, `bill.post`, `bill.void`, and `bill.delete`. A finance user can therefore be allowed to prepare bills without necessarily being allowed to post or void them.
+
+## Why payables can be zero even when purchases exist
+
+A purchase order is not a supplier bill. A goods receipt is not automatically the same thing as an Accounts Payable obligation. If the vendor invoice has not been recorded and posted, the AP aging can legitimately remain zero even though stock was ordered or received.
+
+## Related articles
+
+- [Approve and pay a supplier bill](/product/accounting/payables/approve-pay-bill)
+- [Purchase order to stock workflow](/workflows/procure-to-stock)
+- [A/P Aging and financial reports](/product/accounting/financial-reports)

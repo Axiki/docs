@@ -1,0 +1,40 @@
+---
+title: "Invoices in Lynka Agreements"
+description: "Learn how Lynka invoices move from creation through posting, payment, fulfillment, voids, refunds, and Accounts Receivable."
+keywords: ["invoices", "create invoice", "post invoice", "invoice payment", "invoice fulfillment", "accounts receivable", "refund invoice", "Lynka agreements"]
+---
+
+Invoices are the billing records for amounts owed by customers. Lynka keeps invoice creation, accounting posting, stock fulfillment and payment settlement separate because each action changes a different part of the business record.
+
+Open **Agreements > Invoices** to search, create and manage invoices.
+
+## Create and review
+
+Build the invoice with the correct customer, currency, lines, quantities, prices, discounts, tax and due date. Review the total before posting.
+
+Creating an invoice does not necessarily create accounting activity. Posting is a separate action that depends on permissions and workspace capability.
+
+## Post to Accounting
+
+When posting is enabled and the document is ready, the posting workflow can create the accounting treatment for receivables, revenue and tax. Users may need `invoice.post` or related invoice management permissions.
+
+## Record settlement
+
+Customer payment should be applied through the controlled payment workflow. Cleared payments reduce the receivable; pending activity should not silently make the invoice look settled.
+
+Partial payments leave a remaining balance.
+
+## Fulfill stocked items
+
+If the invoice contains stocked products, fulfillment records the stock actually delivered. Recognized inventory cost for stocked items depends on posted fulfillment rather than assuming every billed unit has already left stock.
+
+## Corrections
+
+Use supported void, refund or credit workflows for corrections. Do not rewrite posted financial history merely to force a desired result.
+
+<CardGroup cols={2}>
+  <Card title="Create an invoice" href="/product/agreements/invoices/create-invoice">Build the billing document correctly.</Card>
+  <Card title="Post an invoice" href="/product/agreements/invoices/post-invoice">Understand when Accounting changes.</Card>
+  <Card title="Record payment" href="/product/agreements/invoices/record-payment">Apply cleared settlement to the invoice.</Card>
+  <Card title="Invoice to ledger" href="/workflows/invoice-to-ledger">Follow the financial effect through the books.</Card>
+</CardGroup>

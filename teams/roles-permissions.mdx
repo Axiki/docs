@@ -1,0 +1,75 @@
+---
+title: "Roles and permissions for a small Lynka team"
+description: "Use Lynka role defaults as a starting point, then control product areas, actions, record scope, ownership, and user overrides for the way your small team actually works."
+keywords: ["Lynka roles", "small team CRM permissions", "sales finance support roles", "CRM role based access", "user permission override"]
+---
+
+Roles help you avoid configuring every new member from zero, but a role is not the whole access model.
+
+For a small team, start with the person's real responsibility, use a sensible role default, then confirm product access, action permissions, and record scope separately.
+
+## Current role patterns
+
+The live default model includes these broad patterns:
+
+**Owner and Admin** receive broad write defaults across the major product areas that the workspace itself is allowed to use.
+
+**Finance** receives Accounting and Agreements write access with Inventory read access by default.
+
+**Marketing** receives Marketing and LeadGen write access.
+
+**Sales and Rep** receive Sales and Agreements write access.
+
+**Member** currently starts with Sales and Agreements write access.
+
+**Support** receives Support or Tickets write access.
+
+These defaults are not a recommendation to organize every five-person company into seven formal departments. They are access starting points.
+
+## Example: five-person business
+
+An owner, two sellers, operations person, and finance person can use role defaults differently:
+
+- Owner starts broad.
+- Sellers use Sales or Rep-style access.
+- Operations receives the Inventory capabilities actually needed.
+- Finance starts from Finance access.
+
+If one seller also handles Support, give that person the additional area or team membership needed rather than promoting the user to Admin.
+
+## Product areas come before detailed permissions
+
+Ask first: **Should this person be in Accounting at all?**
+
+If the answer is no, there is little value in configuring ten Accounting action permissions for that user. Deny or omit the product area and keep the model understandable.
+
+## Actions come next
+
+Inside an allowed area, decide which actions the person needs. Sensitive actions should remain separate.
+
+A finance user may create supplier Bills but not close Accounting periods. A sales manager may reassign Deals but not manage workspace billing. A support manager may assign Tickets but not see the general ledger.
+
+## Record scope controls visibility
+
+After the person can enter the area and perform the action, decide which records they can see.
+
+Use Mine for individual ownership, team scope for manager or shared-team review where supported, and workspace visibility only when the responsibility genuinely requires it.
+
+## User-level exceptions
+
+A specific user can receive an override relative to role defaults. A user-level deny can override a broader role grant where the resolver defines that behavior.
+
+Use exceptions sparingly. If every finance user needs the same extra capability, change the role design instead of adding the same manual override to every person.
+
+## Avoid the Admin shortcut
+
+Giving Admin access to solve every permission problem creates a workspace that is easy to start and difficult to control.
+
+If a user cannot complete a task, identify the missing layer. Add the required product access, scope, or action permission rather than jumping straight to Admin.
+
+<CardGroup cols={2}>
+  <Card title="Small team example" href="/teams/run-small-team">See a practical owner, Sales, operations, and finance setup.</Card>
+  <Card title="Permission reference" href="/reference/permissions">See important action-permission families.</Card>
+  <Card title="Record scope" href="/reference/data-scopes">Understand Mine, team, and workspace visibility.</Card>
+  <Card title="Product areas" href="/teams/access/product-areas">Control which parts of Lynka a person can enter.</Card>
+</CardGroup>

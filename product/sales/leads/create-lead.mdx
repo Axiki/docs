@@ -1,0 +1,69 @@
+---
+title: "Create a lead in Lynka"
+sidebarTitle: "Create a lead"
+description: "Create a new sales lead, capture the right contact and company context, assign ownership, and understand what happens after you save."
+keywords: ["create lead", "new lead", "add prospect", "sales lead", "lead owner", "lead status", "lead contact", "CRM lead"]
+---
+
+A lead is the starting record for a prospect that has not yet become a commercial opportunity. Use a lead when you are still learning whether there is a real need, a decision maker, a budget, and a realistic timeline.
+
+Creating the lead correctly matters because the same record later carries qualification history, activities, ownership, notes, documents, email context, and the link to the deal created after qualification.
+
+## Before you create the lead
+
+Check whether the prospect already exists. Lynka has duplicate review tools and can flag likely matches by details such as email, phone, or company information. A duplicate does not always mean the record is wrong, but creating a second copy makes ownership, activity history, and reporting harder to trust.
+
+You need the `lead.create` permission to create leads. What you can see after creation can also depend on your record scope and area access.
+
+## Create the lead
+
+<Steps>
+  <Step title="Open Sales">Go to **Sales**, then open **Leads**.</Step>
+  <Step title="Start a new lead">Use the create action for Leads. On desktop, the create experience opens inside the Sales workspace. On mobile, the form uses the compact mobile layout.</Step>
+  <Step title="Add identity and contact details">Enter the company or lead name and the contact details you know. The current lead form supports contact information such as email and phone, plus contextual details such as job title, industry, city, country, address, and web presence.</Step>
+  <Step title="Set the lifecycle context">Choose the appropriate lead status, owner, and any available source or context fields. If your workspace uses custom labels or colors, use the labels shown in the app rather than relying on the built in fallback names.</Step>
+  <Step title="Save the record">Save the lead. After it exists, use the detail view for activities, notes, documents, assignment, status changes, email, chat, and qualification.</Step>
+</Steps>
+
+## Which fields are worth completing?
+
+You do not need to fill every field before saving. The goal is to make the next action obvious.
+
+**Identity and contact information** help your team know who the prospect is and how to reach them. Email and phone also help with duplicate review.
+
+**Job title, industry and location** give useful context before a call or meeting. They can also make filters and reporting more meaningful.
+
+**Owner** identifies who is responsible for moving the relationship forward. A lead with no owner can be picked up by Lynka's built in **Lead has no owner** automation when that rule is enabled.
+
+**Status** shows where the lead is in the early sales lifecycle. The built in lifecycle supports `new`, `contacted`, `qualified`, `lost`, and `disqualified`, while workspaces can show configured labels and colors.
+
+**Notes and source context** are useful when the lead came from a referral, campaign, outbound search, event, or another channel that the next person working the record needs to understand.
+
+## What happens after saving?
+
+Saving a lead does not create a deal automatically. A lead remains a lead until you deliberately qualify it through Lynka's qualification flow.
+
+From the lead record you can log customer-facing activities, schedule follow-ups, add notes and documents, assign an owner, change status, and start qualification when the prospect is ready.
+
+<Info>
+A lead is not a won sale. Lynka keeps the early prospect lifecycle separate from the commercial deal lifecycle so pipeline and win reporting do not treat an unqualified prospect as revenue.
+</Info>
+
+## Desktop and mobile
+
+On desktop, Leads can be viewed in table and Kanban-style surfaces, with filters, sorting, scope controls, and detail drawers that keep the Sales workspace visible. On mobile, rows become lead cards and create or detail actions use the mobile form and overlay patterns. The underlying lead record and permissions are the same on both devices.
+
+## If you cannot create a lead
+
+Check these in order:
+
+1. Your workspace includes Sales and Sales is enabled for you.
+2. Your role or user permissions include `lead.create`.
+3. Your workspace access is active rather than paused or expired.
+4. A modal or save error is not blocking creation because of invalid required data.
+
+If the lead exists but you cannot see it after creation, the issue can be record scope rather than creation itself. See [Record scope and who can see what](/teams/access-scopes).
+
+## Next steps
+
+After creating the record, the most useful next actions are to [assign the lead](/product/sales/leads/assign-lead), [log an activity](/product/sales/activities), or [qualify the lead into a deal](/product/sales/leads/qualify-lead) when the prospect is ready.

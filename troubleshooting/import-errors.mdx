@@ -1,0 +1,47 @@
+---
+title: "Troubleshoot Lynka import problems"
+description: "Fix Lynka import errors caused by file validation, column mapping, invalid values, duplicate records, ownership, or failed rows."
+keywords: ["Lynka import error", "CSV import", "column mapping", "duplicate CRM records", "file validation", "import failed rows"]
+---
+
+Import problems usually come from one of three places: the file itself, the mapping between columns and Lynka fields, or data that is technically valid but does not mean what the destination field expects.
+
+## The file is rejected before mapping
+
+Check the file type, extension and size first. Upload validation can also use server side file signature checks where supported, so renaming an unsupported file to a permitted extension is not a valid fix.
+
+If the file was exported from another system, create a clean CSV or supported import format instead of repeatedly retrying a damaged export.
+
+## A column will not map correctly
+
+Inspect several real values from the source column. One column that mixes owner names, companies and statuses cannot be mapped reliably to a single Lynka field.
+
+Normalize the source data first. Keep dates in one date format, currencies in one field and identifiers in the correct destination column.
+
+## Records imported but look wrong
+
+A successful batch only proves that the rows passed the import contract. It does not prove the source data was clean.
+
+Review:
+
+- ownership
+- status or stage values
+- company and contact relationships
+- duplicate customers
+- dates
+- currencies and amounts
+
+## Duplicate records appeared
+
+Stop before importing another full copy. Search existing companies, contacts and leads and identify which source key failed to match the existing record.
+
+Repeatedly importing the same file can make cleanup harder.
+
+## Only some rows failed
+
+Use the import result to isolate failed rows. Correct those rows and retry the failed subset when possible instead of importing all successful rows again.
+
+<CardGroup cols={2}>
+  <Card title="Import existing data" href="/getting-started/import">Review the normal import workflow first.</Card>
+  <Card title="Search" href="/productivity/search-command">Check whether a record already exists before creating another copy.</Card>
+</CardGroup>

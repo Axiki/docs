@@ -1,0 +1,42 @@
+---
+title: "Create and manage a supplier"
+sidebarTitle: "Create a supplier"
+description: "Add a supplier for purchasing, store procurement defaults, link products, and understand how supplier data is used by purchase orders."
+keywords: ["create supplier", "add vendor", "inventory supplier", "preferred supplier", "purchase order supplier", "vendor terms"]
+---
+
+Suppliers are the procurement counterpart to products. A supplier record gives purchase orders and receiving workflows a consistent company to buy from, instead of retyping vendor information on every order.
+
+## Create a supplier
+
+Go to **Inventory**, then **Suppliers**, and use the create action. The supplier form manages vendor identity and procurement details available in the current workspace.
+
+Purchase order creation also supports a quick supplier creation path. In that flow Lynka can collect a supplier name, email, and phone, check for similar existing vendor names, then create a provisional supplier record and select it for the order.
+
+## Procurement defaults
+
+The purchase order builder can resolve defaults from the selected supplier, including currency, payment terms, supplier pricing, and other configured purchasing context.
+
+This makes the supplier record a reusable operational setting, not just an address book entry.
+
+## Link products to suppliers
+
+Product-supplier relationships can hold supplier-specific information such as vendor SKU, vendor price, currency, preferred status, and active state. When you choose a supplier in a purchase order, Lynka can use those relationships to help price or identify the selected products.
+
+## Preferred supplier
+
+For stocked products that are regularly reordered, set the preferred supplier where the workspace supports it. The **Stock item missing supplier** automation can surface stocked items without one.
+
+## Supplier permissions
+
+Supplier visibility and management depend on Inventory access and the procurement permissions configured for the user. Finance can have read access to Inventory by default while operations or owners can have broader management access, depending on the workspace permission setup.
+
+## Mobile
+
+Mobile supplier lists use compact cards and action sheets. The underlying supplier, purchase order, and goods receipt relationships remain the same as desktop.
+
+## Related articles
+
+- [Create a product](/product/inventory/products/create-product)
+- [Create a purchase order](/product/inventory/purchase-orders/create-purchase-order)
+- [Receive a purchase order](/product/inventory/purchase-orders/receive-purchase-order)

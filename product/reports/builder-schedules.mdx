@@ -1,0 +1,29 @@
+---
+title: "Report Builder and scheduled reports in Lynka"
+description: "Learn how the Lynka Report Builder, report runs, schedules, presets, scope, and permissions work together."
+keywords: ["report builder", "scheduled reports", "report runs", "report presets", "report scope", "Lynka reports"]
+---
+
+The Reports area is not limited to opening a fixed catalog. The current frontend also exposes a **Builder** and, when enabled, scheduled or run history surfaces.
+
+## Report Builder
+
+Use the Builder when you want to compose a report or reporting layout from the options available to your workspace. The reports UI supports domain filters such as Leads, Deals, Quotes, Invoices, Products and Tickets, plus scope controls and report search.
+
+Saved layouts and presets can help users return to a useful reporting view without rebuilding the same selection each time.
+
+## Scheduled runs
+
+Scheduled report features can create runs that are reviewed later in the Reports area. Availability depends on the reporting feature flags, current plan and permissions.
+
+Do not assume a schedule bypasses record visibility. Report scope and access rules still matter when the report executes.
+
+## Permissions
+
+Users generally need `report.view` to use reports and `report.export` for export actions. Financial reports can also require finance specific access.
+
+<CardGroup cols={2}>
+  <Card title="Build a report" href="/product/reports/build-report">Use the current report composer workflow.</Card>
+  <Card title="Schedule a report" href="/product/reports/schedule-report">Create and review scheduled report runs.</Card>
+  <Card title="Report catalog" href="/product/reports/catalog">Browse the implemented report library.</Card>
+</CardGroup>

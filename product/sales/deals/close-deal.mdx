@@ -1,0 +1,64 @@
+---
+title: "Close a deal as won, lost, or disqualified"
+sidebarTitle: "Close a deal"
+description: "Finish a deal with a final outcome, close reason, close date, and won value so Sales reporting reflects the real commercial result."
+keywords: ["close deal", "mark deal won", "mark deal lost", "disqualify deal", "close reason", "won opportunity", "lost opportunity"]
+---
+
+Closing a deal is a lifecycle action, not a cosmetic stage change. Lynka's closing flow records the final outcome and the information needed to make pipeline and historical reporting trustworthy.
+
+The supported final outcomes are **Won**, **Lost**, and **Disqualified**.
+
+## Close the opportunity
+
+Open the deal and choose the final status or close action. Lynka opens the closing workflow rather than silently moving a card into a terminal column.
+
+The closing form can collect a reason, reason text, amount, and closed date depending on the outcome and configuration. Close reasons come from the reasons configured for your workspace.
+
+### Won
+
+Use Won when the commercial opportunity actually succeeded. The lifecycle stores the won value at close so reporting does not have to guess the deal's value later from invoices.
+
+This distinction matters when one deal has several invoices or installments. Invoice totals are not a safe replacement for the deal's actual won value because they can double-count the commercial outcome.
+
+### Lost
+
+Use Lost when a real opportunity existed but the customer did not proceed. Capture the close reason so future analysis can distinguish price, timing, competition, no decision, or other causes your workspace tracks.
+
+### Disqualified
+
+Use Disqualified when the opportunity should not have remained a valid sales opportunity. This is different from a normal loss because it can represent poor fit, invalid qualification, no decision maker, territory issues, or similar reasons.
+
+## Close date
+
+The closed date belongs to the final lifecycle event. Sales reports such as win rate and won versus lost trend use closed outcomes in the selected period rather than assuming that the record's last update date means it closed then.
+
+## Won amount and currency
+
+For won deals, Lynka can snapshot the base currency and FX result at close when the conversion is defensible. That protects historical won reporting from later exchange-rate edits.
+
+If an old foreign-currency win has no defensible FX snapshot, reporting should flag the missing conversion instead of inventing a base-currency amount.
+
+<Info>
+A deal can be won even when invoicing happens later. Deal outcome and invoice settlement answer different business questions.
+</Info>
+
+## What happens after closing?
+
+The deal leaves the open pipeline and contributes to the appropriate final outcome reporting. Further stage movement is locked unless the user has permission to reopen the closed deal.
+
+A won deal can also trigger downstream commercial workflows such as invoicing where your workspace has those flows enabled. The automation catalog includes **Won deal missing invoice** to catch cases where an expected invoice was not created correctly.
+
+## Permissions
+
+You need deal editing access for the lifecycle action. Reopening later requires `deal.reopen_closed`.
+
+## Common mistakes
+
+**Using the lead as the won record.** Leads do not own the final sale outcome.
+
+**Using invoice payments to decide whether the deal was won.** Payment collection is downstream of the sales outcome.
+
+**Leaving a won deal open because the invoice is unpaid.** The customer can have agreed to buy even though Accounts Receivable is still outstanding.
+
+**Closing without a meaningful reason.** Lynka includes a **Lost deal missing reason** automation because close reasons are useful only when teams actually record them.

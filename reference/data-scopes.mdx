@@ -1,0 +1,85 @@
+---
+title: "Record scope: Mine, team, and workspace visibility"
+description: "Understand how Lynka record scope controls which leads, deals, tickets, dashboards, and reports a user can see after product access is granted."
+keywords: ["Lynka record scope", "Mine team workspace", "CRM visibility", "team scope", "view all records", "sales manager visibility"]
+---
+
+Record scope controls **which records are included for a user** after they already have access to the product area.
+
+It is different from permission to edit a record and different from whether the plan includes the feature.
+
+## The main scope ideas
+
+| Scope | Practical meaning |
+| --- | --- |
+| Mine | Records owned by the current user |
+| User | Records associated with a selected user when the requester can inspect that user |
+| Team | Records available through the relevant team relationship and permissions |
+| Workspace | All workspace records the user is allowed to see |
+
+The exact options shown depend on the product area and the user's permissions.
+
+## Example: two salespeople and one manager
+
+Salesperson A owns ten open Deals. Salesperson B owns twelve. The manager has team-level visibility.
+
+Under **Mine**, Salesperson A should not suddenly see Salesperson B's Deals simply because both people belong to Sales.
+
+Under **team** scope, the manager can review the team's twenty-two Deals where the access model allows it.
+
+The owner may have wider workspace visibility without becoming the owner of all twenty-two records.
+
+This is why ownership and scope are separate concepts.
+
+## `view_all` expands visibility, not authority
+
+Permissions such as `lead.view_all` and `deal.view_all` can widen which records a user can see.
+
+They do not automatically grant permission to create, edit, delete, assign, close, or reopen those records.
+
+A manager may legitimately see a Deal they are not allowed to perform a sensitive lifecycle action on.
+
+## A requested scope can be reduced
+
+A filter or report can request a broad scope, but the access layer must still enforce what the user is allowed to see.
+
+A restricted user should not become a workspace-wide viewer just because the front end sent `workspace` in a query.
+
+## Scope affects dashboards and Reports
+
+Two people can open the same report title and see different totals because their record scope differs.
+
+Before calling the calculation wrong, compare:
+
+1. report period
+2. selected scope
+3. team or user filter
+4. product-area access
+5. `view_all` or team visibility permissions
+6. reporting exclusions
+7. currency and timezone when the metric depends on them
+
+## Scope does not bypass product access
+
+Workspace-wide Sales visibility does not grant Reports access. Team-level Deal visibility does not grant Accounting. A user still needs the product area and action permissions required for the task.
+
+Think of the access chain as:
+
+**workspace state → plan capability → enabled product area → role or user access → record scope → action permission → record lifecycle rule**
+
+## Teams and one person in multiple groups
+
+A user can belong to more than one team. That makes small-business structures easier to model when someone helps both Sales and Support, or when a manager oversees more than one group.
+
+Do not assume multi-team membership means the person should see every record in every product area. Product access and permission rules still apply.
+
+## When a record is missing
+
+If the user can open the area but one record is missing, investigate ownership, team membership, scope, and `view_all` or team permissions.
+
+If the entire area is missing, investigate plan, installed areas, and user product access instead.
+
+<CardGroup cols={2}>
+  <Card title="Assign work" href="/teams/assign-work">Understand ownership without using it as a security setting.</Card>
+  <Card title="Manager visibility" href="/teams/manager-visibility">Give managers team visibility without making them Admin.</Card>
+</CardGroup>

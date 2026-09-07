@@ -1,0 +1,145 @@
+---
+title: "Support ticket to resolution workflow in Lynka"
+description: "Learn how to create, assign, respond to, track, and resolve customer support tickets in Lynka while managing SLA risk, ownership, notes, and reopen history."
+keywords: ["support ticket workflow", "create support ticket", "assign ticket", "ticket SLA", "resolve ticket", "reopen ticket", "customer support", "ticket automation", "Lynka support"]
+---
+
+A support ticket should make three things clear: what the customer needs, who owns the response, and whether the work is still inside the expected service window.
+
+Lynka keeps the customer relationship, ticket history, assignment, status and SLA context together so support work does not disappear into private messages or disconnected notes.
+
+## 1. Create the ticket against the correct customer
+
+Open **Support > Tickets** and create a ticket.
+
+A ticket requires a company or customer relationship. If you link a deal, the selectable deal must belong to the selected company. This prevents a ticket from being attached to an unrelated commercial record.
+
+The ticket form can include information such as:
+
+- company or customer
+- related deal
+- ticket type
+- category
+- title
+- detailed description
+- impact
+- priority
+- assignee
+- status or workflow fields
+
+Use a specific title and enough description that another team member can understand the issue without asking the customer to repeat everything.
+
+## 2. Set priority and ownership deliberately
+
+Priority should reflect the business impact and urgency of the issue, not simply how loudly it was reported.
+
+Assign the ticket to the person or team responsible for the next action. Users need `ticket.assign` permission to perform assignment where the UI exposes that control.
+
+Unassigned tickets are risky because everyone can see them while nobody is clearly responsible. Lynka includes a built in **Ticket has no assignee** automation that can surface this condition when automation is enabled.
+
+## 3. Work the first response
+
+The first response clock and the resolution clock answer different questions.
+
+The first response measures how quickly the customer receives an initial response. Resolution measures how long it takes to finish the issue.
+
+If SLA features are enabled for the workspace, Lynka can monitor both timelines. Built in ticket automations include:
+
+- Ticket waiting for first response
+- Ticket SLA at risk
+- Ticket SLA breached
+- Ticket idle too long
+- Ticket has no assignee
+- Ticket reopened repeatedly
+
+At risk and breached checks run frequently enough to support active service monitoring rather than only appearing in a daily summary.
+
+## 4. Keep the investigation on the ticket
+
+Use ticket notes, files and status updates to preserve the troubleshooting history.
+
+A useful ticket history should make it possible to answer:
+
+- what the customer originally reported
+- what the support team checked
+- what changed
+- who took each important action
+- what remains unresolved
+- what was communicated back to the customer
+
+Avoid putting essential troubleshooting evidence only in an unrelated chat or private note that the next support owner cannot see.
+
+## 5. Update assignment when responsibility changes
+
+If the issue needs another specialist, change the assignee or team rather than leaving the old owner on the ticket while work happens elsewhere.
+
+This keeps queue ownership useful and helps reports or automation distinguish an active handoff from an abandoned ticket.
+
+When teams and access controls are enabled, visibility can also depend on workspace role, team access and ticket permissions.
+
+## 6. Resolve the ticket only when the issue is actually resolved
+
+Use the appropriate resolved or closed status when the customer issue is finished according to your workflow.
+
+Closing a ticket should represent a real support outcome, not merely an attempt to clear the queue.
+
+Resolution time reporting can use the resolution or close timestamp to understand how long completed work took.
+
+If the issue returns, reopen the ticket when that is the correct workflow. The existing ticket history remains valuable because the new problem can be understood in context.
+
+Repeated reopen activity can also be surfaced by the built in **Ticket reopened repeatedly** automation.
+
+## 7. Review Support reporting
+
+The active Support report catalog includes:
+
+- Incoming Ticket Volume
+- Ticket Backlog by Status
+- First Reply Time
+- Resolution Time
+- SLA Compliance
+
+Those reports answer different operational questions. Backlog tells you what remains open. First reply measures responsiveness. Resolution time measures completion speed. SLA Compliance shows whether service commitments are being met.
+
+## Desktop and mobile
+
+On desktop, Support provides an overview and ticket list/Kanban surfaces with filters, status, priority and type controls. Ticket create and detail flows can open in the right side workspace panel.
+
+On mobile, tickets use compact cards and mobile filters. Create and detail actions use mobile forms or full screen panels. The ticket relationship and SLA rules remain the same.
+
+## Permissions and feature gates
+
+Common Support permissions include:
+
+- `ticket.create`
+- `ticket.edit`
+- `ticket.assign`
+
+Ticket status configuration, SLA behavior, assignment, escalation and automation can also be controlled by feature settings and workspace access.
+
+## Common problems
+
+### I cannot select the deal I expected
+
+Confirm the selected company first. Lynka limits the related deal choice to deals belonging to that company.
+
+### The ticket has no SLA countdown or SLA status
+
+Check whether SLA features are enabled and configured for the workspace and ticket context.
+
+### The ticket keeps appearing as at risk
+
+Review the first response and resolution deadlines, current status and recent activity. An old status alone does not replace the actual SLA timing.
+
+### The issue came back after resolution
+
+Reopen the ticket when appropriate instead of creating disconnected history unless the new issue is genuinely separate.
+
+## Related guides
+
+<CardGroup cols={2}>
+  <Card title="Create a support ticket" href="/product/support/tickets/create-ticket">Capture the customer, issue, priority and assignment correctly.</Card>
+  <Card title="Assign and manage tickets" href="/product/support/tickets/assign-manage">Keep responsibility and ticket history clear.</Card>
+  <Card title="Understand ticket SLA" href="/product/support/sla/understand-sla">Learn how first response, resolution, risk and breach differ.</Card>
+  <Card title="Support overview" href="/product/support/overview">See how tickets, SLA, automation and reporting fit together.</Card>
+</CardGroup>

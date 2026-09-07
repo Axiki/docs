@@ -1,0 +1,38 @@
+---
+title: "Void or refund an invoice"
+sidebarTitle: "Void or refund"
+description: "Choose the correct correction path for an invoice, distinguish voiding from refunding, and avoid rewriting posted financial history."
+keywords: ["void invoice", "refund invoice", "invoice correction", "credit invoice", "reverse payment", "invoice refund permission"]
+---
+
+Voiding and refunding solve different problems. Use the action that matches what actually happened instead of changing invoice totals after the fact.
+
+## Void
+
+Void is appropriate when the invoice should no longer be treated as a valid billing document under the supported lifecycle. The permission model includes invoice void authority separately from ordinary editing.
+
+A posted invoice can require accounting reversal or linked cleanup rather than a simple delete.
+
+## Refund
+
+Refund applies when money was collected and some or all of it needs to be returned or reversed through the payment lifecycle. Refund handling should reduce the net settled amount rather than pretending the original payment never existed.
+
+Settlement reporting counts cleared refunds with their proper negative sign.
+
+## Credit notes
+
+For commercial corrections after invoicing, a credit note can be a better accounting document than rewriting the original invoice. Accounting has a dedicated Credits area and credit-note workflow.
+
+## Historical integrity
+
+Do not mass-recalculate old paid or posted invoices just because a newer calculation rule is better. Historical invoices are financial snapshots. When a provable historical accounting entry is wrong, use an auditable correction or reversal rather than silently changing the original journal.
+
+## Permissions
+
+Invoice management, void, refund, and delete are distinct actions. The exact controls visible to a user depend on role permissions, workspace access, and the invoice state.
+
+## Related articles
+
+- [Create a credit note](/product/accounting/credit-notes)
+- [Post an invoice](/product/agreements/invoices/post-invoice)
+- [Record an invoice payment](/product/agreements/invoices/record-payment)

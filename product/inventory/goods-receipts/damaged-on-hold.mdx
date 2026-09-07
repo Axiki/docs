@@ -1,0 +1,47 @@
+---
+title: "Record damaged and on-hold stock at receiving"
+sidebarTitle: "Damaged and on-hold stock"
+description: "Separate accepted, damaged, and on-hold quantities on a goods receipt so delivered stock is not all treated as clean available inventory."
+keywords: ["damaged stock", "on hold inventory", "goods receipt damaged", "GRN damaged quantity", "accepted quantity"]
+---
+
+Supplier deliveries are not always clean. Lynka's goods receipt lines let you separate what was accepted from what arrived damaged or needs to stay on hold.
+
+## Quantity buckets
+
+For each receipt line, the editor tracks:
+
+**Accepted** for units received in an acceptable state.
+
+**Damaged** for units that arrived damaged.
+
+**On hold** for units physically received but not yet ready to be treated as normal accepted stock.
+
+The total received quantity is the sum of the three buckets.
+
+## Why the split matters
+
+If every delivered unit is recorded as accepted, available stock can look healthier than the physical warehouse. The separate buckets preserve the reason a delivered quantity should not all be treated the same way.
+
+Lynka includes built in automations for **Damaged stock received** and **Received stock on hold** so these exceptions can reach an attention queue instead of disappearing inside a receipt.
+
+## Example
+
+A PO line orders 20 units. The supplier delivers 15 today. Of those, 12 are acceptable, 2 are damaged, and 1 needs inspection.
+
+Record:
+
+- Accepted: 12
+- Damaged: 2
+- On hold: 1
+- Total received: 15
+
+The purchase order still has 5 units outstanding.
+
+## What not to do
+
+Do not enter 15 as accepted and add a note saying three are unusable. The structured quantity fields exist so inventory logic and automation can distinguish the exception.
+
+Do not mark the entire PO received when only 15 of 20 arrived.
+
+Do not edit a posted receipt in place to hide a later discrepancy. Use the supported adjustment or review workflow.

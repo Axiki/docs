@@ -1,0 +1,58 @@
+---
+title: "Sales calculations: pipeline, weighted pipeline, win rate, and average deal size"
+sidebarTitle: "Sales calculations"
+description: "Use the canonical definitions behind Lynka Sales metrics so dashboard and report numbers can be compared without mixing leads, deals, invoices, or cash."
+keywords: ["sales metrics", "pipeline calculation", "weighted pipeline formula", "win rate formula", "average deal size", "won value"]
+---
+
+Sales metrics are easy to misread when lead lifecycle, opportunity lifecycle, invoicing, and payment are mixed together. Lynka keeps these definitions separate.
+
+## Open pipeline
+
+Pipeline uses deals whose canonical outcome is open. It should not infer open status by excluding a hard-coded list of stage names.
+
+For each usable deal, the transaction amount is converted to the workspace base currency using the reporting FX rules.
+
+## Weighted pipeline
+
+Weighted pipeline multiplies the expected amount by the deal probability in transaction currency, then converts the weighted amount to base currency.
+
+Conceptually:
+
+`weighted amount = expected amount x probability`
+
+The result is a forecast measure, not recognized revenue or cash.
+
+## Won value
+
+Won value comes from the opportunity close lifecycle. It prefers the stored base amount snapshot from the close event when one exists and matches the workspace base currency.
+
+It does not replace the won amount with the total of related invoices.
+
+## Win rate
+
+Win rate uses final won and lost deal closures in the selected period:
+
+`won / (won + lost)`
+
+Open deals are not part of the denominator. Lead status is not part of the formula.
+
+## Average deal size
+
+Average deal size uses canonical won values for won deals with usable FX conversion. Legitimate zero-value wins remain in the denominator. Valued historical wins with missing required FX can be excluded with an explicit data-quality warning rather than estimated.
+
+## Lead qualification rate
+
+Be careful because two useful definitions exist.
+
+A dashboard can show a **current lifecycle snapshot**, such as the share of current leads that are qualified.
+
+A management report can show **qualification transitions in a selected period**. These will not necessarily match because one is a current stock measure and the other is a period event measure.
+
+## Sales cycle length
+
+The canonical Sales Cycle Length report uses won opportunities and measures time from opened or created date to the final closed date for wins in the selected period. It can report median and p90 rather than relying only on an average.
+
+## Currency quality
+
+A zero foreign-currency amount can convert to zero without requiring an FX rate. A nonzero foreign-currency amount needs a defensible rate or close snapshot. Missing FX should be surfaced rather than hidden.

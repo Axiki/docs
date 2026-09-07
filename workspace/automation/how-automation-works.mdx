@@ -1,0 +1,46 @@
+---
+title: "How Lynka automation works"
+sidebarTitle: "How automation works"
+description: "Understand scheduled automation rules, workflow triggers, conditions, actions, cadence, and why an automation should surface a source problem instead of rewriting the record blindly."
+keywords: ["automation", "workflow automation", "CRM automation", "scheduled rules", "automation triggers", "Lynka workflows"]
+---
+
+Lynka automation watches for operational conditions and turns them into actions or attention. It is designed to reduce manual checking across Sales, Agreements, Inventory, Accounting, Support, and Marketing.
+
+## Built in scheduled rules
+
+The live automation catalog currently includes 34 active rule types. Examples include overdue invoices, quotes waiting for response, low stock, overdue purchase orders, deals with no next step, unassigned tickets, and SLA risk.
+
+Each catalog rule has a module, trigger kind, default cadence, configuration, and default actions or channels.
+
+## Workflow automation
+
+Lynka also has a workflow model with trigger events, conditions, actions, modes, enable states, versions, and templates. Where templates are available, use them as structured starting points.
+
+## Scheduled versus event-based thinking
+
+A scheduled rule asks "Does this condition exist now?" Examples include an invoice overdue today or a deal that has not changed stage for several days.
+
+An event-based workflow reacts when something happens, then evaluates its conditions and actions.
+
+## Cadence
+
+Different rules need different urgency. SLA and imminent follow-up rules can run every 15 minutes. Less urgent operational hygiene can run hourly or daily.
+
+A faster cadence is not automatically better. It can produce repeated notifications or other noise if the rule is not designed to suppress duplicates.
+
+## Reporting exclusions
+
+Automation candidate scans should respect the same reporting exclusions used to isolate fixtures and test data. A test record should not create a real owner alert simply because it technically matches a rule.
+
+## Automation does not replace source integrity
+
+A rule such as **Invoice accounting posting incomplete** should alert or route the problem. It should not invent a journal with guessed values.
+
+A **Won deal missing invoice** rule should surface the missing downstream document. It should not overwrite the won amount with invoice totals.
+
+## Related articles
+
+- [Automation catalog](/workspace/automation-catalog)
+- [Ticket SLA](/product/support/sla/understand-sla)
+- [Plans and capabilities](/workspace/plans)

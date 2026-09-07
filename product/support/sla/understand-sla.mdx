@@ -1,0 +1,49 @@
+---
+title: "Understand ticket SLA, first response, and resolution time"
+sidebarTitle: "Ticket SLA"
+description: "Learn how Lynka distinguishes first-response and resolution deadlines, at-risk tickets, breaches, and SLA reporting."
+keywords: ["ticket SLA", "first response time", "resolution time", "SLA breach", "support SLA", "ticket deadline"]
+---
+
+SLA rules turn support timing into an explicit service commitment. Lynka tracks first-response and resolution timing separately because replying to the customer and actually resolving the issue are different events.
+
+## First-response SLA
+
+First-response timing measures how long an eligible ticket waits for the first support response under the configured SLA rules.
+
+The automation catalog includes **Ticket waiting for first response**, **Ticket SLA at risk**, and **Ticket SLA breached**.
+
+## Resolution SLA
+
+Resolution timing measures how long the ticket remains unresolved against the configured resolution target.
+
+A ticket can meet its first-response target and still breach its resolution target later.
+
+## At risk versus breached
+
+**At risk** means the deadline is approaching and the team still has time to act.
+
+**Breached** means the relevant deadline passed without the required response or resolution event.
+
+These are more useful than one generic "late" status because they let a team intervene before the commitment is missed.
+
+## Reports
+
+The active Support report catalog includes:
+
+- First Reply Time
+- Resolution Time
+- SLA Compliance
+- Incoming Ticket Volume
+- Ticket Backlog by Status
+
+Ticket reports use the reporting timezone and your workspace's status configuration rather than assuming every workspace has the same labels.
+
+## Assignment and SLA
+
+A ticket can be within SLA but still operationally risky if it has no assignee. Likewise, assigning a ticket does not reset the elapsed SLA clock unless the configured backend rule explicitly does so.
+
+## Related articles
+
+- [Create a support ticket](/product/support/tickets/create-ticket)
+- [Assign and manage tickets](/product/support/tickets/assign-manage)

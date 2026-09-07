@@ -1,0 +1,95 @@
+---
+title: "Run Lynka with a small team"
+sidebarTitle: "Run a small team"
+description: "Set up Lynka for an owner and a small team by separating product access, action permissions, record visibility, ownership, team membership, and approvals."
+keywords: ["CRM for five person team", "small team CRM setup", "small business team permissions", "owner sales finance support access", "Lynka Teams"]
+---
+
+Lynka Teams is designed for the point where a business is no longer operated by one person, but is still small enough that everybody wears more than one hat.
+
+You do not need formal departments to benefit from team controls. A five-person company can already have sensitive finance data, shared customer ownership, different responsibilities, and a real need to know who is doing what.
+
+## Example small team
+
+Imagine this company:
+
+| Person | Main work in Lynka |
+| --- | --- |
+| Owner | Overview, Sales, finance review, team access, Reports |
+| Salesperson A | Leads, Deals, activities, Quotes |
+| Salesperson B | Leads, Deals, activities, Quotes |
+| Operations | Products, Suppliers, Purchase Orders, Goods Receipts |
+| Finance | Agreements, Accounting, payments, payables, bank reconciliation |
+
+Nobody needs every permission simply because the company only has five people.
+
+## Start with product area access
+
+First decide which parts of Lynka each person should be able to enter.
+
+A finance user may need Accounting and Agreements with read access to Inventory. A salesperson may need Sales and Agreements but no Accounting. An operations user may need Inventory without access to financial close controls.
+
+Product area access is the broadest layer. It should answer: **Does this person need this part of Lynka for their job?**
+
+## Then decide what actions they need
+
+Opening an area does not mean somebody should be able to do every sensitive action inside it.
+
+Examples of separately controlled actions include:
+
+- assign a Lead
+- reopen a closed Deal
+- post an Invoice
+- reverse a Journal
+- close or reopen an Accounting period
+- export a Report
+- manage Teams
+
+Use action permissions for responsibility, not status. A senior-sounding job title is not a reason to grant a permission the person never needs.
+
+## Then decide what records they should see
+
+Record scope answers a different question: **Which records inside the area are visible to this person?**
+
+A salesperson may work their own Leads. A manager can receive team-level scope where supported. An owner may need workspace-wide visibility.
+
+Someone can have permission to edit Deals but still only see Deals in their allowed scope.
+
+## Use ownership to make responsibility obvious
+
+Ownership should answer who is expected to act on a Lead, Deal, Ticket, or other assignable record.
+
+Do not use team membership as a substitute for ownership. A person can belong to the Sales team without owning every Deal the team can see.
+
+## Use teams for collaboration and scope
+
+One person can belong to more than one team. That is useful in small businesses where someone may help both Sales and Support, or where a manager needs visibility across two groups.
+
+Teams can also have manager relationships and active membership records.
+
+## Owner access is not the model for everybody
+
+Giving every employee Owner or Admin access is easy on day one and painful later.
+
+It becomes difficult to answer whether a user truly needed access, why a sensitive action occurred, and what should happen when that person leaves.
+
+Use the smallest access that allows the person to complete their real work, then broaden only when the workflow proves it is necessary.
+
+## Add approvals where a second decision matters
+
+Approvals are useful when the business wants a controlled review before supported work proceeds. They are not meant to make every small action bureaucratic.
+
+Use them for moments where the cost of a bad decision is higher than the cost of waiting for review.
+
+## Let the owner see the business without doing every task
+
+The owner workspace and Reports let the owner review attention, performance, finance, members, and access without becoming the owner of every record.
+
+This is one of the most important differences between "five users" and a real team product. The system should help the owner coordinate the business, not force the owner to perform everybody's work.
+
+<CardGroup cols={2}>
+  <Card title="Invite a member" href="/teams/members/invite-member">Add the person, then apply access deliberately.</Card>
+  <Card title="Control product areas" href="/teams/access/product-areas">Decide which parts of Lynka each person can open.</Card>
+  <Card title="Control actions" href="/teams/access/action-permissions">Keep sensitive actions separate from ordinary work.</Card>
+  <Card title="Control record scope" href="/teams/access-scopes">Choose Mine, team, or wider visibility where supported.</Card>
+</CardGroup>

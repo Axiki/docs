@@ -1,0 +1,39 @@
+---
+title: "Why an invoice still shows an outstanding balance"
+sidebarTitle: "Invoice still outstanding"
+description: "Troubleshoot partial, pending, uncleared, refunded, or mismatched payments when an invoice does not move to the expected paid state."
+keywords: ["invoice not paid", "invoice balance wrong", "payment pending", "partial payment", "uncleared payment", "accounts receivable"]
+---
+
+An invoice can still show an amount due even when a payment record exists. The most common reason is that the payment is not a valid cleared settlement for the invoice.
+
+## Check clearance first
+
+Canonical invoice settlement counts payments and refunds only when the clearance state is `cleared`.
+
+A pending payment does not reduce the receivable as if the money already settled.
+
+## Check the amount
+
+A partial cleared payment reduces the outstanding balance but does not make the invoice fully paid.
+
+If a refund exists, the cleared refund reduces the net settled amount and can increase the amount still economically outstanding depending on the workflow.
+
+## Check currency
+
+A payment must use a currency relationship the settlement record can defend. Unsupported currency mismatch should be rejected rather than treated as equal amounts.
+
+## Check for overpayment rejection
+
+The payment flow protects against paying more than the valid invoice total or remaining amount under the supported rules. If the customer truly sent too much, use the supported credit or overpayment process rather than increasing the invoice total to fit the payment.
+
+## Check the invoice posting separately
+
+An invoice can be financially settled while an Accounting posting problem still exists, or it can be posted while still unpaid. Payment state and posting state are different.
+
+The **Invoice accounting posting incomplete** automation can surface the second problem.
+
+## Related articles
+
+- [Record an invoice payment](/product/agreements/invoices/record-payment)
+- [Post an invoice](/product/agreements/invoices/post-invoice)
