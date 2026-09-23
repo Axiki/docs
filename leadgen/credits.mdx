@@ -2,7 +2,7 @@
 title: "LeadGen credits, allowance, charges, and refunds"
 sidebarTitle: "Credits and allowance"
 description: "Understand how Lynka tracks LeadGen run capacity, plan allowance, bonus credits, run cost, remaining balance, and automatic refunds for failed, canceled, or no-result runs."
-keywords: ["LeadGen credits", "lead generation allowance", "LeadGen tokens", "LeadGen refund", "LeadGen run cost", "Lynka plan allowance"]
+keywords: ["LeadGen credits", "lead generation allowance", "LeadGen refund", "LeadGen run cost", "Lynka plan allowance"]
 ---
 
 LeadGen has limited run capacity because each generation run consumes a metered resource. Lynka tracks that capacity separately from ordinary CRM record creation.
@@ -17,13 +17,15 @@ The current backend can draw LeadGen capacity from two broad sources:
 
 **Credit grants.** Lynka can also store separate credit grants with their own remaining balance and optional expiry.
 
-## Current paid-plan LeadGen credits
+## Current LeadGen credits by plan
 
-**Pro:** 15 LeadGen credits to get started, then 5 included each month. The first paid subscription provides 5 normal monthly credits plus 10 one-time starter credits.
+**Free:** LeadGen is available with 3 credits. Free does not support credit top-ups. When those credits are used, upgrade to Pro to receive more credits.
 
-**Teams:** 30 LeadGen credits to get started, then 10 included each month. The first paid subscription provides 10 normal monthly credits plus 20 one-time starter credits.
+**Pro:** 30 LeadGen credits each month.
 
-Starter credits are granted once per workspace when its first successful paid subscription begins. Upgrading later does not grant another starter package. Additional LeadGen credits can be purchased separately; pack quantities and prices are not published here.
+**Teams:** 100 LeadGen credits each month.
+
+Pro and Teams credits renew monthly, whether the subscription is billed monthly or annually.
 
 The run record stores which source was charged so Lynka knows where to return capacity if a refund is required.
 
@@ -66,7 +68,3 @@ If the mismatch persists, keep the run identifier and report the issue through S
 <Card title="View current plans" href="https://lynkacrm.com/pricing" icon="external-link" cta="Open pricing" arrow="true">
   Check current prices, included users, and plan packaging on the website.
 </Card>
-
-## Purchased-credit expiry
-
-The current implementation stores an optional expiry field on credit grants, but it does not establish a customer-facing expiry policy for purchased LeadGen credits. Do not assume that purchased credits expire or carry over until Lynka publishes that policy.
