@@ -1,6 +1,7 @@
 ---
 title: "Privacy Policy"
 description: "The canonical Lynka Privacy Policy."
+hidden: true
 ---
 
 Lynka maintains one controlling Privacy Policy on its public website so the app, marketing site, and documentation do not publish conflicting versions.
