@@ -7,7 +7,10 @@
     "light": "#6FA3F2",
     "dark": "#1D5FB8"
   },
-  "favicon": "/favicon.svg",
+  "favicon": {
+    "light": "/images/lynka-favicon.svg",
+    "dark": "/favicon.svg"
+  },
   "integrations": {
     "ga4": {
       "measurementId": "G-7CWTYHDW5G"
@@ -404,8 +407,8 @@
     ]
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/images/lynka-logo-light.svg",
+    "dark": "/images/lynka-logo-dark.svg"
   },
   "navbar": {
     "links": [

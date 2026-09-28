@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 64" aria-label="Lynka">
+  <svg x="0" y="3" width="49" height="58" viewBox="145 120 235 290">
+    <defs>
+      <linearGradient id="darkBlue" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#2F67F6"/><stop offset="100%" stop-color="#527CF7"/></linearGradient>
+      <linearGradient id="lightBlue" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#6F8DF7"/><stop offset="100%" stop-color="#91A7F8"/></linearGradient>
+    </defs>
+    <path d="M208 138 H247 V310 H164 V182 Q164 138 208 138 Z" fill="url(#lightBlue)"/>
+    <path d="M164 320 H235 Q247 320 247 332 V388 Q247 400 235 400 H208 Q164 400 164 358 Z" fill="url(#lightBlue)"/>
+    <path d="M257 320 H358 V356 Q358 400 314 400 H257 Z" fill="url(#darkBlue)"/>
+  </svg>
+  <text x="58" y="45" fill="#1D71DB" font-family="Arial, sans-serif" font-size="36" font-weight="700">Lynka</text>
+</svg>
