@@ -11,11 +11,11 @@ Journal status controls whether an accounting entry is still being prepared or h
 
 Posting makes the journal part of the ledger used by financial reports. A posted journal must balance and should have enough reference information to explain why it exists.
 
-Posting requires `journal.post`. Viewing or editing ordinary journal data does not automatically grant posting authority.
+Posting requires `journal.entry.post`. Opening Accounting or editing a draft does not automatically grant posting authority.
 
 ## Reversing a posted entry
 
-Reversal creates an auditable accounting path that offsets the original entry instead of pretending it never existed. The permission model includes `journal.reverse` for this reason.
+When a correction uses a separate offsetting journal, that entry is created and posted with `journal.entry.create` and `journal.entry.post`. Unposting is a separate action controlled by `journal.entry.unpost`.
 
 Use reversal when the original posting was validly recorded but needs to be undone in the accounting history.
 

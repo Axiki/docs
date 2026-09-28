@@ -30,7 +30,7 @@ A bill can be related to procurement evidence such as goods receipts where the w
 
 ## Bill lifecycle and permissions
 
-The permission model separates `bill.create`, `bill.view`, `bill.post`, `bill.void`, and `bill.delete`. A finance user can therefore be allowed to prepare bills without necessarily being allowed to post or void them.
+The permission model separates `bill.create`, `bill.view`, `bill.approve`, `bill.post`, `bill.void`, and `bill.delete`. A finance user can therefore be allowed to prepare bills without necessarily being allowed to approve, post, or void them. Voiding is limited to eligible draft bills.
 
 ## Why payables can be zero even when purchases exist
 

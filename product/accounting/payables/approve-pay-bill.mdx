@@ -33,7 +33,7 @@ If you record only the cash payment and skip the bill, A/P Aging cannot show wha
 
 ## Voiding or deleting
 
-The permission model includes separate `bill.void` and `bill.delete` actions. Use them only when the bill lifecycle and accounting period allow it. A posted historical bill should not be deleted merely because the vendor later issues a correction.
+The permission model includes separate `bill.void` and `bill.delete` actions. Voiding applies to a draft bill with no linked journal entry or recorded payment. A posted or paid bill needs an accounting correction; it should not be voided or deleted as if it were still a draft.
 
 ## A/P Aging
 

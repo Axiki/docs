@@ -20,11 +20,11 @@ Examples from the live permission model include:
 | Leads | `lead.create`, `lead.edit`, `lead.assign`, `lead.delete`, `lead.view_all` |
 | Deals | `deal.create`, `deal.edit`, `deal.assign`, `deal.view_all`, `deal.reopen_closed` |
 | Quotes | `quote.create`, `quote.edit`, `quote.void`, `quote.view_all` |
-| Invoices | `invoice.create`, `invoice.manage`, `invoice.post`, `invoice.view`, `invoice.view_all` |
-| Journals | `journal.create`, `journal.post`, `journal.reverse`, `journal.delete`, `journal.view` |
+| Invoices | `invoice.create`, `invoice.manage`, `invoice.view_all` |
+| Journals | `accounting.view`, `journal.entry.create`, `journal.entry.edit`, `journal.entry.post`, `journal.entry.unpost`, `journal.entry.delete` |
 | Bills | `bill.create`, `bill.post`, `bill.void`, `bill.delete`, `bill.view` |
 | Periods | `period.view`, `period.close`, `period.reopen` |
-| Reports | `report.view`, `report.export` |
+| Reports | `report.view`, `report.export`; financial reports also use `financial.report.view` and `financial.report.export` |
 | Tickets | `ticket.create`, `ticket.edit`, `ticket.assign` |
 | Teams | `team.manage` |
 

@@ -10,7 +10,7 @@ Open **Accounting > Payables** to review supplier bills and **Accounting > Payme
 
 ## Supplier bills
 
-A supplier bill records an amount owed to a vendor. Depending on the workflow, users can create, view, post, void or delete bills with permissions such as `bill.create`, `bill.view`, `bill.post`, `bill.void` and `bill.delete`.
+A supplier bill records an amount owed to a vendor. Depending on the workflow, users can create, view, approve, post, void or delete bills with permissions such as `bill.create`, `bill.view`, `bill.approve`, `bill.post`, `bill.void` and `bill.delete`.
 
 Use the correct supplier, dates, currency, amounts and accounting context. A bill should reflect the supplier obligation, not merely a note that a purchase happened.
 
@@ -18,7 +18,7 @@ Use the correct supplier, dates, currency, amounts and accounting context. A bil
 
 Where the workflow exposes approval, review the bill before it affects the books. Posting moves the bill into the accounting record and contributes to Accounts Payable.
 
-If a posted bill needs correction, use the supported void, reversal or credit workflow rather than silently changing historical accounting.
+Voiding is limited to a draft bill with no linked journal entry and no recorded payment. A posted or paid bill needs an accounting reversal or other supported correction workflow; it cannot be voided as if it were still a draft.
 
 ## Paying a bill
 

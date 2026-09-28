@@ -55,11 +55,9 @@ Examples include:
 - `quote.view_all`
 - `invoice.create`
 - `invoice.manage`
-- `invoice.post`
-- `invoice.view`
 - `invoice.view_all`
 
-Posting an Invoice is intentionally separate from simply creating or viewing one because posting can have Accounting consequences.
+`invoice.manage` covers invoice editing, posting, and status updates. Posting can have Accounting consequences, so it also depends on workspace capability and record state. `invoice.view_all` broadens invoice visibility; it is not the general permission to open the Agreements area.
 
 Payment capture, posting, voiding, and refund behavior can also depend on plan entitlements and record state, not only one permission key.
 
@@ -73,17 +71,19 @@ A finance user can have read-oriented Inventory access without receiving the sam
 
 Examples include:
 
-- `journal.create`
-- `journal.post`
-- `journal.reverse`
-- `journal.delete`
+- `accounting.view`
+- `journal.entry.create`
+- `journal.entry.edit`
+- `journal.entry.post`
+- `journal.entry.unpost`
+- `journal.entry.delete`
 - `bill.create`
 - `bill.post`
 - `bill.void`
 - `period.close`
 - `period.reopen`
 
-These permissions are separated because the risk is different. Viewing a Journal is not equivalent to posting it. Posting a Journal is not equivalent to reversing history. Closing a period is a higher-control action than entering a draft transaction.
+These permissions are separated because the risk is different. Opening Accounting is not equivalent to creating or posting an entry. `journal.entry.unpost` controls unposting; creating and posting a separate correction uses the corresponding journal-entry permissions. Closing a period is a higher-control action than entering a draft transaction.
 
 ## Support
 
