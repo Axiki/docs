@@ -9,7 +9,7 @@
   },
   "favicon": {
     "light": "/images/lynka-favicon.svg",
-    "dark": "/favicon.svg"
+    "dark": "/images/lynka-favicon.svg"
   },
   "integrations": {
     "ga4": {
