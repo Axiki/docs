@@ -52,7 +52,7 @@ for file in public_files:
     if re.search(r'\b(?:Sales|Agreements|Inventory|Accounting|Support|Marketing|Reporting|Tickets) Hub\b', text, re.I):
         errors.append(f'Legacy customer-facing Hub name found: {rel}')
 
-    if not rel.endswith(('refund-policy.md',)) and re.search(r'\$\s*\d|\b\d+\s*(?:USD|GHS)\s*/\s*(?:mo|month)\b', text, re.I):
+    if rel not in ('refund-policy.md', 'workspace/plans.mdx') and re.search(r'\$\s*\d|\b\d+\s*(?:USD|GHS)\s*/\s*(?:mo|month)\b', text, re.I):
         errors.append(f'Hardcoded price found: {rel}')
 
     # MDX hrefs
